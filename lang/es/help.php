@@ -1,0 +1,25 @@
+<?php
+
+return [
+    'about_me_description' => 'Aquí es donde me presento a mí mismo. En esta sección encontrarás todo sobre mi perfil profesional, currículum, formación, intereses, etc',
+    'projects_description' => 'Algunos de los principales proyectos que he tenido llevado a cabo. Programar es uno de mis hobbies, por lo que suelo dedicar parte de mi tiempo libre a realizar algún proyecto..',
+    'tutorials_description' => 'Tutoriales de distintas cosas que he ido aprendiendo y que creo pueden ser de utilidad para otros desarrolladores.',
+    'configurator_description' => 'Constructor y estimador de presupuestos para cualquiera de mis servicios, como consultoría, asesoría y desarrollos a medida.',
+    'contact_with_me' => 'Contacta conmigo rellenando este formulario. Intentaré responder con la mayor brevedad posible.',
+    'who_am_i_1' => 'Mi nombre es Gonzalo Pabón Flores, tengo :age años y actualmente estoy viviendo en Madrid.',
+    'who_am_i_2' => 'Aunque nací en Venezuela, me he criado en Sevilla. Padre de España y madre de Perú.',
+    'who_am_i_3' => 'Me considero una persona muy inquieta y creativa, por esta razón, siempre tengo algún proyecto en marcha.',
+    'hobbies_1' => 'Además de programar, en mis ratos libres también me entretengo con:',
+    'experience' => 'A continuación un listado con las distintas empresas en las que he trabajado.',
+    'technologies' => 'Estas son las tecnologías que domino y con las que me siento más cómodo a la hora de realizar proyectos Web.',
+    'professional_profile_1' => 'Soy un Desarrollador Web FullStack muy especializado en desarrollos a medida con Laravel + VueJS.',
+    'professional_profile_2' => 'Tengo experiencia construyendo proyectos desde cero, abarcando todas las ramas de desarrollo, desde la toma de requerimientos, pasando por el diseño de arquitecturas, modelado de datos, interfaces de usuario, infraestructuras cloud hasta testing y maquetación.',
+    'professional_profile_3' => 'Como Líder Técnico de equipos de Desarrollo, también he llevado a cabo tareas de mentoría y formación, así como planificación y estimación de proyectos.',
+    'academic_training_1' => 'Estudié en la Escuela Técnica Superior de Ingeniería Informática (Universidad de Sevilla), en la especialidad de Computadores.',
+    'academic_training_2' => 'Paralelamente a mis estudios, conocí Laracasts, la plataforma oficial de formación y comunidad principal de Laravel en la cual siempre he estado muy activo.',
+    'academic_training_3' => 'Siempre me mantengo en contaste formación mediante proyectos personales, la realización de cursos o la participación en eventos tecnológicos.',
+    'my_jobs' => 'Algunas de las funciones que he desempeñado a nivel profesional:',
+    'laracasts' => 'Gran parte de lo que sé lo he aprendido en la comunidad de Laracast. Con más de 800 lecciones realizadas, mantengo un perfil fuerte y actualizado con todo su ecosistema.',
+    'laracasts_developer' => 'Como desarrollador muy especializado en Laravel, disfruto mucho con la creación de aplicaciones completas, incluyendo modelado de BBDD, diseño API, integraciones con otras plataformas y desarrollos VueJS',
+    'work_in_progress' => 'Esta sección aún está en construcción...'
+];

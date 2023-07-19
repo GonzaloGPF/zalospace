@@ -1,0 +1,19 @@
+https://www.php.net                                      |   8.2   | Lenguaje del Backend | <img src="{{ asset('images/technologies/php.png' }}" width="50" height="50" />
+https://www.mysql.com                                  |    8    | Motor de Base de Datos |  <img src="{{ asset('images/technologies/mysql.png' }}" width="50" height="50" />
+https://vuejs.org                                        |    3    | Framework Frontend | <img src="{{ asset('images/technologies/vue.png' }}" width="50" height="50" />
+https://vuetifyjs.com                                |    3    | Librería UX para Vue | <img src="{{ asset('images/technologies/vuetify.png' }}" width="50" height="50" />
+https://www.chartjs.org                              |    3    | Gráficas | <img src="{{ asset('images/technologies/chartjs.png' }}" width="50" height="50" />
+https://d3js.org/                                         |    7    | Diseño Vectorial | <img src="{{ asset('images/technologies/d3.png' }}" width="50" height="50" />
+https://521dimensions.com/open-source/amplitudejs|    5    | Reproductor de Audio Web | <img src="{{ asset('images/technologies/amplitudejs.png' }}" width="50" height="50" />
+https://www.greensock.org                               |    3    | Animaciones Html | <img src="{{ asset('images/technologies/gsap.gif' }}" width="50" height="50" />
+https://vitejs.dev/                                     |    3    | Compilador Front | <img src="{{ asset('images/technologies/vite.png' }}" width="50" height="50" />
+https://sass-lang.com                                   |    -    | Lenguaje par Estilos | <img src="{{ asset('images/technologies/sass.png' }}" width="50" height="50" />
+https://phpunit.de                                   |    10   | Test Runner PHP | <img src="{{ asset('images/technologies/phpunit.png' }}" width="50" height="50" />
+https://vitest.dev/                                   |   0.3   | Test Runner Javascript | <img src="{{ asset('images/technologies/vitest.png' }}" width="50" height="50" />
+https://laravel.com/docs/10.x                        |    10   | Framework Backend | <img src="{{ asset('images/technologies/laravel.png' }}" width="50" height="50" />
+https://laravel.com/docs/10.x/dusk               |    -    | Testing E2E | <img src="{{ asset('images/technologies/laravel_dusk.png' }}" width="50" height="50" />
+https://laravel.com/docs/10.x/horizon            |    5    | Sistema de Colas | <img src="{{ asset('images/technologies/horizon.png' }}" width="50" height="50" />
+https://forge.laravel.com                        | current | Gestión de Servidores | <img src="{{ asset('images/technologies/forge.png' }}" width="50" height="50" />
+https://stripe.com                                    | current | Sistema de Pagos | <img src="{{ asset('images/technologies/stripe.png' }}" width="50" height="50" />
+https://aws.amazon.com                                   | current | Infraestructura Cloud | <img src="{{ asset('images/technologies/aws.png' }}" width="50" height="50" />
+https://larecipe.binarytorch.com.my/docs/           |   2.5   | Herramienta para Documentación | <img src="{{ asset('images/technologies/larecipe.png' }}" width="50" height="50" />

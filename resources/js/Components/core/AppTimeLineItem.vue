@@ -1,0 +1,74 @@
+<script setup>
+import TechList from '@/Components/TechList.vue';
+
+defineProps({
+    title: {
+        type: String,
+        default: null
+    },
+    subtitle: {
+        type: String,
+        default: null
+    },
+    url: {
+        type: String,
+        default: null
+    },
+    urlLabel: {
+        type: String,
+        default: null
+    },
+    image: {
+        type: String,
+        default: null
+    },
+    paragraphs: {
+        type: Array,
+        default: () => []
+    },
+    technologies: {
+        type: Array,
+        default: () => []
+    },
+});
+</script>
+<template>
+    <div class="flex flex-col">
+        <div class="flex justify-between">
+            <div v-if="title || subtitle" class="flex flex-col justify-center">
+                 <span
+                     class="font-semibold text-gray-900 dark:text-white"
+                     v-text="title"
+                 />
+                <span
+                    v-if="subtitle"
+                    class="block mt-1 mb-3 font-thin"
+                    v-text="subtitle"
+                />
+                <tech-list :technologies="technologies" />
+            </div>
+            <div v-if="url || image" class="flex flex-col items-center">
+                <a
+                    v-if="url"
+                    :href="url"
+                    class="link"
+                    target="_blank"
+                >
+                    {{ urlLabel }}
+                </a>
+                <img
+                    v-if="image"
+                    :src="image"
+                    :alt="title"
+                    width="150"
+                    class="rounded-lg shadow-md"
+                />
+            </div>
+        </div>
+        <p
+            v-for="paragraph in paragraphs"
+            class="text-gray-500 dark:text-gray-400 py-1"
+            v-html="paragraph"
+        />
+    </div>
+</template>

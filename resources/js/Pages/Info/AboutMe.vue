@@ -42,9 +42,9 @@ const age = computed(() => {
                 <template #description>
                     <p v-text="Translator.t('help.hobbies_1')" />
                     <ul class="list-disc list-inside mt-3">
-                        <li class="" v-text="Translator.tl('gym')" />
                         <li class="" v-text="Translator.tl('music_production')" />
                         <li class="" v-text="Translator.tl('motorbike')" />
+                        <li class="" v-text="Translator.tl('gym')" />
                     </ul>
                 </template>
             </app-card>

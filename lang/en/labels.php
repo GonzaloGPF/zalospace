@@ -2,6 +2,7 @@
 
 return [
     'months' => ':months Months',
+    'years' => ':years Years',
     'dashboard' => 'Dashboard',
     'home' => 'Home',
     'about_me' => 'About Me',
@@ -13,4 +14,17 @@ return [
     'experience' => 'Experience',
     'professional_profile' => 'Professional Profile',
     'academic_training' => 'Academic Training',
+    'hobbies' => 'hobbies',
+    'gym' => 'Gym',
+    'music_production' => 'Music Production',
+    'motorbike' => 'Motorbike Routes',
+    'my_jobs' => 'Jobs',
+    'fullstack_developer' => 'FullStack Developer',
+    'consultant' => 'Technology Consulting',
+    'team_lead' => 'Team Technical Leader',
+    'technologies' => 'Technologies',
+    'view_more' => 'View More',
+    'view_less' => 'View Less',
+    'spanish' => 'Spanish',
+    'english' => 'English',
 ];

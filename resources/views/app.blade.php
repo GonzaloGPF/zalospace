@@ -21,7 +21,7 @@
         <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/favicon-16x16.png') }}">
         <link rel="icon" href="{{ asset('images/favicon.ico') }}" sizes="any"><!-- 32×32 -->
         <link rel="apple-touch-icon" href="{{ asset('images/apple-touch-icon.png') }}"><!-- 180×180 -->
-        <link rel="manifest" href="{{ asset('images/manifest.webmanifest') }}">
+        <link rel="manifest" href="{{ asset('images/site.webmanifest') }}">
 
         <title inertia>{{ config('app.name') }}</title>
 

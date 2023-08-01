@@ -51,7 +51,7 @@ defineProps({
                 />
             </app-link>
             <app-navigation class="flex-1" />
-            <contact-button class="my-1" />
+            <contact-button class="my-1 mr-2" />
             <language-button class="my-1" />
         </div>
         <!-- Page Heading -->

@@ -34,7 +34,7 @@ defineProps({
 </script>
 <template>
     <div class="flex flex-col">
-        <div class="flex justify-between">
+        <div class="flex flex-col md:flex-row justify-between">
             <div v-if="title || subtitle" class="flex flex-col justify-center">
                  <span
                      class="font-semibold text-gray-900 dark:text-white"
@@ -42,7 +42,7 @@ defineProps({
                  />
                 <span
                     v-if="subtitle"
-                    class="block mt-1 mb-3 font-thin"
+                    class="block mt-1 mb-3 font-thin whitespace-nowrap"
                     v-text="subtitle"
                 />
                 <tech-list :technologies="technologies" />

@@ -5,10 +5,10 @@ import tailwindConfig from '@/../../tailwind.config.js'
 const fullConfig = resolveConfig(tailwindConfig);
 
 export default function useTailwind () {
-    const screenWidth = ref(screen.width);
+    const screenWidth = ref(window.innerWidth);
     const isResizing = ref(false);
 
-    window.onresize = () => screenWidth.value = screen.width;
+    window.onresize = () => screenWidth.value = window.innerWidth
 
     const isMobile = computed(() => screenWidth.value <= getBreakpoint('md'));
 
@@ -25,7 +25,7 @@ export default function useTailwind () {
                 clearTimeout(timer);
             }
         }, 250)
-    })
+    });
 
     return {
         isMobile,

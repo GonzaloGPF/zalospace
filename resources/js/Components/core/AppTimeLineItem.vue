@@ -47,22 +47,23 @@ defineProps({
                 />
                 <tech-list :technologies="technologies" />
             </div>
-            <div v-if="url || image" class="flex flex-col items-center">
+            <div class="flex flex-col items-center rounded-lg text-center">
                 <a
-                    v-if="url"
+                    v-if="url || image"
                     :href="url"
+                    :title="urlLabel"
                     class="link"
                     target="_blank"
                 >
-                    {{ urlLabel }}
+                    <span v-if="urlLabel" v-text="urlLabel" />
+                    <img
+                        v-if="image"
+                        :src="image"
+                        :alt="title"
+                        width="150"
+                        class="rounded-lg shadow-md bg-gray-800 p-3"
+                    />
                 </a>
-                <img
-                    v-if="image"
-                    :src="image"
-                    :alt="title"
-                    width="150"
-                    class="rounded-lg shadow-md"
-                />
             </div>
         </div>
         <p

@@ -55,7 +55,7 @@ defineProps({
             <language-button class="my-1" />
         </div>
         <!-- Page Heading -->
-        <header v-if="description" class="bg-white dark:bg-gray-900 shadow pt-10 md:mt-12">
+        <header v-if="description" class="pt-5 md:mt-12">
             <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                 <app-card
                     :title="title"

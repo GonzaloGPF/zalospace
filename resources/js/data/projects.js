@@ -12,6 +12,7 @@ export default computed(() => [
         title: 'ZaloSpace v2',
         subtitle: Formatter.formatDiff('2023-06-01', new Date),
         image: 'images/projects/zalospace_v2.png',
+        url: 'https://zalospace.com/',
         paragraphs: [
             Translator.t('projects.zalospace_v2_1'),
             Translator.t('projects.zalospace_v2_2'),
@@ -23,6 +24,7 @@ export default computed(() => [
         title: 'Talent Battles',
         subtitle: Formatter.formatDiff('2019-08-13', new Date),
         image: 'images/projects/talentbattles.png',
+        url: 'https://talentbattles.com/',
         paragraphs: [
             Translator.t('projects.talentbattles_1'),
             Translator.t('projects.talentbattles_2'),
@@ -38,6 +40,7 @@ export default computed(() => [
         title: 'Pegasus',
         subtitle: Formatter.formatDiff('2017-09-01', '2022-02-01'),
         image: 'images/projects/pegasus.png',
+        url: 'https://pegasus.grupomobius.com/',
         paragraphs: [
             Translator.t('projects.pegasus_1'),
             Translator.t('projects.pegasus_2'),

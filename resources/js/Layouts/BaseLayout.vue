@@ -47,7 +47,7 @@ defineProps({
                     :scale-x=".125"
                     :scale-y=".125"
                     color="#0e4178ff"
-                    class="rounded-full bg-white mr-3"
+                    class="rounded-full bg-white mr-1"
                 />
             </app-link>
             <app-navigation class="flex-1" />
@@ -55,7 +55,7 @@ defineProps({
             <language-button class="my-1" />
         </div>
         <!-- Page Heading -->
-        <header v-if="description" class="pt-5 md:mt-12">
+        <header v-if="description" class="pt-5 mt-6 md:mt-12">
             <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                 <app-card
                     :title="title"

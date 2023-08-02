@@ -8,9 +8,10 @@ export default function useTailwind () {
     const screenWidth = ref(window.innerWidth);
     const isResizing = ref(false);
 
-    window.onresize = () => screenWidth.value = window.innerWidth
+    window.onresize = () => screenWidth.value = window.innerWidth || screen.width;
 
     const isMobile = computed(() => screenWidth.value <= getBreakpoint('md'));
+    const isLg = computed(() => screenWidth.value >= getBreakpoint('lg'));
 
     const getBreakpoint = (breakpointName) => parseInt(fullConfig.theme.screens[breakpointName]);
 
@@ -29,6 +30,7 @@ export default function useTailwind () {
 
     return {
         isMobile,
+        isLg,
         isResizing,
         getBreakpoint
     }

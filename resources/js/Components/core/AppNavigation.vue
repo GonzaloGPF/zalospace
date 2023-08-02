@@ -2,7 +2,7 @@
 import AppLink from '@/Components/core/AppLink.vue';
 import Translator from '@/objects/Translator.js';
 import { computed, ref } from 'vue';
-import { usePage, router } from '@inertiajs/vue3';
+import { usePage } from '@inertiajs/vue3';
 import AppSvg from '@/Components/core/AppSvg.vue';
 import Utils from '@/objects/Utils.js';
 import AppButton from '@/Components/core/AppButton.vue';
@@ -19,7 +19,7 @@ defineProps({
         default: false
     }
 });
-const { isMobile, isResizing } = useTailwind();
+const { isMobile, isResizing } = useTailwind(); // TODO: for some reason, only at this component, useTailwind is not reactive
 const { props } = usePage();
 const items = computed(() => [
     {
@@ -80,8 +80,6 @@ const showMenu = computed(() => {
     }
     return true;
 });
-
-
 </script>
 <template>
     <div
@@ -121,7 +119,7 @@ const showMenu = computed(() => {
             <div
                 v-if="showMenu"
                 v-click-outside
-                class="flex flex-col md:flex-row absolute md:static left-0 bg-blue-950 dark:bg-gray-800 text-sm md:text-base"
+                class="flex flex-col md:flex-row absolute md:static left-0 bg-blue-950 dark:bg-gray-800 text-xs md:text-sm lg:text-base"
                 style="top: 42px;"
             >
                 <app-link

@@ -23,27 +23,27 @@ const currentFlag = computed(() => flags.value.find(flag => flag.locale === Tran
 
 </script>
 <template>
-    <Dropdown align="right" width="25">
-        <template #trigger>
-            <app-button variant="plain">
-                <img :src="currentFlag?.src" :alt="currentFlag?.title" width="25" />
-            </app-button>
-        </template>
+  <Dropdown align="right" width="25">
+    <template #trigger>
+      <app-button variant="plain">
+        <img :src="currentFlag?.src" :alt="currentFlag?.title" width="25" />
+      </app-button>
+    </template>
 
-        <template #content>
-            <app-button
-                v-for="flag in filteredFlags"
-                :key="flag.locale"
-                variant="plain"
-                class="w-full"
-                @click="Translator.setLocale(flag.locale)"
-            >
-                <img
-                    :src="flag.src"
-                    :alt="flag.title"
-                    width="25"
-                />
-            </app-button>
-        </template>
-    </Dropdown>
+    <template #content>
+      <app-button
+        v-for="flag in filteredFlags"
+        :key="flag.locale"
+        variant="plain"
+        class="w-full"
+        @click="Translator.setLocale(flag.locale)"
+      >
+        <img
+          :src="flag.src"
+          :alt="flag.title"
+          width="25"
+        />
+      </app-button>
+    </template>
+  </Dropdown>
 </template>

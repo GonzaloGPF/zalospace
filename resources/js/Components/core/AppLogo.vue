@@ -36,26 +36,26 @@ const animateTitle = () => {
 }
 </script>
 <template>
-    <div class="flex justify-center flex-col mx-auto items-center">
-        <div :title="globalConfig.getAppName()">
-            <app-svg
-                id="logo"
-                :height="300"
-                :width="300"
-                :scale-x=".25"
-                :scale-y=".25"
-                color="#0e4178ff"
-                class="rounded-full bg-white"
-                icon="logo"
-            />
-        </div>
-        <h1
-            id="title"
-            v-text-split="'inline-block m-0 md:mx-1 title-character'"
-            class="brand-font text-blue-950 dark:text-white text-5xl lg:text-6xl mt-3 font-bold whitespace-nowrap"
-            @split="animateTitle"
-            v-text="globalConfig.getAppName()"
-        />
-        <span id="title-ceil" class="block w-100 border-b border-4 mt-5 border-blue-950 dark:border-white" style="width: 400px"></span>
+  <div class="flex justify-center flex-col mx-auto items-center">
+    <div :title="globalConfig.getAppName()">
+      <app-svg
+        id="logo"
+        :height="300"
+        :width="300"
+        :scale-x=".25"
+        :scale-y=".25"
+        color="#0e4178ff"
+        class="rounded-full bg-white"
+        icon="logo"
+      />
     </div>
+    <h1
+      id="title"
+      v-text-split="'inline-block m-0 md:mx-1 title-character'"
+      class="brand-font text-blue-950 dark:text-white text-5xl lg:text-6xl mt-3 font-bold whitespace-nowrap"
+      @split="animateTitle"
+      v-text="globalConfig.getAppName()"
+    />
+    <span id="title-ceil" class="block w-100 border-b border-4 mt-5 border-blue-950 dark:border-white" style="width: 400px"></span>
+  </div>
 </template>

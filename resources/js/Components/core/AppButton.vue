@@ -3,7 +3,6 @@ import { computed } from 'vue';
 import AppSvg from '@/Components/core/AppSvg.vue';
 import colors from '@/config/colors.js';
 import { router } from '@inertiajs/vue3';
-import PrimaryButton from '@/Components/buttons/PrimaryButton.vue';
 
 defineEmits(['click']);
 const props = defineProps({
@@ -110,18 +109,18 @@ const loadingClass = computed(() => props.loading ? 'opacity-25' : null);
 const classes = computed(() => [flexDirection.value, bgColor.value, bgColorHover.value, border.value, textColor.value, borderRadius.value, shadow.value, loadingClass.value]);
 </script>
 <template>
-    <button
-        :title="title || label"
-        :type="type"
-        :class="classes"
-        :disabled="disabled || loading"
-        class="brand-font items-center px-2 py-1 lg:px-4 lg:py-2 font-semibold text-xs uppercase tracking-widest focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 disabled:opacity-25 transition ease-in-out duration-150 space-x-3"
-        @click="to ? router.visit(to) : $emit('click')"
-    >
-        <slot>
-            <app-svg v-if="icon" :icon="icon" />
-            <span v-if="label && !circle" v-text="label" />
-        </slot>
-        <slot name="modal" />
-    </button>
+  <button
+    :title="title || label"
+    :type="type"
+    :class="classes"
+    :disabled="disabled || loading"
+    class="brand-font items-center px-2 py-1 lg:px-4 lg:py-2 font-semibold text-xs uppercase tracking-widest focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 disabled:opacity-25 transition ease-in-out duration-150 space-x-3"
+    @click="to ? router.visit(to) : $emit('click')"
+  >
+    <slot>
+      <app-svg v-if="icon" :icon="icon" />
+      <span v-if="label && !circle" v-text="label" />
+    </slot>
+    <slot name="modal" />
+  </button>
 </template>

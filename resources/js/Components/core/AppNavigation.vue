@@ -82,65 +82,65 @@ const showMenu = computed(() => {
 });
 </script>
 <template>
-    <div
-        v-click-outside
-        class="flex"
-        @click-outside="openMenu = false"
+  <div
+    v-click-outside
+    class="flex"
+    @click-outside="openMenu = false"
+  >
+    <app-button
+      icon="menu"
+      class="md:hidden"
+      variant="plain"
+      @click="openMenu = !openMenu"
+    />
+    <teleport to="body">
+      <transition
+        v-if="isMobile"
+        enter-active-class="ease-out duration-200"
+        enter-from-class="opacity-0"
+        enter-to-class="opacity-100"
+        leave-from-class="opacity-100"
+        leave-to-class="opacity-0"
+      >
+        <div v-show="openMenu" class="fixed inset-0 transform transition-all" @click.stop="openMenu = false" style="pointer-events: none">
+          <div class="absolute inset-0 bg-gray-500 dark:bg-gray-900 opacity-75" />
+        </div>
+      </transition>
+    </teleport>
+    <transition
+      :css="!isResizing"
+      enter-active-class="ease-out duration-200"
+      enter-from-class="opacity-0 -translate-x-4"
+      enter-to-class="opacity-100 -translate-x-0"
+      leave-active-class="ease-in duration-200"
+      leave-from-class="opacity-100 -translate-x-0"
+      leave-to-class="opacity-0 -translate-x-4"
     >
-        <app-button
-            icon="menu"
-            class="md:hidden"
-            variant="plain"
-            @click="openMenu = !openMenu"
-        />
-        <teleport to="body">
-            <transition
-                v-if="isMobile"
-                enter-active-class="ease-out duration-200"
-                enter-from-class="opacity-0"
-                enter-to-class="opacity-100"
-                leave-from-class="opacity-100"
-                leave-to-class="opacity-0"
-            >
-                <div v-show="openMenu" class="fixed inset-0 transform transition-all" @click.stop="openMenu = false" style="pointer-events: none">
-                    <div class="absolute inset-0 bg-gray-500 dark:bg-gray-900 opacity-75" />
-                </div>
-            </transition>
-        </teleport>
-        <transition
-            :css="!isResizing"
-            enter-active-class="ease-out duration-200"
-            enter-from-class="opacity-0 -translate-x-4"
-            enter-to-class="opacity-100 -translate-x-0"
-            leave-active-class="ease-in duration-200"
-            leave-from-class="opacity-100 -translate-x-0"
-            leave-to-class="opacity-0 -translate-x-4"
+      <div
+        v-if="showMenu"
+        v-click-outside
+        class="flex flex-col md:flex-row absolute md:static left-0 bg-blue-950 dark:bg-gray-800 text-xs md:text-sm lg:text-base"
+        style="top: 42px;"
+      >
+        <app-link
+          v-for="item in items"
+          :key="item.href"
+          :href="item.href"
+          :label="item.label"
+          :class="Utils.isSamePath(item.href) ? 'border-b-2' : null"
+          class="flex md:items-center space-x-2 text-white dark:text-gray-500 p-3 border-white-700 dark:border-white-300 px-4 whitespace-nowrap"
         >
-            <div
-                v-if="showMenu"
-                v-click-outside
-                class="flex flex-col md:flex-row absolute md:static left-0 bg-blue-950 dark:bg-gray-800 text-xs md:text-sm lg:text-base"
-                style="top: 42px;"
-            >
-                <app-link
-                    v-for="item in items"
-                    :key="item.href"
-                    :href="item.href"
-                    :label="item.label"
-                    :class="Utils.isSamePath(item.href) ? 'border-b-2' : null"
-                    class="flex md:items-center space-x-2 text-white dark:text-gray-500 p-3 border-white-700 dark:border-white-300 px-4 whitespace-nowrap"
-                >
-                    <app-svg
-                        v-if="item.icon"
-                        :icon="item.icon"
-                    />
-                    <span
-                        v-if="item.label"
-                        class="brand-font"
-                        v-text="item.label"
-                    />
-                </app-link>
-            </div>
-        </transition>
-    </div>
+          <app-svg
+            v-if="item.icon"
+            :icon="item.icon"
+          />
+          <span
+            v-if="item.label"
+            class="brand-font"
+            v-text="item.label"
+          />
+        </app-link>
+      </div>
+    </transition>
+  </div>
 </template>

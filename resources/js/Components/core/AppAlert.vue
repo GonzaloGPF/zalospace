@@ -40,26 +40,26 @@ const classes = computed(() => ({
 }));
 </script>
 <template>
-<div :class="classes" class="flex items-center p-4 rounded-lg space-x-3">
+  <div :class="classes" class="flex items-center p-4 rounded-lg space-x-3">
     <app-svg v-if="icon" :icon="icon" />
     <div class="grow">
-        <span
-            v-if="title"
-            class="font-bold"
-            v-text="title"
-        />
-        <span
-            v-if="message"
-            v-text="message"
-        />
+      <span
+        v-if="title"
+        class="font-bold"
+        v-text="title"
+      />
+      <span
+        v-if="message"
+        v-text="message"
+      />
     </div>
     <secondary-button
-        v-if="closable"
-        variant="plain"
-        :class="classes"
-        @click="$emit('close')"
+      v-if="closable"
+      variant="plain"
+      :class="classes"
+      @click="$emit('close')"
     >
-        X
+      X
     </secondary-button>
-</div>
+  </div>
 </template>

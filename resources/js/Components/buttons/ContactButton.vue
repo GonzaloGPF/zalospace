@@ -10,11 +10,11 @@ const label = computed(() => isLg.value ? Translator.actionTitle('contact') : nu
 const canShow = computed(() => !Utils.isSamePath(route('contacts.create')));
 </script>
 <template>
-    <app-button
-        v-if="canShow"
-        :title="label"
-        :label="label"
-        :to="route('contacts.create')"
-        icon="email"
-    />
+  <app-button
+    v-if="canShow"
+    :title="label"
+    :label="label"
+    :to="route('contacts.create')"
+    icon="email"
+  />
 </template>

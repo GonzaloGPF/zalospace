@@ -21,57 +21,57 @@ const submit = () => {
 };
 </script>
 <template>
-    <form @submit.prevent="submit" class="flex flex-col justify-center text-gray-500 dark:text-gray-400">
-        <div>
-            <InputLabel for="name" :value="Translator.ta('name')" />
+  <form @submit.prevent="submit" class="flex flex-col justify-center text-gray-500 dark:text-gray-400">
+    <div>
+      <InputLabel for="name" :value="Translator.ta('name')" />
 
-            <TextInput
-                id="name"
-                type="text"
-                class="mt-1 block w-full"
-                v-model="form.name"
-                required
-                autofocus
-                autocomplete="name"
-            />
+      <TextInput
+        id="name"
+        type="text"
+        class="mt-1 block w-full"
+        v-model="form.name"
+        required
+        autofocus
+        autocomplete="name"
+      />
 
-            <InputError class="mt-2" :message="form.errors.name" />
-        </div>
+      <InputError class="mt-2" :message="form.errors.name" />
+    </div>
 
-        <div class="mt-4">
-            <InputLabel for="email" :value="Translator.ta('email')" />
+    <div class="mt-4">
+      <InputLabel for="email" :value="Translator.ta('email')" />
 
-            <TextInput
-                id="email"
-                type="email"
-                class="mt-1 block w-full"
-                v-model="form.email"
-                required
-                autocomplete="username"
-            />
+      <TextInput
+        id="email"
+        type="email"
+        class="mt-1 block w-full"
+        v-model="form.email"
+        required
+        autocomplete="username"
+      />
 
-            <InputError class="mt-2" :message="form.errors.email" />
-        </div>
+      <InputError class="mt-2" :message="form.errors.email" />
+    </div>
 
-        <div class="mt-4">
-            <InputLabel for="message" :value="Translator.ta('message')" />
+    <div class="mt-4">
+      <InputLabel for="message" :value="Translator.ta('message')" />
 
-            <TextArea
-                id="message"
-                type="text"
-                class="mt-1 block w-full"
-                v-model="form.message"
-                required
-            />
+      <TextArea
+        id="message"
+        type="text"
+        class="mt-1 block w-full"
+        v-model="form.message"
+        required
+      />
 
-            <InputError class="mt-2" :message="form.errors.message" />
-        </div>
+      <InputError class="mt-2" :message="form.errors.message" />
+    </div>
 
-        <app-button
-            type="submit"
-            :label="title"
-            :loading="form.processing"
-            class="mx-auto mt-5"
-        />
-    </form>
+    <app-button
+      type="submit"
+      :label="title"
+      :loading="form.processing"
+      class="mx-auto mt-5"
+    />
+  </form>
 </template>

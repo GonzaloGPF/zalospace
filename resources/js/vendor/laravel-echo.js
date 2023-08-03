@@ -4,9 +4,9 @@
  * allows your team to easily build robust real-time web applications.
  */
 
-import Echo from 'laravel-echo';
-import Pusher from 'pusher-js';
+import Echo from 'laravel-echo'
+import Pusher from 'pusher-js'
 
-window.Pusher = Pusher;
+window.Pusher = Pusher
 
-export default Echo;
+export default Echo

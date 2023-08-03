@@ -1,13 +1,9 @@
 {
     "private": true,
     "type": "module",
-    "author": {
-        "name": "Gonzalo Pabón Flores",
-        "email": "zalo.pabon@gmail.com",
-        "url": "https://github.com/ZaloSpace"
-    },
+    "author": "Gonzalo Pabón Flores <zalo.pabon@gmail.com> (https://github.com/ZaloSpace)",
     "scripts": {
-        "js-lint": "eslint ./resources/js/**/*.vue ./resources/js/**/*.js --fix",
+        "js-lint": "./node_modules/.bin/eslint ./resources/js/**/*.vue ./resources/js/**/*.js --fix",
         "style-lint": "node_modules/stylelint/bin/stylelint.js resources/sass/**/* --fix",
         "dev": "vite",
         "build": "vite build"
@@ -18,7 +14,11 @@
         "@vitejs/plugin-vue": "^4.0.0",
         "autoprefixer": "^10.4.12",
         "axios": "^1.1.2",
-        "eslint": "^8.43.0",
+        "eslint": "^8.0.1",
+        "eslint-config-standard": "^17.1.0",
+        "eslint-plugin-import": "^2.25.2",
+        "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
+        "eslint-plugin-promise": "^6.0.0",
         "eslint-plugin-vue": "^9.16.1",
         "laravel-vite-plugin": "^0.7.5",
         "postcss": "^8.4.18",

@@ -12,7 +12,7 @@ defineProps({
   <ol class="flex flex-col space-y-8 list-disc">
     <li
       v-for="item in items"
-      class="pt-2 pb-6 mt-2 border-b border-slate-800"
+      class="pt-2 pb-6 mt-2 border-b border-slate-300 dark:border-slate-600"
     >
       <app-time-line-item
         :title="item.title"

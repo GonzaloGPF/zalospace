@@ -1,5 +1,5 @@
 <script setup>
-import Dropdown from '@/Components/Dropdown.vue';
+import AppDropdown from '@/Components/core/AppDropdown.vue';
 import AppButton from '@/Components/core/AppButton.vue';
 import { computed } from 'vue';
 import Translator from '@/objects/Translator.js';
@@ -23,7 +23,7 @@ const currentFlag = computed(() => flags.value.find(flag => flag.locale === Tran
 
 </script>
 <template>
-  <Dropdown align="right" width="25">
+  <AppDropdown align="right" width="25">
     <template #trigger>
       <app-button variant="plain">
         <img :src="currentFlag?.src" :alt="currentFlag?.title" width="25" />
@@ -45,5 +45,5 @@ const currentFlag = computed(() => flags.value.find(flag => flag.locale === Tran
         />
       </app-button>
     </template>
-  </Dropdown>
+  </AppDropdown>
 </template>

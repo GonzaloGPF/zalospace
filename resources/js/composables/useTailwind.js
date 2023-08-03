@@ -1,37 +1,41 @@
-import { computed, ref, watch } from 'vue';
+import { computed, ref, watch } from 'vue'
 import resolveConfig from 'tailwindcss/resolveConfig'
 import tailwindConfig from '@/../../tailwind.config.js'
 
-const fullConfig = resolveConfig(tailwindConfig);
+const fullConfig = resolveConfig(tailwindConfig)
 
 export default function useTailwind () {
-    const screenWidth = ref(window.innerWidth);
-    const isResizing = ref(false);
+  const screenWidth = ref(window.innerWidth)
+  const isResizing = ref(false)
 
-    window.onresize = () => screenWidth.value = window.innerWidth || screen.width;
+  window.onresize = () => {
+    screenWidth.value = window.innerWidth || screen.width
 
-    const isMobile = computed(() => screenWidth.value <= getBreakpoint('md'));
-    const isLg = computed(() => screenWidth.value >= getBreakpoint('lg'));
+    return screenWidth.value
+  }
 
-    const getBreakpoint = (breakpointName) => parseInt(fullConfig.theme.screens[breakpointName]);
+  const isMobile = computed(() => screenWidth.value <= getBreakpoint('md'))
+  const isLg = computed(() => screenWidth.value >= getBreakpoint('lg'))
 
-    watch(screenWidth, () => {
-        isResizing.value = true;
+  const getBreakpoint = (breakpointName) => parseInt(fullConfig.theme.screens[breakpointName])
 
-        const lastValue = screenWidth.value;
+  watch(screenWidth, () => {
+    isResizing.value = true
 
-        const timer = setTimeout(() => {
-            if (lastValue === screenWidth.value) {
-                isResizing.value = false;
-                clearTimeout(timer);
-            }
-        }, 250)
-    });
+    const lastValue = screenWidth.value
 
-    return {
-        isMobile,
-        isLg,
-        isResizing,
-        getBreakpoint
-    }
+    const timer = setTimeout(() => {
+      if (lastValue === screenWidth.value) {
+        isResizing.value = false
+        clearTimeout(timer)
+      }
+    }, 250)
+  })
+
+  return {
+    isMobile,
+    isLg,
+    isResizing,
+    getBreakpoint
+  }
 }

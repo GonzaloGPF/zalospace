@@ -1,41 +1,41 @@
-import { nextTick } from 'vue';
+import { nextTick } from 'vue'
 
 export default {
-    beforeMount: (el, binding) => {
-        const text = el.innerHTML;
-        const className = binding.value;
+  beforeMount: (el, binding) => {
+    const text = el.innerHTML
+    const className = binding.value
 
-        if (typeof text !== 'string') return;
+    if (typeof text !== 'string') return
 
-        el.originalText = text;
-        el.innerHTML = null;
+    el.originalText = text
+    el.innerHTML = null
 
-        text.split('')
-            .map(char => toSpan(char, className))
-            .forEach(span => el.appendChild(span));
+    text.split('')
+      .map(char => toSpan(char, className))
+      .forEach(span => el.appendChild(span))
 
-        nextTick(() => el.dispatchEvent(new Event('split')));
-    },
-    unmounted: el => {
-        el.innerHTML = el.originalText;
-    },
+    nextTick(() => el.dispatchEvent(new Event('split')))
+  },
+  unmounted: el => {
+    el.innerHTML = el.originalText
+  }
 }
 
-function toSpan(char, className) {
-    const node = document.createElement('span');
+function toSpan (char, className) {
+  const node = document.createElement('span')
 
-    if (className) {
-        className.split(' ')
-            .forEach(classString => node.classList.add(classString));
-    }
+  if (className) {
+    className.split(' ')
+      .forEach(classString => node.classList.add(classString))
+  }
 
-    if (char === ' ') {
-        node.classList.add('mx-3');
-    }
+  if (char === ' ') {
+    node.classList.add('mx-3')
+  }
 
-    const content = document.createTextNode(char);
+  const content = document.createTextNode(char)
 
-    node.appendChild(content);
+  node.appendChild(content)
 
-    return node;
+  return node
 }

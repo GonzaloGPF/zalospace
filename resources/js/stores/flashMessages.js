@@ -1,12 +1,12 @@
-import { defineStore } from 'pinia';
-import { ref } from 'vue';
+import { defineStore } from 'pinia'
+import { ref } from 'vue'
 
-const MESSAGE_TTL = 3000;
+const MESSAGE_TTL = 3000
 
 export const useFlashMessages = defineStore('flashMessages', () => {
-    const flashMessages = ref([]);
+  const flashMessages = ref([])
 
-    /**
+  /**
      * {
      *   title: String
      *   message: String - Required,
@@ -26,59 +26,59 @@ export const useFlashMessages = defineStore('flashMessages', () => {
      * }
      * @param params
      */
-    const pushFlashMessage = (message, params = {}) => {
-        if (! message) return;
+  const pushFlashMessage = (message, params = {}) => {
+    if (!message) return
 
-        const flashMessage = addMessage(parseFlashMessage(message, params));
+    const flashMessage = addMessage(parseFlashMessage(message, params))
 
-        if (! flashMessage) return;
+    if (!flashMessage) return
 
-        flashMessage.timer = setTimeout(() => destroy(flashMessage), flashMessage.duration);
+    flashMessage.timer = setTimeout(() => destroy(flashMessage), flashMessage.duration)
+  }
+
+  const addMessage = (flashMessage) => {
+    if (isDuplicated(flashMessage)) {
+      return
     }
 
-    const addMessage = (flashMessage) => {
-        if (isDuplicated(flashMessage)) {
-            return;
-        }
+    flashMessages.value.push(flashMessage)
 
-        flashMessages.value.push(flashMessage);
+    return flashMessage
+  }
 
-        return flashMessage;
-    }
+  const isDuplicated = (flashMessage) => flashMessages.value.find(iMessage => iMessage.message === flashMessage.message)
 
-    const isDuplicated = (flashMessage) => flashMessages.value.find(iMessage => iMessage.message === flashMessage.message);
+  const destroy = (flashMessage) => {
+    clearTimeout(flashMessage.timer)
 
-    const destroy = (flashMessage) => {
-        clearTimeout(flashMessage.timer);
+    flashMessage.destroyed = true
 
-        flashMessage.destroyed = true;
+    clean()
+  }
 
-        clean();
-    }
+  const clean = () => {
+    flashMessages.value = flashMessages.value.filter(flashMessage => !flashMessage.destroyed)
+  }
 
-    const clean = () => {
-        flashMessages.value = flashMessages.value.filter(flashMessage => ! flashMessage.destroyed);
-    }
-
-    const parseFlashMessage = (message, params = {}) => {
-        if (typeof message === 'string') {
-            params.message = message;
-        } else {
-            params = message || {};
-        }
-
-        return {
-            title: params.title,
-            message: params.message,
-            icon: params.icon,
-            closable: params.closable,
-            type: params.type,
-            duration: params.duration || MESSAGE_TTL,
-        }
+  const parseFlashMessage = (message, params = {}) => {
+    if (typeof message === 'string') {
+      params.message = message
+    } else {
+      params = message || {}
     }
 
     return {
-        flashMessages,
-        pushFlashMessage,
+      title: params.title,
+      message: params.message,
+      icon: params.icon,
+      closable: params.closable,
+      type: params.type,
+      duration: params.duration || MESSAGE_TTL
     }
-});
+  }
+
+  return {
+    flashMessages,
+    pushFlashMessage
+  }
+})

@@ -1,6 +1,6 @@
 // import { createI18n } from 'vue-i18n';
-import locales from '@/config/locales';
-import { i18nVue } from 'laravel-vue-i18n';
+import locales from '@/config/locales'
+import { i18nVue } from 'laravel-vue-i18n'
 
 /*
  * All i18n resources specified in the plugin `include` option can be loaded
@@ -21,14 +21,14 @@ import { i18nVue } from 'laravel-vue-i18n';
 //     },
 // });
 
-export default i18nVue;
+export default i18nVue
 
 export const options = {
-    lang: locales.getLocale(),
-    fallbackLocale: 'en',
-    resolve: async lang => {
-        const data = import.meta.glob('../../../lang/*.json');
-        return await data[`../../../lang/php_${ lang }.json`]();
-    },
-    // onLoad: () => {}
+  lang: locales.getLocale(),
+  fallbackLocale: 'en',
+  resolve: async lang => {
+    const data = import.meta.glob('../../../lang/*.json')
+    return await data[`../../../lang/php_${lang}.json`]()
+  }
+  // onLoad: () => {}
 }

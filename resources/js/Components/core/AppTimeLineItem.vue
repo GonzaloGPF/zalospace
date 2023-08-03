@@ -56,7 +56,6 @@ defineProps({
                  class="link mb-5"
                  target="_blank"
                 >
-                    <span v-if="urlLabel" v-text="urlLabel" />
                     <img
                      v-if="image"
                      :src="image"
@@ -64,6 +63,7 @@ defineProps({
                      width="150"
                      class="rounded-lg shadow-md bg-gray-800 p-3"
                     />
+                    <span v-if="urlLabel" v-text="urlLabel" />
                 </a>
             </div>
             <tech-list :technologies="technologies" />

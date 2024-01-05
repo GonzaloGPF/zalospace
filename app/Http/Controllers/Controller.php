@@ -11,11 +11,6 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
 
-    /**
-     * @param string $message
-     * @param Levels $level
-     * @return void
-     */
     protected function flashMessage(string $message, Levels $level = Levels::SUCCESS): void
     {
         session()->flash('flash_message_data', [

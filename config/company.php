@@ -11,6 +11,6 @@ return [
     ],
     'contact' => [
         'cif' => '',
-        'address' => 'Calle del Codo, 20., Piso 2, puerta 1, Alcobendas, M, 28100, España'
+        'address' => 'Calle del Codo, 20., Piso 2, puerta 1, Alcobendas, M, 28100, España',
     ],
 ];

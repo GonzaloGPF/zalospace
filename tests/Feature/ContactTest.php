@@ -23,7 +23,7 @@ class ContactTest extends TestCase
 
         $this->post(route('contacts.store'), [
             'email' => 'test@email.com',
-            'message' => 'Some Message'
+            'message' => 'Some Message',
         ]);
 
         $this->assertEquals(tAction('sent', null, false), session('flash_message'));

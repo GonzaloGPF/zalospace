@@ -1,4 +1,5 @@
 <?php
+
 return [
     'index' => 'Índice|Índice',
     'showed' => 'Mostrado|Mostrada',

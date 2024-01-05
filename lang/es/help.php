@@ -21,5 +21,5 @@ return [
     'my_jobs' => 'Algunas de las funciones que he desempeñado a nivel profesional:',
     'laracasts' => 'Gran parte de lo que sé lo he aprendido en la comunidad de Laracast. Con más de 800 lecciones realizadas, mantengo un perfil fuerte y actualizado con todo su ecosistema.',
     'laracasts_developer' => 'Como desarrollador muy especializado en Laravel, disfruto mucho con la creación de aplicaciones completas, incluyendo modelado de BBDD, diseño API, integraciones con otras plataformas y desarrollos VueJS',
-    'work_in_progress' => 'Esta sección aún está en construcción...'
+    'work_in_progress' => 'Esta sección aún está en construcción...',
 ];

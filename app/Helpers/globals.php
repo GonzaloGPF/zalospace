@@ -13,11 +13,6 @@ use Illuminate\Support\Str;
 use Mockery\LegacyMockInterface;
 use Mockery\MockInterface;
 
-/**
- * @param string|null $type
- * @param int|null $id
- * @return Model|null
- */
 function morphedModel(?string $type, ?int $id): ?Model
 {
     if (! $type || ! $id) {
@@ -27,10 +22,6 @@ function morphedModel(?string $type, ?int $id): ?Model
     return resolve(classByString($type))::findOrFail($id);
 }
 
-/**
- * @param string|null $modelType
- * @return string
- */
 function getMorphIdAttribute(?string $modelType = null): string
 {
     return Str::of($modelType)
@@ -41,10 +32,6 @@ function getMorphIdAttribute(?string $modelType = null): string
         ->value();
 }
 
-/**
- * @param string|null $modelType
- * @return string
- */
 function getMorphTable(?string $modelType = null): string
 {
     return Str::of($modelType)
@@ -55,8 +42,6 @@ function getMorphTable(?string $modelType = null): string
 }
 
 /**
- * @param string|null $type
- *
  * @return string|null string
  */
 function classByString(?string $type): ?string
@@ -76,11 +61,6 @@ function classByString(?string $type): ?string
         ->value();
 }
 
-/**
- * @param string $className
- * @param bool|null $plural
- * @return string
- */
 function toSnake(string $className, ?bool $plural = false): string
 {
     return Str::of($className)
@@ -91,9 +71,7 @@ function toSnake(string $className, ?bool $plural = false): string
 }
 
 /**
- * @param $class
- * @param array $parameters
- * @param null $count
+ * @param  null  $count
  * @return Collection|Model|mixed
  */
 function make($class, array $parameters = [], $count = null): Collection|Model
@@ -107,9 +85,7 @@ function make($class, array $parameters = [], $count = null): Collection|Model
 }
 
 /**
- * @param $class
- * @param array $parameters
- * @param null $count
+ * @param  null  $count
  * @return mixed|Collection|Model
  */
 function create($class, array $parameters = [], $count = null): Collection|Model
@@ -122,11 +98,6 @@ function create($class, array $parameters = [], $count = null): Collection|Model
         ->create($parameters);
 }
 
-/**
- * @param string $enum
- * @param bool $multiple
- * @return string|array
- */
 function randomConstant(string $enum, bool $multiple = false): string|array
 {
     $constants = collect($enum::cases());
@@ -149,11 +120,6 @@ function randomConstant(string $enum, bool $multiple = false): string|array
  * Helper that returns an ID of a specified Model (by class name).
  * If there are any Model, it will grab one randomly, if not, it will create a new one using its Factory
  * When using make() it won't write in Database, instead, it will return a 1
- *
- * @param string $modelClass
- * @param array $attributes
- * @param bool $create
- * @return int|string
  */
 function associateTo(string $modelClass, array $attributes = [], bool $create = false): int|string
 {
@@ -179,10 +145,6 @@ function associateTo(string $modelClass, array $attributes = [], bool $create = 
 
 /**
  * Translate a Model
- *
- * @param string $model
- * @param bool $plural
- * @return string
  */
 function modelTitle(string $model, ?bool $plural = false): string
 {
@@ -193,11 +155,6 @@ function modelTitle(string $model, ?bool $plural = false): string
 
 /**
  * Translate a Model
- *
- * @param string $model
- * @param string $value
- * @param bool|null $plural
- * @return string
  */
 function constantTitle(string $model, string $value, ?bool $plural = false): string
 {
@@ -208,10 +165,6 @@ function constantTitle(string $model, string $value, ?bool $plural = false): str
 
 /**
  * Translate a Model name, useful for Constants Models.
- *
- * @param string $constant
- * @param string|BackedEnum $value
- * @return string|null
  */
 function tConstValue(string $constant, string|BackedEnum $value): ?string
 {
@@ -229,14 +182,8 @@ function tConstValue(string $constant, string|BackedEnum $value): ?string
 
 /**
  * Translate an action for a Model
- *
- * @param string $action
- * @param bool|null $female
- * @param string|null $model
- * @param bool|null $plural
- * @return string
  */
-function tAction(string $action, ?string $model = null, bool $female = null, ?bool $plural = false): string
+function tAction(string $action, ?string $model = null, ?bool $female = null, ?bool $plural = false): string
 {
     if ($female === null) {
         $translation = trans("actions.$action");
@@ -246,7 +193,7 @@ function tAction(string $action, ?string $model = null, bool $female = null, ?bo
 
     if ($model) {
         $modelName = Str::snake(class_basename($model));
-        $translation = modelTitle($modelName, $plural) . ' ' . $translation;
+        $translation = modelTitle($modelName, $plural).' '.$translation;
     }
 
     return $translation;
@@ -254,23 +201,18 @@ function tAction(string $action, ?string $model = null, bool $female = null, ?bo
 
 /**
  * Translate given attribute name
- *
- * @param $attribute
- * @return string
  */
 function ta($attribute): string
 {
     if (! Lang::has("validation.attributes.$attribute")) {
         return Str::title($attribute);
     }
+
     return trans("validation.attributes.$attribute");
 }
 
 /**
  * Translate given label
- *
- * @param $label
- * @return string
  */
 function tl($label): string
 {
@@ -279,14 +221,8 @@ function tl($label): string
 
 /**
  * Helper function to know if User has a specific Role.
- *
- * @param string|BackedEnum $role
- * @param bool $allowAdmin
- * @param User|null $user
- *
- * @return bool
  */
-function hasRole(string|BackedEnum $role, bool $allowAdmin = false, User $user = null): bool
+function hasRole(string|BackedEnum $role, bool $allowAdmin = false, ?User $user = null): bool
 {
     /** @var ?User $user */
     if (! $user && auth()->hasUser()) {
@@ -310,9 +246,6 @@ function hasRole(string|BackedEnum $role, bool $allowAdmin = false, User $user =
 
 /**
  * Function that converts a numeric value into an exact abbreviation
- * @param float $value
- * @param int $precision
- * @return string
  */
 function shortenNumber(float $value, int $precision = 1): string
 {
@@ -340,19 +273,15 @@ function shortenNumber(float $value, int $precision = 1): string
     // Remove unnecessary zeroes after decimal. "1.0" -> "1"; "1.00" -> "1"
     // Intentionally does not affect partials, eg "1.50" -> "1.50"
     if ($precision > 0) {
-        $dotZero = '.' . str_repeat('0', $precision);
+        $dotZero = '.'.str_repeat('0', $precision);
         $n_format = str_replace($dotZero, '', $n_format);
     }
-    return $n_format . $suffix;
+
+    return $n_format.$suffix;
 }
 
 /**
  * Creates a file and returns the path where it has been saved.
- *
- * @param string|null $name
- * @param string|null $extension
- * @param string $fileContent
- * @return string
  */
 function generateTestFile(?string $name = 'Test', ?string $extension = null, string $fileContent = 'This is a test content'): string
 {
@@ -366,9 +295,6 @@ function generateTestFile(?string $name = 'Test', ?string $extension = null, str
 }
 
 /**
- * @param string $className
- * @param array $attributes
- * @param int $times
  * @return mixed|Model|Collection|LegacyMockInterface|MockInterface
  */
 function makeMock(string $className, array $attributes = [], int $times = 0): mixed
@@ -381,10 +307,6 @@ function makeMock(string $className, array $attributes = [], int $times = 0): mi
         ->map(fn () => Mockery::mock(make($className, $attributes)));
 }
 
-/**
- * @param string $path
- * @return string|null
- */
 function mockFileContent(string $path): ?string
 {
     try {
@@ -396,8 +318,6 @@ function mockFileContent(string $path): ?string
 
 /**
  * Dates always have formats 'Y-m-d' or 'Y/m/d'
- * @param $value
- * @return bool
  */
 function isDateString($value): bool
 {
@@ -406,7 +326,7 @@ function isDateString($value): bool
     }
 
     $fails = Validator::make([
-        'date' => $value
+        'date' => $value,
     ], [
         'date' => 'date',
     ])->fails();
@@ -416,11 +336,6 @@ function isDateString($value): bool
 
 /**
  * Returns a Collection of Carbon dates
- *
- * @param string|null $minDate
- * @param string|null $maxDate
- * @param string|null $interval
- * @return Collection
  */
 function createPeriod(?string $minDate = null, ?string $maxDate = null, ?string $interval = '1 month'): Collection
 {
@@ -431,12 +346,8 @@ function createPeriod(?string $minDate = null, ?string $maxDate = null, ?string 
     return collect(CarbonPeriod::create($minDate, $interval, $maxDate));
 }
 
-
 /**
  * Remove special chars in string.
- * @param $string
- * @param bool $removeDots
- * @return string
  */
 function removeSpecialChars($string, bool $removeDots = false): string
 {
@@ -455,35 +366,23 @@ function removeSpecialChars($string, bool $removeDots = false): string
     return $withoutAccents;
 }
 
-/**
- * @param string $interface
- * @return Collection
- */
 function loadModels(string $interface): Collection
 {
-    return collect(glob(app_path('Models') . '/*.php'))
+    return collect(glob(app_path('Models').'/*.php'))
         ->each(fn (string $file) => require_once $file)
-        ->map(fn (string $filePath) => 'App\\Models\\' . basename($filePath, '.php'))
+        ->map(fn (string $filePath) => 'App\\Models\\'.basename($filePath, '.php'))
         ->filter(fn (string $class) => implementsInterface($class, $interface))
         ->map(fn (string $modelString) => resolve($modelString));
 }
 
-/**
- * @return Collection
- */
 function loadConstants(): Collection
 {
-    return collect(glob(app_path('Enums') . '/*.php'))
+    return collect(glob(app_path('Enums').'/*.php'))
         ->each(fn (string $file) => require_once $file)
-        ->map(fn (string $filePath) => 'App\\Enums\\' . basename($filePath, '.php'))
+        ->map(fn (string $filePath) => 'App\\Enums\\'.basename($filePath, '.php'))
         ->filter(fn (string $class) => implementsInterface($class, UnitEnum::class));
 }
 
-/**
- * @param string $class
- * @param string $interface
- * @return bool
- */
 function implementsInterface(string $class, string $interface): bool
 {
     try {
@@ -495,10 +394,6 @@ function implementsInterface(string $class, string $interface): bool
 
 /**
  * Formats a currency value
- *
- * @param $value
- * @param string|null $currencySymbolOrHtmlEntity
- * @return string
  */
 function money($value, ?string $currencySymbolOrHtmlEntity = '€'): string
 {
@@ -508,13 +403,11 @@ function money($value, ?string $currencySymbolOrHtmlEntity = '€'): string
     //    return money_format('%.2n', (float)round($value, 2));
     $value = round(round(round($value, 4), 3), 2);
 
-    return number_format($value, 2, ',', '.') . ' ' . $currencySymbolOrHtmlEntity;
+    return number_format($value, 2, ',', '.').' '.$currencySymbolOrHtmlEntity;
 }
 
 /**
  * Debugging purposes
- *
- * @return void
  */
 function debugBackTrace(): void
 {

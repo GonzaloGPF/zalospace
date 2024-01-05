@@ -40,8 +40,8 @@ const vTechnologies = computed(() => _
         name="technology"
       >
         <div
-          key="button"
           v-if="limit && limit < technologies.length"
+          key="button"
           class="flex items-center max-w-xs"
         >
           <app-button
@@ -52,9 +52,9 @@ const vTechnologies = computed(() => _
         </div>
         <a
           v-for="technology in vTechnologies"
+          :key="technology.name"
           :href="technology.url"
           :title="technology.name"
-          :key="technology.name"
           target="_blank"
           class="block p-2 rounded-lg link flex items-center justify-center"
         >

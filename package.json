@@ -4,7 +4,7 @@
     "author": "Gonzalo Pabón Flores <zalo.pabon@gmail.com> (https://github.com/ZaloSpace)",
     "scripts": {
         "js-lint": "./node_modules/.bin/eslint ./resources/js/**/*.vue ./resources/js/**/*.js --fix",
-        "style-lint": "node_modules/stylelint/bin/stylelint.js resources/sass/**/* --fix",
+        "style-lint": "./node_modules/.bin/stylelint resources/css/**/* --fix",
         "dev": "vite",
         "build": "vite build"
     },
@@ -41,5 +41,11 @@
         "pinia": "^2.1.4",
         "pluralize": "^8.0.0",
         "qs": "^6.11.2"
+    },
+    "lint-staged": {
+        "resources/{js,vue}/**/*.{js,vue}": [
+            "eslint --fix --ignore-path .gitignore"
+        ],
+        "**/*.php": "./vendor/bin/pint --preset laravel"
     }
 }

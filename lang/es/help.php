@@ -2,7 +2,7 @@
 
 return [
     'about_me_description' => 'Aquí es donde me presento a mí mismo. En esta sección encontrarás todo sobre mi perfil profesional, currículum, formación, intereses, etc',
-    'projects_description' => 'Algunos de los principales proyectos que he tenido llevado a cabo. Programar es uno de mis hobbies, por lo que suelo dedicar parte de mi tiempo libre a realizar algún proyecto...',
+    'projects_description' => 'Algunos de los proyectos que he llevado a cabo. Programar es uno de mis hobbies, por lo que suelo dedicar parte de mi tiempo libre a programar...',
     'tutorials_description' => 'Tutoriales de distintas cosas que he ido aprendiendo y que creo pueden ser de utilidad para otros desarrolladores.',
     'configurator_description' => 'Constructor y estimador de presupuestos para cualquiera de mis servicios, como consultoría, asesoría y desarrollos a medida.',
     'contact_with_me' => 'Contacta conmigo rellenando este formulario. Intentaré responder con la mayor brevedad posible.',

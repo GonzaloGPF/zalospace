@@ -2,7 +2,7 @@
 
 return [
     'about_me_description' => 'This is where I introduce myself. In this section you will find everything about my professional profile, curriculum, training, interests, etc',
-    'projects_description' => 'Some of the main projects I\'ve had carried out. Programming is one of my hobbies, so I usually dedicate part of my free time to carrying out a project...',
+    'projects_description' => 'Some of projects I\'ve done. Programming is one of my hobbies, so I usually dedicate part of my free program...',
      'tutorials_description' => 'Tutorials of different things that I have been learning and that I think can be useful for other developers.',
      'configurator_description' => 'Builder and budget estimator for any of my services, such as consultancy, advice and custom developments.',
      'contact_with_me' => 'Contact me by filling out this form. I will try to respond as soon as possible.',

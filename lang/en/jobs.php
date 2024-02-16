@@ -27,4 +27,9 @@ return [
     'mobius_4' => 'Implementation of systems in real time with WebSockets.',
     'mobius_5' => 'Migration from an old system to new technologies.',
     'mobius_6' => 'Team management, project planning and requirements gathering, as well as user interface design.',
+    'acierto_1' => 'Front end development for the renewal of all Acierto applications',
+    'acierto_2' => 'The project was developed using Nuxt with Nitro in its latest versions',
+    'acierto_3' => 'We use Stroyblok as a CMS for content management',
+    'acierto_4' => 'For this development it was necessary to create our own Component Library, implementing Storybook',
+    'acierto_5' => 'The main language was Typescript and the styles were written with Sass',
 ];

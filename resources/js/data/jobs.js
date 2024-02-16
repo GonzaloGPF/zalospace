@@ -12,7 +12,7 @@ export default computed(() => [
     paragraphs: [
       Translator.t('jobs.salsero_app_1'),
       Translator.t('jobs.salsero_app_2'),
-      Translator.t('jobs.salsero_app_3')
+      Translator.t('jobs.salsero_app_3'),
     ]
   },
   {
@@ -24,7 +24,7 @@ export default computed(() => [
     paragraphs: [
       Translator.t('jobs.sopra_steria_1'),
       Translator.t('jobs.sopra_steria_2'),
-      Translator.t('jobs.sopra_steria_3')
+      Translator.t('jobs.sopra_steria_3'),
     ]
   },
   {
@@ -38,7 +38,7 @@ export default computed(() => [
       Translator.t('jobs.indra_2'),
       Translator.t('jobs.indra_3'),
       Translator.t('jobs.indra_4'),
-      Translator.t('jobs.indra_5')
+      Translator.t('jobs.indra_5'),
     ]
   },
   {
@@ -49,7 +49,7 @@ export default computed(() => [
     image: 'images/companies/boream.png',
     paragraphs: [
       Translator.t('jobs.boream_1'),
-      Translator.t('jobs.boream_2')
+      Translator.t('jobs.boream_2'),
     ]
   },
   {
@@ -61,7 +61,7 @@ export default computed(() => [
     paragraphs: [
       Translator.t('jobs.eugen_1'),
       Translator.t('jobs.eugen_2'),
-      Translator.t('jobs.eugen_3')
+      Translator.t('jobs.eugen_3'),
     ]
   },
   {
@@ -76,7 +76,7 @@ export default computed(() => [
       Translator.t('jobs.mobius_3'),
       Translator.t('jobs.mobius_4'),
       Translator.t('jobs.mobius_5'),
-      Translator.t('jobs.mobius_6')
+      Translator.t('jobs.mobius_6'),
     ]
   },
   {
@@ -86,12 +86,11 @@ export default computed(() => [
     urlLabel: 'Acierto',
     image: 'images/companies/acierto.png',
     paragraphs: [
-      Translator.t('jobs.mobius_1'),
-      Translator.t('jobs.mobius_2'),
-      Translator.t('jobs.mobius_3'),
-      Translator.t('jobs.mobius_4'),
-      Translator.t('jobs.mobius_5'),
-      Translator.t('jobs.mobius_6')
+      Translator.t('jobs.acierto_1'),
+      Translator.t('jobs.acierto_2'),
+      Translator.t('jobs.acierto_3'),
+      Translator.t('jobs.acierto_4'),
+      Translator.t('jobs.acierto_5'),
     ]
   }
 ])

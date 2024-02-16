@@ -27,4 +27,9 @@ return [
     'mobius_4' => 'Implementación de sistemas en tiempo real con WebSockets.',
     'mobius_5' => 'Migración de un sistema antiguo a nuevas tecnologías.',
     'mobius_6' => 'Gestión de equipos, planificación de proyectos y toma de requisitos, así como diseño de interfaces de usuario.',
+    'acierto_1' => 'Desarrollo front end para la renovación de todas las aplicaciones de Acierto',
+    'acierto_2' => 'El proyecto consistió en aplicaciones Nuxt con Nitro en sus últimas versiones',
+    'acierto_3' => 'Utilizamos Stroyblok como CMS para la gestión de los contenidos',
+    'acierto_4' => 'Para este desarrollo fue necesaria la creación de una Librería de Componentes propia, implementando Storybook',
+    'acierto_5' => 'El lenguaje principal fue Typescript y los estilos con Sass',
 ];

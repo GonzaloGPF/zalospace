@@ -47,7 +47,7 @@ defineProps({
       mode="out-in"
       enter-from-class="opacity-0"
       leave-to-class="opacity-0"
-      class="transition ease-in-out duration-500"
+      class="transition ease-in-out duration-500 flex-1"
       appear
     >
       <main

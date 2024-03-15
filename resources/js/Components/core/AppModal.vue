@@ -1,7 +1,7 @@
 <script setup>
-import { computed, onMounted, onUnmounted, watch } from 'vue';
-import AppButton from '@/Components/core/AppButton.vue';
-import Translator from '@/objects/Translator.js';
+import { computed, onMounted, onUnmounted, watch } from 'vue'
+import AppButton from '@/Components/core/AppButton.vue'
+import Translator from '@/objects/Translator.js'
 
 const props = defineProps({
     show: {
@@ -104,8 +104,7 @@ const maxWidthClass = computed(() => {
               @click="close"
             />
             <h1
-              v-if="title"
-              class="brand-font font-semibold max-w-md flex-grow mb-5 text-gray-900 dark:text-white"
+              class="brand-font font-semibold max-w-md flex-grow mb-5 text-gray-900 dark:text-white min-h-5"
               v-text="title"
             />
             <slot v-if="show" />

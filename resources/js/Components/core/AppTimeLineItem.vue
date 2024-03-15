@@ -1,5 +1,6 @@
 <script setup>
-import TechList from '@/Components/TechList.vue';
+import TechList from '@/Components/TechList.vue'
+import AppImage from '@/Components/core/AppImage.vue'
 
 defineProps({
   title: {
@@ -56,14 +57,12 @@ defineProps({
                  class="link mb-5"
                  target="_blank"
                 >
-                    <img
-                     v-if="image"
-                     :src="image"
-                     :alt="title"
-                     width="150"
-                     class="rounded-lg shadow-md bg-gray-800 p-3"
-                    />
-                    <span v-if="urlLabel" v-text="urlLabel" />
+                  <app-image
+                    :title="title"
+                    :image="image"
+                    :label="urlLabel"
+                    :modal="!url"
+                  />
                 </a>
             </div>
             <tech-list :technologies="technologies" />

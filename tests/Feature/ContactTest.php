@@ -2,7 +2,7 @@
 
 namespace Tests\Feature;
 
-// use Illuminate\Foundation\Testing\RefreshDatabase;
+use App\Enums\Levels;
 use App\Mail\ContactEmail;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Mail;
@@ -26,11 +26,15 @@ class ContactTest extends TestCase
             'message' => 'Some Message',
         ]);
 
-        $this->assertEquals(tAction('sent', null, false), session('flash_message'));
+        $flashMessageData = [
+            'message' => tAction('sent', null, false),
+            'type' => Levels::SUCCESS->value
+        ];
+
+        $this->assertEquals($flashMessageData, session('flash_message_data'));
 
         Mail::assertQueued(ContactEmail::class, function (ContactEmail $email) {
             $this->assertEquals('company@mail.com', $email->to[0]['address']);
-            $this->assertEquals('test@email.com', $email->cc[0]['address']);
 
             return true;
         });

@@ -27,4 +27,9 @@ return [
     'view_less' => 'View Less',
     'spanish' => 'Spanish',
     'english' => 'English',
+    'novice' => 'Novice',
+    'apprentice' => 'Apprentice',
+    'medium' => 'Medium',
+    'advanced' => 'Advanced',
+    'expert' => 'Expert',
 ];

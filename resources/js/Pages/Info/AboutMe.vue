@@ -38,6 +38,7 @@ const age = computed(() => {
             <app-card
                 :title="Translator.tl('hobbies')"
                 class="md:w-80"
+                shine
             >
                 <template #description>
                     <p v-text="Translator.t('help.hobbies_1')" />
@@ -53,6 +54,7 @@ const age = computed(() => {
             <app-card
                 :title="Translator.tl('my_jobs')"
                 class="md:w-96"
+                shine
             >
                 <template #description>
                     <p v-text="Translator.t('help.my_jobs')" />
@@ -89,6 +91,7 @@ const age = computed(() => {
             <app-card
                 :title="'Laravel'"
                 class="md:w-80"
+                shine
             >
                 <template #description>
                     <p v-text="Translator.t('help.laracasts')" />

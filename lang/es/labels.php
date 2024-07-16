@@ -27,4 +27,9 @@ return [
     'view_less' => 'Ver Menos',
     'spanish' => 'Español',
     'english' => 'Inglés',
+    'novice' => 'Novato',
+    'apprentice' => 'Aprendiz',
+    'medium' => 'Medio',
+    'advanced' => 'Avanzado',
+    'expert' => 'Experto',
 ];

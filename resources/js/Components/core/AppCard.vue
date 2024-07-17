@@ -80,7 +80,7 @@ const classes = computed(() => [imageSize.value, bg.value])
 <style>
 
 @keyframes ShineAnimation {
-    from {
+    0% {
         background-repeat: no-repeat;
         background-image: -webkit-linear-gradient(
                 top left,
@@ -95,7 +95,7 @@ const classes = computed(() => [imageSize.value, bg.value])
         background-position: -450px -450px;
         background-size: 800px 800px
     }
-    to {
+    20%, 100% {
         background-repeat: no-repeat;
         background-position: 850px 850px;
     }
@@ -103,6 +103,7 @@ const classes = computed(() => [imageSize.value, bg.value])
 
 .shine-me {
     /*width: 100%;*/
-    animation: ShineAnimation 3s infinite;
+    animation: ShineAnimation 8s infinite ease-in-out;
+    animation-delay: 5s;
 }
 </style>

@@ -5,14 +5,14 @@ import projects from '@/data/projects.js';
 import AppTimeline from '@/Components/core/AppTimeline.vue';
 </script>
 <template>
-    <base-layout
+    <BaseLayout
         :title="Translator.tl('projects')"
         :description="Translator.t('help.projects_description')"
         icon="projects"
     >
-        <app-timeline
+        <AppTimeline
             :items="projects"
             class="w-100"
         />
-    </base-layout>
+    </BaseLayout>
 </template>

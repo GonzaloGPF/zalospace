@@ -35,7 +35,7 @@ defineProps({
       class="pt-5 mt-6 md:mt-12"
     >
       <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-        <app-card
+        <AppCard
           :title="title"
           :description="description"
           :icon="icon"

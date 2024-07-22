@@ -1,84 +1,85 @@
 <script setup>
 import AppLink from '@/Components/core/AppLink.vue';
 import Translator from '@/objects/Translator.js';
-import { computed, ref } from 'vue';
-import { usePage } from '@inertiajs/vue3';
+import {computed, ref} from 'vue';
+import {usePage} from '@inertiajs/vue3';
 import AppSvg from '@/Components/core/AppSvg.vue';
 import Utils from '@/objects/Utils.js';
 import AppButton from '@/Components/core/AppButton.vue';
 import useTailwind from '@/composables/useTailwind.js';
-import { default as vClickOutside } from '@/directives/clickOutside.js';
+import {default as vClickOutside} from '@/directives/clickOutside.js';
 
 defineProps({
-    canLogin: {
-        type: Boolean,
-        default: false
-    },
-    canRegister: {
-        type: Boolean,
-        default: false
-    }
+  canLogin: {
+    type: Boolean,
+    default: false
+  },
+  canRegister: {
+    type: Boolean,
+    default: false
+  }
 });
-const { isMobile, isResizing } = useTailwind(); // TODO: for some reason, only at this component, useTailwind is not reactive
-const { props } = usePage();
+const {isMobile, isResizing} = useTailwind(); // TODO: for some reason, only at this component, useTailwind is not reactive
+const {props} = usePage();
 const items = computed(() => [
-    {
-        href: route('welcome'),
-        label: Translator.tl('home'),
-        icon: 'home',
-        visible: () => isMobile.value
-    },
-    {
-        href: route('info.about_me'),
-        label: Translator.tl('about_me'),
-        icon: 'user'
-    },
-    {
-        href: route('info.projects'),
-        label: Translator.tl('projects'),
-        icon: 'projects'
-    },
-    {
-        href: route('info.tutorials'),
-        label: Translator.tl('tutorials'),
-        icon: 'tutorials',
-    },
-    {
-        href: route('info.configurator'),
-        label: Translator.tl('configurator'),
-        icon: 'configurator',
-    },
-    // {
-    //     href: route('register'),
-    //     label: Translator.actionTitle('register'),
-    //     visible: !props.auth?.user
-    // },
-    // {
-    //     href: route('contacts.create'),
-    //     label: Translator.actionTitle('contact'),
-    //     icon: 'email',
-    //     visible: Utils.isSamePath(route('contacts.create')),
-    //     class: 'px-4 py-2 font-semibold text-xs uppercas'
-    // },
+  {
+    href: route('welcome'),
+    label: Translator.tl('home'),
+    icon: 'home',
+    visible: () => isMobile.value
+  },
+  {
+    href: route('info.about_me'),
+    label: Translator.tl('about_me'),
+    icon: 'user'
+  },
+  {
+    href: route('info.projects'),
+    label: Translator.tl('projects'),
+    icon: 'projects'
+  },
+  {
+    href: route('larecipe.index'),
+    label: Translator.tl('tutorials'),
+    icon: 'tutorials',
+    external: true
+  },
+  {
+    href: route('info.configurator'),
+    label: Translator.tl('configurator'),
+    icon: 'configurator',
+  },
+  // {
+  //     href: route('register'),
+  //     label: Translator.actionTitle('register'),
+  //     visible: !props.auth?.user
+  // },
+  // {
+  //     href: route('contacts.create'),
+  //     label: Translator.actionTitle('contact'),
+  //     icon: 'email',
+  //     visible: Utils.isSamePath(route('contacts.create')),
+  //     class: 'px-4 py-2 font-semibold text-xs uppercas'
+  // },
 ].filter(item => {
-    if ('visible' in item) {
-        if (typeof item.visible === 'function') {
-            return typeof item.visible === 'function'
-                ? item.visible()
-                : item.visible;
-        } else {
-            return item.visible;
-        }
+  if ('visible' in item) {
+    if (typeof item.visible === 'function') {
+      return typeof item.visible === 'function'
+        ? item.visible()
+        : item.visible;
+    } else {
+      return item.visible;
     }
-    return true;
+  }
+  return true;
 }));
 const openMenu = ref(false);
 
 const showMenu = computed(() => {
-    if (isMobile.value) {
-        return openMenu.value;
-    }
-    return true;
+  if (isMobile.value) {
+    return openMenu.value;
+  }
+  return true;
 });
 </script>
 <template>
@@ -87,7 +88,7 @@ const showMenu = computed(() => {
     class="flex"
     @click-outside="openMenu = false"
   >
-    <app-button
+    <AppButton
       icon="menu"
       class="md:hidden"
       variant="plain"
@@ -102,8 +103,9 @@ const showMenu = computed(() => {
         leave-from-class="opacity-100"
         leave-to-class="opacity-0"
       >
-        <div v-show="openMenu" class="fixed inset-0 transform transition-all" @click.stop="openMenu = false" style="pointer-events: none">
-          <div class="absolute inset-0 bg-gray-500 dark:bg-gray-900 opacity-75" />
+        <div v-show="openMenu" class="fixed inset-0 transform transition-all" @click.stop="openMenu = false"
+             style="pointer-events: none">
+          <div class="absolute inset-0 bg-gray-500 dark:bg-gray-900 opacity-75"/>
         </div>
       </transition>
     </teleport>
@@ -122,15 +124,15 @@ const showMenu = computed(() => {
         class="flex flex-col md:flex-row absolute md:static left-0 bg-blue-950 dark:bg-gray-800 text-xs md:text-sm lg:text-base"
         style="top: 42px;"
       >
-        <app-link
+        <AppLink
           v-for="item in items"
           :key="item.href"
           :href="item.href"
           :label="item.label"
-          :class="Utils.isSamePath(item.href) ? 'border-b-2' : null"
+          :external="item.external"
           class="flex md:items-center space-x-2 text-white dark:text-gray-500 p-3 border-white-700 dark:border-white-300 px-4 whitespace-nowrap"
         >
-          <app-svg
+          <AppSvg
             v-if="item.icon"
             :icon="item.icon"
           />
@@ -139,7 +141,7 @@ const showMenu = computed(() => {
             class="brand-font"
             v-text="item.label"
           />
-        </app-link>
+        </AppLink>
       </div>
     </transition>
   </div>

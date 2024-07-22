@@ -4,8 +4,8 @@ import Translator from '@/objects/Translator.js';
 import AppCard from '@/Components/core/AppCard.vue';
 </script>
 <template>
-    <base-layout>
-        <app-card
+    <BaseLayout>
+        <AppCard
             :title="Translator.tl('configurator')"
             :description="Translator.t('help.configurator_description')"
             icon="work"
@@ -15,5 +15,5 @@ import AppCard from '@/Components/core/AppCard.vue';
             class="mt-10 text-center"
             v-text="Translator.t('help.work_in_progress')"
         />
-    </base-layout>
+    </BaseLayout>
 </template>

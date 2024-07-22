@@ -8,11 +8,11 @@
         <meta name="app_name" content="{{ config('app.name') }}">
         <meta name="company_name" content="{{ config('company.name') }}">
         <meta name="company_acronym" content="{{ config('company.acronym') }}">
-        <meta property="og:locale" content="en_EN" />
+        <meta property="og:locale" content="es_ES" />
         <meta property="og:url" content="{{ config('app.url') }}" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="{{ config('company.name') }}" />
-        <meta property="og:description" content="Web personal de Gonzalo Pabón Flores" />
+        <meta property="og:description" content="{{ config('company.description') }}" />
         <meta property="og:image" content="{{ url('images/logo.png') }}">
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="200">

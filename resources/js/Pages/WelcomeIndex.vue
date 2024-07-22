@@ -3,47 +3,47 @@ import AppLogo from '@/Components/core/AppLogo.vue'
 import AppCard from '@/Components/core/AppCard.vue'
 import Translator from '@/objects/Translator.js'
 import BaseLayout from '@/Layouts/BaseLayout.vue'
-import NavLink from '@/Components/NavLink.vue'
+import AppLink from '@/Components/core/AppLink.vue'
 </script>
 <template>
-  <base-layout>
-    <app-logo />
+  <BaseLayout>
+    <AppLogo />
 
     <div class="mt-20 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-      <nav-link :href="route('info.about_me')">
-        <app-card
+      <AppLink :href="route('info.about_me')">
+        <AppCard
           :title="Translator.tl('about_me')"
           :description="Translator.t('help.about_me_description')"
           class="scale-100 motion-safe:hover:scale-[1.01] transition-all duration-250"
           icon="user"
         />
-      </nav-link>
-      <nav-link :href="route('info.projects')">
-        <app-card
+      </AppLink>
+      <AppLink :href="route('info.projects')">
+        <AppCard
           :title="Translator.tl('projects')"
           :description="Translator.t('help.projects_description')"
           class="scale-100 motion-safe:hover:scale-[1.01] transition-all duration-250"
           icon="projects"
         />
-      </nav-link>
-      <nav-link :href="route('info.tutorials')">
-        <app-card
+      </AppLink>
+      <AppLink :href="route('larecipe.index')" external>
+        <AppCard
           :title="Translator.tl('tutorials')"
           :description="Translator.t('help.tutorials_description')"
           class="scale-100 motion-safe:hover:scale-[1.01] transition-all duration-250"
           icon="tutorials"
         />
-      </nav-link>
-      <nav-link :href="route('info.configurator')">
-        <app-card
+      </AppLink>
+      <AppLink :href="route('info.configurator')">
+        <AppCard
           :title="Translator.tl('configurator')"
           :description="Translator.t('help.configurator_description')"
           class="scale-100 motion-safe:hover:scale-[1.01] transition-all duration-250"
           icon="configurator"
         />
-      </nav-link>
+      </AppLink>
     </div>
-  </base-layout>
+  </BaseLayout>
 </template>
 
 <style>

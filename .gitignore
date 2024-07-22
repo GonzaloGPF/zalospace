@@ -3,6 +3,7 @@
 /public/build
 /public/hot
 /public/storage
+/public/vendor/binarytorch
 /storage/*.key
 /vendor
 .env

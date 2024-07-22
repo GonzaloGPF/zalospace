@@ -21,7 +21,6 @@ use Inertia\Inertia;
 Route::get('/', [WelcomeController::class, 'show'])->name('welcome');
 Route::get('/about-me', [InfoController::class, 'aboutMe'])->name('info.about_me');
 Route::get('/projects', [InfoController::class, 'projects'])->name('info.projects');
-Route::get('/tutorials', [InfoController::class, 'tutorials'])->name('info.tutorials');
 Route::get('/configurator', [InfoController::class, 'configurator'])->name('info.configurator');
 
 Route::get('/dashboard', function () {

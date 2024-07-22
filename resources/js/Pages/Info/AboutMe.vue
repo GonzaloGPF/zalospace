@@ -19,13 +19,13 @@ const age = computed(() => {
 
 </script>
 <template>
-    <base-layout
+    <BaseLayout
         :title="Translator.tl('about_me')"
         :description="Translator.t('help.about_me_description')"
         icon="user"
     >
         <div class="flex flex-col md:flex-row justify-between items-center mb-16">
-            <app-panel
+            <AppPanel
                 :title="Translator.tl('who_am_i')"
                 image="/images/profile_photo.jpg"
             >
@@ -34,8 +34,8 @@ const age = computed(() => {
                     <p v-text="Translator.t('help.who_am_i_2')" />
                     <p v-text="Translator.t('help.who_am_i_3')" />
                 </template>
-            </app-panel>
-            <app-card
+            </AppPanel>
+            <AppCard
                 :title="Translator.tl('hobbies')"
                 class="md:w-80"
                 shine
@@ -48,10 +48,10 @@ const age = computed(() => {
                         <li class="" v-text="Translator.tl('gym')" />
                     </ul>
                 </template>
-            </app-card>
+            </AppCard>
         </div>
         <div class="flex flex-col md:flex-row justify-between items-center mb-16">
-            <app-card
+            <AppCard
                 :title="Translator.tl('my_jobs')"
                 class="md:w-96"
                 shine
@@ -64,8 +64,8 @@ const age = computed(() => {
                         <li class="" v-text="Translator.tl('team_lead')" />
                     </ul>
                 </template>
-            </app-card>
-            <app-panel
+            </AppCard>
+            <AppPanel
                 :title="Translator.tl('professional_profile')"
                 class="max-w-5xl"
             >
@@ -74,11 +74,11 @@ const age = computed(() => {
                     <p v-text="Translator.t('help.professional_profile_2')" />
                     <p v-text="Translator.t('help.professional_profile_3')" />
                 </template>
-            </app-panel>
+            </AppPanel>
         </div>
 
         <div class="flex flex-col md:flex-row justify-between items-center mb-16">
-            <app-panel
+            <AppPanel
                 :title="Translator.tl('academic_training')"
                 class="mt-5"
             >
@@ -87,8 +87,8 @@ const age = computed(() => {
                     <p v-text="Translator.t('help.academic_training_2')" />
                     <p v-text="Translator.t('help.academic_training_3')" />
                 </template>
-            </app-panel>
-            <app-card
+            </AppPanel>
+            <AppCard
                 :title="'Laravel'"
                 class="md:w-80"
                 shine
@@ -96,10 +96,10 @@ const age = computed(() => {
                 <template #description>
                     <p v-text="Translator.t('help.laracasts')" />
                 </template>
-            </app-card>
+            </AppCard>
         </div>
 
-        <app-panel
+        <AppPanel
             :title="Translator.tl('technologies')"
             class="mt-5"
         >
@@ -113,9 +113,9 @@ const age = computed(() => {
                     :limit="null"
                 />
             </template>
-        </app-panel>
+        </AppPanel>
 
-        <app-panel
+        <AppPanel
             :title="Translator.tl('experience')"
             class="mt-5"
         >
@@ -124,11 +124,11 @@ const age = computed(() => {
                     class="mb-3"
                     v-text="Translator.t('help.experience')"
                 />
-                <app-timeline
+                <AppTimeline
                     :items="jobs"
                     class="w-100"
                 />
             </template>
-        </app-panel>
-    </base-layout>
+        </AppPanel>
+    </BaseLayout>
 </template>

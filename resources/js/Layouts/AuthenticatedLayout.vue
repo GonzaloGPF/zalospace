@@ -3,9 +3,9 @@ import { ref } from 'vue'
 import ApplicationLogo from '@/Components/ApplicationLogo.vue'
 import AppDropdown from '@/Components/core/AppDropdown.vue'
 import DropdownLink from '@/Components/DropdownLink.vue'
-import NavLink from '@/Components/NavLink.vue'
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue'
 import { Link } from '@inertiajs/vue3'
+import AppLink from '@/Components/core/AppLink.vue'
 
 const showingNavigationDropdown = ref(false)
 </script>
@@ -29,12 +29,11 @@ const showingNavigationDropdown = ref(false)
 
               <!-- Navigation Links -->
               <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                <NavLink
+                <AppLink
                   :href="route('dashboard')"
                   :active="route().current('dashboard')"
-                >
-                  Dashboard
-                </NavLink>
+                  label="Dashboard"
+                />
               </div>
             </div>
 

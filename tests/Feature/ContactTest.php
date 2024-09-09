@@ -12,6 +12,12 @@ class ContactTest extends TestCase
 {
     use RefreshDatabase;
 
+    public function test_user_can_go_to_contact_page()
+    {
+        $this->get(route('contacts.create'))
+            ->assertSuccessful();
+    }
+
     /**
      * A basic test example.
      */

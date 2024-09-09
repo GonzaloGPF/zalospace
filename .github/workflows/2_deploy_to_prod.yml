@@ -26,8 +26,10 @@ jobs:
           echo DEPLOY_USER="${{ secrets.ZALOSPACE_USER }}" >> .env
           echo DEPLOY_DIR="${{ secrets.ZALOSPACE_DIR }}" >> .env
 
-      - name: Deploy Site
+      - name: Use laravel environment
         uses: laravelfans/laravel
+
+      - name: Deploy Site
         run: |
           composer global require laravel/envoy
           php ~/.composer/vendor/bin/envoy run deploy

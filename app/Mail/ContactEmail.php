@@ -22,16 +22,6 @@ class ContactEmail extends Mailable
     }
 
     /**
-     * Get the message envelope.
-     */
-    public function envelope(): Envelope
-    {
-        return new Envelope(
-            subject: tl('contact_email'),
-        );
-    }
-
-    /**
      * Get the message content definition.
      */
     public function content(): Content
@@ -39,15 +29,5 @@ class ContactEmail extends Mailable
         return new Content(
             markdown: 'emails.contact_email',
         );
-    }
-
-    /**
-     * Get the attachments for the message.
-     *
-     * @return array<int, Attachment>
-     */
-    public function attachments(): array
-    {
-        return [];
     }
 }

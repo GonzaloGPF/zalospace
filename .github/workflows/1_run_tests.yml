@@ -23,7 +23,7 @@ jobs:
         run: |
           mysql --version
           sudo apt-get install -y mysql-client
-          mysql --host 127.0.0.1 --port ${{ job.services.mysql.ports['3306'] }} -testing -ppassword -e "SHOW DATABASES"
+          mysql --host 127.0.0.1 --port ${{ job.services.mysql.ports['3306'] }} -utesting -ppassword -e "SHOW DATABASES"
 
       - name: Install Server Software
         run: sudo apt-get install -y gnupg gosu curl ca-certificates zip unzip git supervisor sqlite3 libcap2-bin libpng-dev python2 software-properties-common
@@ -50,4 +50,4 @@ jobs:
           DB_USERNAME: testing
           DB_PASSWORD: password
           DB_PORT: ${{ job.services.mysql.ports[3306] }}
-        run: php vendor/bin/phpunit
+        run: php vendor/bin/phpunit --coverage-text --min=90

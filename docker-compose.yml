@@ -1,4 +1,3 @@
-version: '3'
 services:
     zalospace.test:
         build:
@@ -20,6 +19,7 @@ services:
 #            IGNITION_LOCAL_SITES_PATH: '${PWD}'
         volumes:
             - '.:/var/www/html'
+            - '~/.ssh:/home/sail/.ssh'
         networks:
             - sail
         depends_on:

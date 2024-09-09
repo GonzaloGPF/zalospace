@@ -2,10 +2,8 @@
 
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\InfoController;
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,15 +21,5 @@ Route::get('/about-me', [InfoController::class, 'aboutMe'])->name('info.about_me
 Route::get('/projects', [InfoController::class, 'projects'])->name('info.projects');
 Route::get('/configurator', [InfoController::class, 'configurator'])->name('info.configurator');
 
-Route::get('/dashboard', function () {
-    return Inertia::render('DashboardIndex');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
 Route::resource('contacts', ContactController::class)->only(['create', 'store']);
 
-require __DIR__.'/auth.php';

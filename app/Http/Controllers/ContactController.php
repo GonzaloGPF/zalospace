@@ -23,7 +23,7 @@ class ContactController extends Controller
 
         Mail::to(config('mail.contact'))
 //            ->cc($request->get('email'))
-            ->send($email); // queue
+            ->queue($email);
 
         $this->flashMessage(tAction('sent', null, false));
 

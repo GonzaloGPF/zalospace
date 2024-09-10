@@ -47,6 +47,7 @@ jobs:
       - name: Run tests
         env:
           MYSQL_DATABASE: testing
+          DB_HOST: 127.0.0.1
           DB_USERNAME: testing
           DB_PASSWORD: password
           DB_PORT: ${{ job.services.mysql.ports[3306] }}

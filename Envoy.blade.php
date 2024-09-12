@@ -39,7 +39,7 @@
   cd {{ $dir }}
 
   git reset --hard
-  git pull origin master
+  git pull origin main
 @endtask
 
 @task('backend')
@@ -47,7 +47,7 @@
   composer install --no-dev --no-interaction --no-plugins --no-progress --no-suggest --prefer-dist --optimize-autoloader
 
   php artisan optimize:clear
-  php artisan migrate --force
+  #php artisan migrate --force
   php artisan larecipe:install
 @endtask
 

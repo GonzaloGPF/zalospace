@@ -1,10 +1,1 @@
-{
-    "extends": "stylelint-config-recommended",
-    "plugins": [],
-    "ignoreFiles": [
-        "node_modules"
-    ],
-    "rules": {
-        "at-rule-no-unknown": null
-    }
-}
+{ "extends": ["stylelint-config-standard"] }

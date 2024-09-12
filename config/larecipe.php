@@ -13,9 +13,9 @@ return [
     |
     */
 
-    'docs'        => [
-        'route'   => '/tutorials',
-        'path'    => '/resources/tutorials',
+    'docs' => [
+        'route' => '/tutorials',
+        'path' => '/resources/tutorials',
         'landing' => 'overview',
         'middleware' => ['web'],
     ],
@@ -32,11 +32,11 @@ return [
     |
     */
 
-    'versions'      => [
-        'default'   => 'es',
+    'versions' => [
+        'default' => 'es',
         'published' => [
-            'es'
-        ]
+            'es',
+        ],
     ],
 
     /*
@@ -54,13 +54,13 @@ return [
     |
     */
 
-    'settings'       => [
-        'auth'       => false,
-        'guard'      => null,
-        'ga_id'      => env('GTM_ID'),
+    'settings' => [
+        'auth' => false,
+        'guard' => null,
+        'ga_id' => env('GTM_ID'),
         'middleware' => [
             'web',
-        ]
+        ],
     ],
 
     /*
@@ -76,9 +76,9 @@ return [
     |
     */
 
-    'cache'       => [
+    'cache' => [
         'enabled' => false,
-        'period'  => 5
+        'period' => 5,
     ],
 
     /*
@@ -94,18 +94,18 @@ return [
     |
     */
 
-    'search'            => [
-        'enabled'       => false,
-        'default'       => 'algolia',
-        'engines'       => [
-            'internal'  => [
-                'index' => ['h2', 'h3']
+    'search' => [
+        'enabled' => false,
+        'default' => 'algolia',
+        'engines' => [
+            'internal' => [
+                'index' => ['h2', 'h3'],
             ],
-            'algolia'   => [
-                'key'   => '',
-                'index' => ''
-            ]
-        ]
+            'algolia' => [
+                'key' => '',
+                'index' => '',
+            ],
+        ],
     ],
 
     /*
@@ -120,17 +120,17 @@ return [
     |
     */
 
-    'ui'                 => [
-        'code_theme'     => 'dark', // or: light
-        'fav'            => 'images/logo.png',     // eg: fav.png
-        'fa_v4_shims'    => true, // Add FontAwesome v4 shims prevent BC break
-        'show_side_bar'  => true,
-        'colors'         => [
-            'primary'    => '#787AF6',
-            'secondary'  => '#2b9cf2'
+    'ui' => [
+        'code_theme' => 'dark', // or: light
+        'fav' => 'images/logo.png',     // eg: fav.png
+        'fa_v4_shims' => true, // Add FontAwesome v4 shims prevent BC break
+        'show_side_bar' => true,
+        'colors' => [
+            'primary' => '#787AF6',
+            'secondary' => '#2b9cf2',
         ],
 
-        'theme_order'    => null // ['LaRecipeDarkTheme', 'customTheme']
+        'theme_order' => null, // ['LaRecipeDarkTheme', 'customTheme']
     ],
 
     /*
@@ -145,20 +145,20 @@ return [
     |
     */
 
-    'seo'                 => [
-        'author'          => 'Gonzalo Pabón Flores',
-        'description'     => 'Web personal de Gonzalo Pabón sobre tecnología y desarrollo web con Laravel y Vue',
-        'keywords'        => 'Desarrollo Web con Laravel y Vue',
-        'og'              => [
-            'title'       => 'ZaloSpace',
-            'type'        => 'article',
-            'url'         => env('APP_URL'),
-            'image'       => '',
+    'seo' => [
+        'author' => 'Gonzalo Pabón Flores',
+        'description' => 'Web personal de Gonzalo Pabón sobre tecnología y desarrollo web con Laravel y Vue',
+        'keywords' => 'Desarrollo Web con Laravel y Vue',
+        'og' => [
+            'title' => 'ZaloSpace',
+            'type' => 'article',
+            'url' => env('APP_URL'),
+            'image' => '',
             'description' => 'Web personal de Gonzalo Pabón sobre tecnología y desarrollo web con Laravel y Vue',
-        ]
+        ],
     ],
 
-   /*
+    /*
    |--------------------------------------------------------------------------
    | Forum
    |--------------------------------------------------------------------------
@@ -171,14 +171,14 @@ return [
    |
    */
 
-  'forum'                   => [
-        'enabled'           => false,
-        'default'           => 'disqus',
-        'services'          => [
-            'disqus'        => [
+    'forum' => [
+        'enabled' => false,
+        'default' => 'disqus',
+        'services' => [
+            'disqus' => [
                 'site_name' => '', // yoursite.disqus.com
-            ]
-        ]
+            ],
+        ],
     ],
 
     /*
@@ -202,7 +202,7 @@ return [
             'code-blocks' => [
                 'match' => '/\<pre\>(.|\n)*?<\/pre\>/',
                 'replacement' => '<code-block>',
-            ]
-        ]
-    ]
+            ],
+        ],
+    ],
 ];

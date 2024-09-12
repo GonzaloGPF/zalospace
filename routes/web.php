@@ -22,4 +22,3 @@ Route::get('/projects', [InfoController::class, 'projects'])->name('info.project
 Route::get('/configurator', [InfoController::class, 'configurator'])->name('info.configurator');
 
 Route::resource('contacts', ContactController::class)->only(['create', 'store']);
-

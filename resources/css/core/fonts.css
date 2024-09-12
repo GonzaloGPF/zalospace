@@ -1,19 +1,19 @@
 @font-face {
-    font-family: "Batman";
+    font-family: Batman;
     font-style: normal;
     src: url("/fonts/batman_forever_black.ttf") format("ttf"),
     url("/fonts/batman_forever_black.woff2") format("woff2")
 }
 
 @font-face {
-    font-family: "Cinzel";
+    font-family: Cinzel;
     font-style: normal;
     src: url("/fonts/Cinzel-VariableFont_wght.ttf") format("ttf"),
     url("/fonts/Cinzel-VariableFont_wght.woff2") format("woff2")
 }
 
 @font-face {
-    font-family: "Orbitron";
+    font-family: Orbitron;
     font-style: normal;
     src: url("/fonts/Orbitron-VariableFont_wght.ttf") format("ttf"),
     url("/fonts/Orbitron-VariableFont_wght.woff2") format("woff2")

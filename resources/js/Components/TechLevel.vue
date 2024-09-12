@@ -26,9 +26,10 @@ const getTechClass = (value) => {
   <div class="flex gap-1 min-h-6">
     <div
       v-for="levelValue in MAX_LEVEL"
-      class="w-2 h-4"
+      :key="levelValue"
       :title="label"
       :class="getTechClass(levelValue)"
+      class="w-2 h-4"
     />
   </div>
 </template>

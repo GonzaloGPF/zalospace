@@ -34,7 +34,7 @@ class ContactTest extends TestCase
 
         $flashMessageData = [
             'message' => tAction('sent', null, false),
-            'type' => Levels::SUCCESS->value
+            'type' => Levels::SUCCESS->value,
         ];
 
         $this->assertEquals($flashMessageData, session('flash_message_data'));

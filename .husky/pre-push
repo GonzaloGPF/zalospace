@@ -1,0 +1,7 @@
+export $(grep -v '^#' .env | xargs)
+
+service_name="${APP_CONTAINER}-${APP_SERVICE}-1"
+
+#docker exec ${service_name} php artisan test
+
+exit 0

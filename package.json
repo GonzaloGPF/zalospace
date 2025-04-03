@@ -23,7 +23,7 @@
     "globals": "^15.9.0",
     "husky": "^9.1.6",
     "laravel-vite-plugin": "^0.7.5",
-    "lint-staged": "^15.2.0",
+    "lint-staged": "^15.5.0",
     "postcss": "^8.4.18",
     "prettier": "^3.3.3",
     "stylelint": "^16.9.0",
@@ -49,6 +49,7 @@
     "resources/{js,vue}/**/*.{js,vue}": [
       "eslint --fix --ignore-path .gitignore"
     ],
+    "**/*.css": "stylelint --fix",
     "**/*.php": "./vendor/bin/pint --preset laravel"
   }
 }

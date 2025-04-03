@@ -93,7 +93,7 @@ const age = computed(() => {
     <AppPanel :title="Translator.tl('experience')" class="mt-5">
       <template #description>
         <p class="mb-3" v-text="Translator.t('help.experience')" />
-        <AppTimeline :items="jobs" class="w-100" />
+        <AppTimeline :items="jobs.reverse()" class="w-100" />
       </template>
     </AppPanel>
   </BaseLayout>

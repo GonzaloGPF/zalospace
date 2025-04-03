@@ -73,7 +73,7 @@ export default [
     name: TechNames.NUXT,
     url: 'https://nuxt.com/',
     image: '/images/technologies/nuxt.png',
-    level: LEVELS.MEDIUM,
+    level: LEVELS.EXPERT,
   },
   {
     name: TechNames.ANALYTICS,
@@ -181,7 +181,7 @@ export default [
     name: TechNames.VITEST,
     url: 'https://vitest.dev/',
     image: '/images/technologies/vitest.png',
-    level: LEVELS.MEDIUM,
+    level: LEVELS.ADVANCED,
   },
   {
     name: TechNames.LARAVEL,
@@ -277,7 +277,7 @@ export default [
     name: TechNames.NITRO,
     url: 'https://nitro.unjs.io/',
     image: '/images/technologies/nitro.png',
-    level: LEVELS.APPRENTICE,
+    level: LEVELS.MEDIUM,
   },
   {
     name: TechNames.STORYBOOK,

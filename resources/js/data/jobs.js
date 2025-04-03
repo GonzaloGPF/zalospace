@@ -79,7 +79,7 @@ export default computed(() => [
   {
     title: Translator.t('jobs.senior_frontend'),
     url: 'https://acierto.com//',
-    subtitle: Formatter.formatDiff('2022-02-01', new Date()),
+    subtitle: Formatter.formatDiff('2022-02-01', '2025-01-01'),
     urlLabel: 'Acierto',
     image: 'images/companies/acierto.png',
     paragraphs: [
@@ -88,6 +88,22 @@ export default computed(() => [
       Translator.t('jobs.acierto_3'),
       Translator.t('jobs.acierto_4'),
       Translator.t('jobs.acierto_5'),
+    ],
+  },
+  {
+    title: Translator.t('jobs.tech_lead'),
+    url: 'https://www.learningheroes.com/',
+    subtitle: Formatter.formatDiff('2025-01-01', new Date()),
+    urlLabel: 'Learning Heroes',
+    image: 'images/companies/learning-heroes.png',
+    paragraphs: [
+      Translator.t('jobs.learning_heroes_1'),
+      Translator.t('jobs.learning_heroes_2'),
+      Translator.t('jobs.learning_heroes_3'),
+      Translator.t('jobs.learning_heroes_4'),
+      Translator.t('jobs.learning_heroes_5'),
+      Translator.t('jobs.learning_heroes_6'),
+      Translator.t('jobs.learning_heroes_7'),
     ],
   },
 ])

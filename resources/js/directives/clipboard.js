@@ -2,7 +2,8 @@ import Translator from '@/objects/Translator'
 
 export default {
   beforeMount: (el, binding) => {
-    if (!window.isSecureContext) { // Only in https context
+    if (!window.isSecureContext) {
+      // Only in https context
       el.classList.add('d-none')
       return
     }
@@ -13,7 +14,7 @@ export default {
 
     el.addEventListener('click', el.copyToClipboard)
   },
-  unmounted: el => {
+  unmounted: (el) => {
     el.removeEventListener('click', el.copyToClipboard)
-  }
+  },
 }

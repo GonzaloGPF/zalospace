@@ -1,112 +1,122 @@
 <script setup>
-import { computed } from 'vue';
-import AppSvg from '@/Components/core/AppSvg.vue';
-import colors from '@/config/colors.js';
-import { router } from '@inertiajs/vue3';
+import { computed } from 'vue'
+import AppSvg from '@/Components/core/AppSvg.vue'
+import colors from '@/config/colors.js'
+import { router } from '@inertiajs/vue3'
 
-defineEmits(['click']);
+defineEmits(['click'])
 const props = defineProps({
-    type: {
-        type: String,
-        default: 'button',
-    },
-    variant: {
-        type: String,
-        default: null,
-        validator: (value) => ['plain'].includes(value)
-    },
-    aspect: {
-        type: String,
-        default: null,
-        validator: (value) => ['success', 'warning', 'info', 'danger'].includes(value)
-    },
-    icon: {
-        type: String,
-        default: null
-    },
-    label: {
-        type: String,
-        default: null
-    },
-    title: {
-        type: String,
-        default: null
-    },
-    radius: {
-        type: String,
-        default: null,
-        validator: (value) => ['none', 'sm', 'md', 'lg', 'xl'].includes(value)
-    },
-    circle: {
-        type: Boolean,
-        default: null
-    },
-    stacked: {
-        type: Boolean,
-        default: null
-    },
-    loading: {
-        type: Boolean,
-        default: null
-    },
-    disabled: {
-        type: Boolean,
-        default: null
-    },
-    to: {
-        type: String,
-        default: null
-    }
-});
+  type: {
+    type: String,
+    default: 'button',
+  },
+  variant: {
+    type: String,
+    default: null,
+    validator: (value) => ['plain'].includes(value),
+  },
+  aspect: {
+    type: String,
+    default: null,
+    validator: (value) =>
+      ['success', 'warning', 'info', 'danger'].includes(value),
+  },
+  icon: {
+    type: String,
+    default: null,
+  },
+  label: {
+    type: String,
+    default: null,
+  },
+  title: {
+    type: String,
+    default: null,
+  },
+  radius: {
+    type: String,
+    default: null,
+    validator: (value) => ['none', 'sm', 'md', 'lg', 'xl'].includes(value),
+  },
+  circle: {
+    type: Boolean,
+    default: null,
+  },
+  stacked: {
+    type: Boolean,
+    default: null,
+  },
+  loading: {
+    type: Boolean,
+    default: null,
+  },
+  disabled: {
+    type: Boolean,
+    default: null,
+  },
+  to: {
+    type: String,
+    default: null,
+  },
+})
 const border = computed(() => {
-    if (props.variant === 'plain') {
-        return;
-    }
+  if (props.variant === 'plain') {
+    return
+  }
 
-    return `border ${colors.getBorderColor(props.aspect)}`;
-});
+  return `border ${colors.getBorderColor(props.aspect)}`
+})
 const borderRadius = computed(() => {
-    if (props.circle) {
-        return 'w-14 h-14 rounded-full';
-    }
+  if (props.circle) {
+    return 'w-14 h-14 rounded-full'
+  }
 
-    const borders = {
-        none: 'rounded-none',
-        sm: 'rounded-sm',
-        md: 'rounded-md',
-        lg: 'rounded-lg',
-        xl: 'rounded-xl',
-        full: 'rounded-full',
-    }
+  const borders = {
+    none: 'rounded-none',
+    sm: 'rounded-sm',
+    md: 'rounded-md',
+    lg: 'rounded-lg',
+    xl: 'rounded-xl',
+    full: 'rounded-full',
+  }
 
-    return borders[props.radius] || 'rounded';
-});
+  return borders[props.radius] || 'rounded'
+})
 const bgColor = computed(() => {
-    return colors.getBgColor(props.aspect, 'bg-white dark:bg-gray-800');
-});
+  return colors.getBgColor(props.aspect, 'bg-white dark:bg-gray-800')
+})
 const bgColorHover = computed(() => {
-    return colors.getBgHoverColor(props.aspect);
+  return colors.getBgHoverColor(props.aspect)
 })
 const textColor = computed(() => {
-    return colors.getTextColor(props.aspect, 'text-gray-700 dark:text-gray-300');
-});
+  return colors.getTextColor(props.aspect, 'text-gray-700 dark:text-gray-300')
+})
 const flexDirection = computed(() => {
-    if (props.stacked) {
-        return 'flex flex-col';
-    }
+  if (props.stacked) {
+    return 'flex flex-col'
+  }
 
-    return 'inline-flex';
-});
+  return 'inline-flex'
+})
 const shadow = computed(() => {
-    if (props.variant === 'plain') {
-        return;
-    }
+  if (props.variant === 'plain') {
+    return
+  }
 
-    return 'shadow-sm';
-});
-const loadingClass = computed(() => props.loading ? 'opacity-25' : null);
+  return 'shadow-sm'
+})
+const loadingClass = computed(() => (props.loading ? 'opacity-25' : null))
 
-const classes = computed(() => [flexDirection.value, bgColor.value, bgColorHover.value, border.value, textColor.value, borderRadius.value, shadow.value, loadingClass.value]);
+const classes = computed(() => [
+  flexDirection.value,
+  bgColor.value,
+  bgColorHover.value,
+  border.value,
+  textColor.value,
+  borderRadius.value,
+  shadow.value,
+  loadingClass.value,
+])
 </script>
 <template>
   <button

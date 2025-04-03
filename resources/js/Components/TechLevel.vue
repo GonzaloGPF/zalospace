@@ -1,6 +1,6 @@
 <script setup>
 import Translator from '@/objects/Translator.js'
-import {computed} from 'vue'
+import { computed } from 'vue'
 
 const props = defineProps(['technology'])
 const MAX_LEVEL = 5

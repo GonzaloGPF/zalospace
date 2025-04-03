@@ -8,38 +8,28 @@ import TopMenu from '@/Components/menu/TopMenu.vue'
 defineProps({
   title: {
     type: String,
-    default: null
+    default: null,
   },
   description: {
     type: String,
-    default: null
+    default: null,
   },
   icon: {
     type: String,
-    default: null
-  }
+    default: null,
+  },
 })
 </script>
 <template>
   <div
     class="relative sm:flex flex-col sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-blue-800 selection:text-white"
   >
-    <Head
-      v-if="title"
-      :title="title"
-    />
+    <Head v-if="title" :title="title" />
     <app-flash-messages />
     <TopMenu />
-    <header
-      v-if="description"
-      class="pt-5 mt-6 md:mt-12"
-    >
+    <header v-if="description" class="pt-5 mt-6 md:mt-12">
       <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-        <AppCard
-          :title="title"
-          :description="description"
-          :icon="icon"
-        />
+        <AppCard :title="title" :description="description" :icon="icon" />
       </div>
     </header>
     <Transition
@@ -50,10 +40,7 @@ defineProps({
       class="transition ease-in-out duration-500 flex-1"
       appear
     >
-      <main
-        :key="$page.component"
-        class="container mx-auto"
-      >
+      <main :key="$page.component" class="container mx-auto">
         <div class="px-6 lg:px-8 mb-auto text-gray-900 dark:text-white pt-16">
           <slot />
         </div>

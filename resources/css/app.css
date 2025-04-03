@@ -1,4 +1,4 @@
-@import "./core/fonts.css";
+@import './core/fonts.css';
 
 @tailwind base;
 @tailwind components;
@@ -6,14 +6,14 @@
 
 .page-enter-active,
 .page-leave-active {
-    transition: all .1s;
+  transition: all 0.1s;
 }
 
 .page-enter,
 .page-leave-active {
-    opacity: 0;
+  opacity: 0;
 }
 
 .link {
-    @apply font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-blue-500
+  @apply font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-blue-500;
 }

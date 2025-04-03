@@ -8,12 +8,12 @@ import TechLevel from '@/Components/TechLevel.vue'
 const props = defineProps({
   technologies: {
     type: Array,
-    default: null
+    default: null,
   },
   limit: {
     type: Number,
-    default: 6
-  }
+    default: 6,
+  },
 })
 const viewMore = ref(false)
 const vLimit = computed(() => {
@@ -23,13 +23,12 @@ const vLimit = computed(() => {
 
   return props.limit ?? props.technologies.length
 })
-const vTechnologies = computed(() => _
-  .chain(props.technologies)
-  .orderBy(['level.value', 'level.name'], ['desc'])
-  .slice(0, +vLimit.value)
-  .value()
+const vTechnologies = computed(() =>
+  _.chain(props.technologies)
+    .orderBy(['level.value', 'level.name'], ['desc'])
+    .slice(0, +vLimit.value)
+    .value()
 )
-
 </script>
 <template>
   <div>
@@ -66,13 +65,12 @@ const vTechnologies = computed(() => _
                 :alt="technology.name"
                 class="mx-auto rounded-lg"
                 width="50"
-              >
+              />
               <span v-text="technology.name" />
             </div>
           </a>
           <TechLevel :technology="technology" />
         </div>
-
       </TransitionGroup>
     </div>
   </div>
@@ -81,11 +79,11 @@ const vTechnologies = computed(() => _
 .technology-move,
 .technology-enter-active,
 .technology-leave-active {
-    transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .technology-enter-from,
 .technology-leave-to {
-    opacity: 0;
+  opacity: 0;
 }
 </style>

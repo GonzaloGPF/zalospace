@@ -8,7 +8,8 @@ import ContactButton from '@/Components/buttons/ContactButton.vue'
 </script>
 <template>
   <div
-    class="flex items-center dark:border-gray-700 fixed top-0 right-0 text-right bg-blue-950 dark:bg-gray-800 w-full px-2 md:px-5 z-10 drop-shadow-md">
+    class="flex items-center dark:border-gray-700 fixed top-0 right-0 text-right bg-blue-950 dark:bg-gray-800 w-full px-2 md:px-5 z-10 drop-shadow-md"
+  >
     <app-link
       :href="route('welcome')"
       :title="globalConfig.getAppName()"
@@ -18,14 +19,14 @@ import ContactButton from '@/Components/buttons/ContactButton.vue'
         icon="logo"
         :height="300"
         :width="300"
-        :scale-x=".125"
-        :scale-y=".125"
+        :scale-x="0.125"
+        :scale-y="0.125"
         color="#0e4178ff"
         class="rounded-full bg-white mr-1"
       />
     </app-link>
-    <app-navigation class="flex-1"/>
-    <contact-button class="my-1 mr-2"/>
-    <language-button class="my-1"/>
+    <app-navigation class="flex-1" />
+    <contact-button class="my-1 mr-2" />
+    <language-button class="my-1" />
   </div>
 </template>

@@ -5,11 +5,11 @@ import { Link } from '@inertiajs/vue3'
 const props = defineProps({
   href: {
     type: String,
-    required: true
+    required: true,
   },
   active: {
-    type: Boolean
-  }
+    type: Boolean,
+  },
 })
 
 const classes = computed(() =>
@@ -20,10 +20,7 @@ const classes = computed(() =>
 </script>
 
 <template>
-  <Link
-    :href="href"
-    :class="classes"
-  >
+  <Link :href="href" :class="classes">
     <slot />
   </Link>
 </template>

@@ -1,19 +1,25 @@
-import { getActiveLanguage, I18n, loadLanguageAsync, trans, transChoice } from 'laravel-vue-i18n'
+import {
+  getActiveLanguage,
+  I18n,
+  loadLanguageAsync,
+  trans,
+  transChoice,
+} from 'laravel-vue-i18n'
 import Formatter from '@/objects/Formatter'
 import { es } from 'date-fns/locale'
 
 const Translator = {
   getLocale: () => getActiveLanguage(),
 
-  getDateLocale () {
+  getDateLocale() {
     const locales = {
-      es
+      es,
     }
 
     return locales[Translator.getLocale()]
   },
 
-  setLocale (locale) {
+  setLocale(locale) {
     if (!locale) return
 
     document.documentElement.setAttribute('lang', locale)
@@ -24,11 +30,11 @@ const Translator = {
   t: (string, options = {}) => trans(string, options),
 
   /**
-     * Translates an attribute
-     *
-     * @param {string} attribute
-     * @returns {string}
-     */
+   * Translates an attribute
+   *
+   * @param {string} attribute
+   * @returns {string}
+   */
   ta: (attribute) => {
     if (!attribute) return ''
 
@@ -36,12 +42,12 @@ const Translator = {
   },
 
   /**
-     * Translates a label
-     *
-     * @param {string} label
-     * @param {*} options
-     * @returns {string}
-     */
+   * Translates a label
+   *
+   * @param {string} label
+   * @param {*} options
+   * @returns {string}
+   */
   tl: (label, options = {}) => {
     if (!label) return ''
 
@@ -49,31 +55,33 @@ const Translator = {
   },
 
   /**
-     * Translate
-     *
-     * @param {string} path
-     * @param {number} choice
-     * @returns {string}
-     */
+   * Translate
+   *
+   * @param {string} path
+   * @param {number} choice
+   * @returns {string}
+   */
   tc: (path, choice = 1) => transChoice(path, choice),
 
   /**
-     * Checks if given translation exists
-     *
-     * @param {string} path
-     */
+   * Checks if given translation exists
+   *
+   * @param {string} path
+   */
   te: (path) => {
-    const translations = Object.keys(I18n.getSharedInstance().activeMessages || {})
+    const translations = Object.keys(
+      I18n.getSharedInstance().activeMessages || {}
+    )
     return translations.includes(path)
   },
 
   /**
-     * Translates a Constant value
-     *
-     * @param constant
-     * @param {string} value
-     * @returns {string}
-     */
+   * Translates a Constant value
+   *
+   * @param constant
+   * @param {string} value
+   * @returns {string}
+   */
   tConstName: (constant, value) => {
     if (!value) return ''
 
@@ -83,11 +91,11 @@ const Translator = {
   },
 
   /**
-     * Tries to translate a value looking for everywhere posible
-     * @param {string} string
-     * @param {boolean} plural
-     * @returns {string}
-     */
+   * Tries to translate a value looking for everywhere posible
+   * @param {string} string
+   * @param {boolean} plural
+   * @returns {string}
+   */
   translate: (string, plural = false) => {
     if (Translator.te(`labels.${string}`)) {
       return Translator.tl(string)
@@ -112,28 +120,31 @@ const Translator = {
   },
 
   /**
-     * Translates an Enum
-     *
-     * @returns {string}
-     * @param model
-     * @param plural
-     */
+   * Translates an Enum
+   *
+   * @returns {string}
+   * @param model
+   * @param plural
+   */
   constantTitle: (model, plural = false) => {
     if (!model) return ''
 
     const snakeModel = Formatter.snakeCase(model)
     const singularModel = Formatter.singular(snakeModel)
 
-    return Translator.tc(`constants.${singularModel}.${singularModel}`, plural ? 2 : 1)
+    return Translator.tc(
+      `constants.${singularModel}.${singularModel}`,
+      plural ? 2 : 1
+    )
   },
 
   /**
-     * Translates a model name.
-     *
-     * @param {string} model
-     * @param {boolean} plural
-     * @returns {string}
-     */
+   * Translates a model name.
+   *
+   * @param {string} model
+   * @param {boolean} plural
+   * @returns {string}
+   */
   modelTitle: (model, plural = false) => {
     if (!model) return ''
 
@@ -143,14 +154,14 @@ const Translator = {
     return Translator.tc(`models.${singularModel}`, plural ? 2 : 1)
   },
   /**
-     * Translation for a specific verb and model
-     *
-     * @param {string} action
-     * @param female
-     * @param {string|null} model
-     * @param plural
-     * @returns {string}
-     */
+   * Translation for a specific verb and model
+   *
+   * @param {string} action
+   * @param female
+   * @param {string|null} model
+   * @param plural
+   * @returns {string}
+   */
   actionTitle: (action, model = null, female = null, plural = false) => {
     let translatedAction
 
@@ -162,13 +173,14 @@ const Translator = {
 
     if (model) {
       const translatedModel = Translator.modelTitle(model, plural)
-      translatedAction = female === null
-        ? `${translatedAction} ${translatedModel}`
-        : `${translatedModel} ${translatedAction}`
+      translatedAction =
+        female === null
+          ? `${translatedAction} ${translatedModel}`
+          : `${translatedModel} ${translatedAction}`
     }
 
     return translatedAction
-  }
+  },
 }
 
 export default Translator

@@ -25,45 +25,44 @@ const Utils = {
   // },
 
   /**
-     * Deep copy of an Object. You can pass an except array to remove desired keys
-     *
-     * @param obj
-     * @param except
-     * @returns {any}
-     */
+   * Deep copy of an Object. You can pass an except array to remove desired keys
+   *
+   * @param obj
+   * @param except
+   * @returns {any}
+   */
   copy: (obj, except = []) => {
     const result = { ...obj }
 
-    except.forEach(key => delete result[key])
+    except.forEach((key) => delete result[key])
 
     return JSON.parse(JSON.stringify(result)) // This destroys File variables
   },
 
   /**
-     * Returns the given object, removing all keys with empty values
-     * @param obj
-     * @returns {{}|*}
-     */
+   * Returns the given object, removing all keys with empty values
+   * @param obj
+   * @returns {{}|*}
+   */
   removeEmpty: (obj) => {
     if (!obj) return {}
 
     obj = JSON.parse(JSON.stringify(obj)) // deep clone
 
-    Object
-      .keys(obj)
-      .forEach(k =>
-        ((obj[k] && typeof obj[k] === 'object') && Utils.removeEmpty(obj[k])) ||
-            (Utils.isEmptyValue(obj[k]) && delete obj[k])
-      )
+    Object.keys(obj).forEach(
+      (k) =>
+        (obj[k] && typeof obj[k] === 'object' && Utils.removeEmpty(obj[k])) ||
+        (Utils.isEmptyValue(obj[k]) && delete obj[k])
+    )
 
     return obj
   },
 
   /**
-     * Checks if a given value is empty
-     * @param value
-     * @returns {boolean}
-     */
+   * Checks if a given value is empty
+   * @param value
+   * @returns {boolean}
+   */
   isEmptyValue: (value) => {
     if (Array.isArray(value)) return value.length === 0
 
@@ -71,21 +70,21 @@ const Utils = {
   },
 
   /**
-     *
-     * @param obj1
-     * @param obj2
-     * @returns {boolean}
-     */
+   *
+   * @param obj1
+   * @param obj2
+   * @returns {boolean}
+   */
   areEquals: (obj1, obj2) => {
     return _.isEqual(Utils.removeEmpty(obj1), Utils.removeEmpty(obj2))
   },
 
   /**
-     *
-     * @param file
-     * @param {boolean} cacheBreaking
-     * @returns {string|null}
-     */
+   *
+   * @param file
+   * @param {boolean} cacheBreaking
+   * @returns {string|null}
+   */
   getFileURL: (file, cacheBreaking = false) => {
     if (!file) return Utils.getFullUrl('/images/logo.svg')
 
@@ -113,8 +112,8 @@ const Utils = {
   },
 
   /**
-     * @param {string} path
-     */
+   * @param {string} path
+   */
   getFullUrl: (path) => {
     if (!path) return ''
 
@@ -132,10 +131,10 @@ const Utils = {
   },
 
   /**
-     *
-     * @param path
-     * @returns {Promise<unknown>|boolean}
-     */
+   *
+   * @param path
+   * @returns {Promise<unknown>|boolean}
+   */
   openTab: (path) => {
     if (!path) {
       return false
@@ -153,14 +152,14 @@ const Utils = {
 
     tab.focus()
 
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
       tab.addEventListener('beforeunload', () => resolve())
     })
   },
 
   isSamePath: (path) => {
     return new URL(path).pathname === window.location.pathname
-  }
+  },
 }
 
 export default Utils

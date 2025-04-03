@@ -9,7 +9,7 @@ import {
   intervalToDuration,
   isAfter,
   isValid,
-  parse
+  parse,
 } from 'date-fns'
 import { enGB, es, fr, pt, ru } from 'date-fns/locale'
 import locales from '@/config/locales'
@@ -20,26 +20,26 @@ const dateLocales = {
   enGB,
   fr,
   pt,
-  ru
+  ru,
 }
 
 const Time = {
-  isAfter (dateA, dateB) {
+  isAfter(dateA, dateB) {
     dateA = Time.parse(dateA)
     dateB = Time.parse(dateB)
 
     return isAfter(dateA, dateB)
   },
 
-  addSeconds (value, amount) {
+  addSeconds(value, amount) {
     return addSeconds(value, amount)
   },
 
-  addMonths (value, amount) {
+  addMonths(value, amount) {
     return addMonths(value, amount)
   },
 
-  differenceInMonths (dateA, dateB) {
+  differenceInMonths(dateA, dateB) {
     dateA = Time.parse(dateA)
     dateB = Time.parse(dateB)
 
@@ -50,7 +50,7 @@ const Time = {
     return differenceInMonths(dateA, dateB)
   },
 
-  differenceInYears (dateA, dateB) {
+  differenceInYears(dateA, dateB) {
     dateA = Time.parse(dateA)
     dateB = Time.parse(dateB)
 
@@ -62,44 +62,45 @@ const Time = {
   },
 
   /**
-     * @param start
-     * @param end
-     * @returns {Duration}
-     */
-  getDuration (start, end) {
+   * @param start
+   * @param end
+   * @returns {Duration}
+   */
+  getDuration(start, end) {
     return intervalToDuration({
       start: Time.parse(start),
-      end: Time.parse(end)
+      end: Time.parse(end),
     })
   },
 
   /**
-     *
-     * @param {Duration} duration
-     * @param options
-     * @returns {string}
-     */
-  formatDuration (duration, options) {
+   *
+   * @param {Duration} duration
+   * @param options
+   * @returns {string}
+   */
+  formatDuration(duration, options) {
     return formatDuration(duration, options)
   },
 
   /**
-     * Tries to create a Date object from given value
-     *
-     * @param {Date|string} value
-     * @returns {Date|null}
-     */
-  parse (value) {
+   * Tries to create a Date object from given value
+   *
+   * @param {Date|string} value
+   * @returns {Date|null}
+   */
+  parse(value) {
     if (!value) {
       return null
     }
 
     let parsedDate = new Date(value)
 
-    if (!isValid(parsedDate)) { // it assumes given date is in UTC
+    if (!isValid(parsedDate)) {
+      // it assumes given date is in UTC
       parsedDate = locales.dateFormats
-        .map(format => parse(value, format, Time.now()))
-        .filter(date => isValid(date))
+        .map((format) => parse(value, format, Time.now()))
+        .filter((date) => isValid(date))
         .shift()
     }
 
@@ -111,9 +112,9 @@ const Time = {
   },
 
   /**
-     * @returns {Date}
-     */
-  now (args = null) {
+   * @returns {Date}
+   */
+  now(args = null) {
     if (args) {
       return new Date(args)
     } else {
@@ -122,14 +123,14 @@ const Time = {
   },
 
   /**
-     * Returns a string with formatted date
-     *
-     * @param {Date|string} value
-     * @param humanize
-     * @param customFormat
-     * @returns {string|null}
-     */
-  format (value, humanize = false, customFormat = null) {
+   * Returns a string with formatted date
+   *
+   * @param {Date|string} value
+   * @param humanize
+   * @param customFormat
+   * @returns {string|null}
+   */
+  format(value, humanize = false, customFormat = null) {
     const parsedDate = Time.parse(value)
 
     if (!parsedDate) {
@@ -138,13 +139,13 @@ const Time = {
 
     const options = {
       locale: dateLocales[locales.getLocale()],
-      includeSeconds: true
+      includeSeconds: true,
     }
 
     return humanize
       ? formatDistanceToNow(parsedDate, options)
       : format(parsedDate, customFormat || locales.dateFormat, options)
-  }
+  },
 }
 
 export default Time

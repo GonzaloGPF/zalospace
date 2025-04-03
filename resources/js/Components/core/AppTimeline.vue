@@ -1,12 +1,12 @@
 <script setup>
-import AppTimeLineItem from '@/Components/core/AppTimeLineItem.vue';
+import AppTimeLineItem from '@/Components/core/AppTimeLineItem.vue'
 
 defineProps({
-    items: {
-        type: Array,
-        default: null
-    }
-});
+  items: {
+    type: Array,
+    default: null,
+  },
+})
 </script>
 <template>
   <ol class="flex flex-col space-y-8 list-disc">

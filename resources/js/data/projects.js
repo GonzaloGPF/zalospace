@@ -3,8 +3,8 @@ import Translator from '@/objects/Translator.js'
 import { computed } from 'vue'
 import technologies, { TechNames } from '@/data/technologies.js'
 
-function only (names) {
-  return technologies.filter(tech => names.includes(tech.name))
+function only(names) {
+  return technologies.filter((tech) => names.includes(tech.name))
 }
 
 export default computed(() => [
@@ -16,9 +16,21 @@ export default computed(() => [
     paragraphs: [
       Translator.t('projects.zalospace_v2_1'),
       Translator.t('projects.zalospace_v2_2'),
-      Translator.t('projects.zalospace_v2_3')
+      Translator.t('projects.zalospace_v2_3'),
     ],
-    technologies: only([TechNames.PHP, TechNames.VUE, TechNames.TAILWINDCSS, TechNames.AWS, TechNames.ANALYTICS, TechNames.FORGE, TechNames.INERTIAJS, TechNames.PHPUNIT, TechNames.GSAP, TechNames.VITE, TechNames.GIT])
+    technologies: only([
+      TechNames.PHP,
+      TechNames.VUE,
+      TechNames.TAILWINDCSS,
+      TechNames.AWS,
+      TechNames.ANALYTICS,
+      TechNames.FORGE,
+      TechNames.INERTIAJS,
+      TechNames.PHPUNIT,
+      TechNames.GSAP,
+      TechNames.VITE,
+      TechNames.GIT,
+    ]),
   },
   {
     title: 'Talent Battles',
@@ -32,9 +44,30 @@ export default computed(() => [
       Translator.t('projects.talentbattles_4'),
       Translator.t('projects.talentbattles_5'),
       Translator.t('projects.talentbattles_6'),
-      Translator.t('projects.talentbattles_7')
+      Translator.t('projects.talentbattles_7'),
     ],
-    technologies: only([TechNames.PHP, TechNames.VUE, TechNames.TAILWINDCSS, TechNames.AWS, TechNames.ANALYTICS, TechNames.FORGE, TechNames.HORIZON, TechNames.PHPUNIT, TechNames.GSAP, TechNames.AMPLITUDEJS, TechNames.D3, TechNames.LARECIPE, TechNames.SASS, TechNames.STRIPE, TechNames.MYSQL, TechNames.VITE, TechNames.VUETIFY, TechNames.GIT, TechNames.WEBSOCKETS, TechNames.PUSHER])
+    technologies: only([
+      TechNames.PHP,
+      TechNames.VUE,
+      TechNames.TAILWINDCSS,
+      TechNames.AWS,
+      TechNames.ANALYTICS,
+      TechNames.FORGE,
+      TechNames.HORIZON,
+      TechNames.PHPUNIT,
+      TechNames.GSAP,
+      TechNames.AMPLITUDEJS,
+      TechNames.D3,
+      TechNames.LARECIPE,
+      TechNames.SASS,
+      TechNames.STRIPE,
+      TechNames.MYSQL,
+      TechNames.VITE,
+      TechNames.VUETIFY,
+      TechNames.GIT,
+      TechNames.WEBSOCKETS,
+      TechNames.PUSHER,
+    ]),
   },
   {
     title: 'Pegasus',
@@ -46,9 +79,26 @@ export default computed(() => [
       Translator.t('projects.pegasus_2'),
       Translator.t('projects.pegasus_3'),
       Translator.t('projects.pegasus_4'),
-      Translator.t('projects.pegasus_5')
+      Translator.t('projects.pegasus_5'),
     ],
-    technologies: only([TechNames.PHP, TechNames.VUE, TechNames.TAILWINDCSS, TechNames.AWS, TechNames.HIGHCHARTS, TechNames.FORGE, TechNames.HORIZON, TechNames.PHPUNIT, TechNames.SCRIBE, TechNames.SASS, TechNames.MYSQL, TechNames.VITE, TechNames.VUETIFY, TechNames.GIT, TechNames.WEBSOCKETS, TechNames.PUSHER])
+    technologies: only([
+      TechNames.PHP,
+      TechNames.VUE,
+      TechNames.TAILWINDCSS,
+      TechNames.AWS,
+      TechNames.HIGHCHARTS,
+      TechNames.FORGE,
+      TechNames.HORIZON,
+      TechNames.PHPUNIT,
+      TechNames.SCRIBE,
+      TechNames.SASS,
+      TechNames.MYSQL,
+      TechNames.VITE,
+      TechNames.VUETIFY,
+      TechNames.GIT,
+      TechNames.WEBSOCKETS,
+      TechNames.PUSHER,
+    ]),
   },
   {
     title: 'Asamblea Real Madrid',
@@ -58,9 +108,9 @@ export default computed(() => [
       Translator.t('projects.real_madrid_1'),
       Translator.t('projects.real_madrid_2'),
       Translator.t('projects.real_madrid_3'),
-      Translator.t('projects.real_madrid_4')
+      Translator.t('projects.real_madrid_4'),
     ],
-    technologies: only([TechNames.PHP, TechNames.VUE, TechNames.MYSQL])
+    technologies: only([TechNames.PHP, TechNames.VUE, TechNames.MYSQL]),
   },
   {
     title: 'System Engineering Tier 1',
@@ -70,9 +120,14 @@ export default computed(() => [
       Translator.t('projects.set1_1'),
       Translator.t('projects.set1_2'),
       Translator.t('projects.set1_3'),
-      Translator.t('projects.set1_4')
+      Translator.t('projects.set1_4'),
     ],
-    technologies: only([TechNames.PHP, TechNames.VUE, TechNames.HIGHCHARTS, TechNames.MYSQL])
+    technologies: only([
+      TechNames.PHP,
+      TechNames.VUE,
+      TechNames.HIGHCHARTS,
+      TechNames.MYSQL,
+    ]),
   },
   {
     title: 'ZaloSpace',
@@ -82,9 +137,16 @@ export default computed(() => [
       Translator.t('projects.zalospace_1'),
       Translator.t('projects.zalospace_2'),
       Translator.t('projects.zalospace_3'),
-      Translator.t('projects.zalospace_4')
+      Translator.t('projects.zalospace_4'),
     ],
-    technologies: only([TechNames.PHP, TechNames.VUE, TechNames.GSAP, TechNames.MYSQL, TechNames.ANALYTICS, TechNames.BOOTSTRAP])
+    technologies: only([
+      TechNames.PHP,
+      TechNames.VUE,
+      TechNames.GSAP,
+      TechNames.MYSQL,
+      TechNames.ANALYTICS,
+      TechNames.BOOTSTRAP,
+    ]),
   },
   {
     title: 'Control Bluetooth Programable',
@@ -95,9 +157,9 @@ export default computed(() => [
       Translator.t('projects.bt_android_2'),
       Translator.t('projects.bt_android_3'),
       Translator.t('projects.bt_android_4'),
-      Translator.t('projects.bt_android_5')
+      Translator.t('projects.bt_android_5'),
     ],
-    technologies: only([TechNames.ANDROID])
+    technologies: only([TechNames.ANDROID]),
   },
   {
     title: 'Vehículo Arduino',
@@ -114,9 +176,9 @@ export default computed(() => [
       Translator.t('projects.arduino_8'),
       Translator.t('projects.arduino_9'),
       Translator.t('projects.arduino_10'),
-      Translator.t('projects.arduino_11')
+      Translator.t('projects.arduino_11'),
     ],
-    technologies: only([TechNames.ARDUINO])
+    technologies: only([TechNames.ARDUINO]),
   },
   {
     title: 'Cannon Defense',
@@ -124,8 +186,8 @@ export default computed(() => [
     image: 'images/projects/cannon_defense.png',
     paragraphs: [
       Translator.t('projects.cannon_defense_1'),
-      Translator.t('projects.cannon_defense_2')
+      Translator.t('projects.cannon_defense_2'),
     ],
-    technologies: only([TechNames.CREATEJS])
-  }
+    technologies: only([TechNames.CREATEJS]),
+  },
 ])

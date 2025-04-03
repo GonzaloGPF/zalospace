@@ -4,7 +4,7 @@ import tailwindConfig from '@/../../tailwind.config.js'
 
 const fullConfig = resolveConfig(tailwindConfig)
 
-export default function useTailwind () {
+export default function useTailwind() {
   const screenWidth = ref(window.innerWidth)
   const isResizing = ref(false)
 
@@ -17,7 +17,8 @@ export default function useTailwind () {
   const isMobile = computed(() => screenWidth.value <= getBreakpoint('md'))
   const isLg = computed(() => screenWidth.value >= getBreakpoint('lg'))
 
-  const getBreakpoint = (breakpointName) => parseInt(fullConfig.theme.screens[breakpointName])
+  const getBreakpoint = (breakpointName) =>
+    parseInt(fullConfig.theme.screens[breakpointName])
 
   watch(screenWidth, () => {
     isResizing.value = true
@@ -36,6 +37,6 @@ export default function useTailwind () {
     isMobile,
     isLg,
     isResizing,
-    getBreakpoint
+    getBreakpoint,
   }
 }

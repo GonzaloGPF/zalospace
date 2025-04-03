@@ -6,6 +6,7 @@
     "js-lint": "./node_modules/.bin/eslint ./resources/js/**/*.vue ./resources/js/**/*.js --fix",
     "style-lint": "./node_modules/.bin/stylelint resources/css/**/* --fix",
     "php-lint": "./vendor/bin/pint --preset laravel ./**/*.php",
+    "prettier": "prettier --write . --fix",
     "dev": "vite",
     "build": "vite build",
     "prepare": "husky"

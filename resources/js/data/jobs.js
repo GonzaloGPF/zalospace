@@ -13,7 +13,7 @@ export default computed(() => [
       Translator.t('jobs.salsero_app_1'),
       Translator.t('jobs.salsero_app_2'),
       Translator.t('jobs.salsero_app_3'),
-    ]
+    ],
   },
   {
     title: Translator.t('jobs.qa_tester_engineer'),
@@ -25,7 +25,7 @@ export default computed(() => [
       Translator.t('jobs.sopra_steria_1'),
       Translator.t('jobs.sopra_steria_2'),
       Translator.t('jobs.sopra_steria_3'),
-    ]
+    ],
   },
   {
     title: Translator.t('jobs.fullstack_developer'),
@@ -39,7 +39,7 @@ export default computed(() => [
       Translator.t('jobs.indra_3'),
       Translator.t('jobs.indra_4'),
       Translator.t('jobs.indra_5'),
-    ]
+    ],
   },
   {
     title: Translator.t('jobs.web_developer'),
@@ -47,10 +47,7 @@ export default computed(() => [
     subtitle: Formatter.formatDiff('2017-03-01', '2017-06-01'),
     urlLabel: 'Boream',
     image: 'images/companies/boream.png',
-    paragraphs: [
-      Translator.t('jobs.boream_1'),
-      Translator.t('jobs.boream_2'),
-    ]
+    paragraphs: [Translator.t('jobs.boream_1'), Translator.t('jobs.boream_2')],
   },
   {
     title: Translator.t('jobs.fullstack_developer'),
@@ -62,7 +59,7 @@ export default computed(() => [
       Translator.t('jobs.eugen_1'),
       Translator.t('jobs.eugen_2'),
       Translator.t('jobs.eugen_3'),
-    ]
+    ],
   },
   {
     title: Translator.t('jobs.fullstack_developer'),
@@ -77,7 +74,7 @@ export default computed(() => [
       Translator.t('jobs.mobius_4'),
       Translator.t('jobs.mobius_5'),
       Translator.t('jobs.mobius_6'),
-    ]
+    ],
   },
   {
     title: Translator.t('jobs.senior_frontend'),
@@ -91,6 +88,6 @@ export default computed(() => [
       Translator.t('jobs.acierto_3'),
       Translator.t('jobs.acierto_4'),
       Translator.t('jobs.acierto_5'),
-    ]
-  }
+    ],
+  },
 ])

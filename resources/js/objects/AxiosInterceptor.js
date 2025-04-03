@@ -13,20 +13,20 @@ const REQUEST_ENTITY_TOO_LARGE = 413
 const UNPROCESSABLE_ENTITY = 422
 
 export default class AxiosInterceptor {
-  constructor (axiosInstance) {
+  constructor(axiosInstance) {
     this.axiosInstance = axiosInstance
   }
 
-  async getRequestInterceptor () {
-    return request => {
+  async getRequestInterceptor() {
+    return (request) => {
       request.headers.common['Accept-Language'] = Translator.getLocale()
       request.headers.common['X-Requested-With'] = 'XMLHttpRequest'
       // request.headers['X-Socket-Id'] = authStore.sockedId;
     }
   }
 
-  getResponseInterceptor () {
-    return response => {
+  getResponseInterceptor() {
+    return (response) => {
       const status = response.status
       const { message } = response.data
 
@@ -34,21 +34,25 @@ export default class AxiosInterceptor {
         if (status === NO_CONTENT) {
           EventBus.emit(EventTypes.flash_message, {
             message: Translator.t('help.no_content'),
-            type: 'warning'
+            type: 'warning',
           })
         }
 
         if ([CREATED, ACCEPTED].includes(status)) {
           EventBus.emit(EventTypes.flash_message, {
             message,
-            type: 'success'
+            type: 'success',
           })
         }
       }
 
       const content = response?.headers?.['content-disposition']
       if (content) {
-        response.data.filename = content.replace('attachment; filename=', '', content)
+        response.data.filename = content.replace(
+          'attachment; filename=',
+          '',
+          content
+        )
       }
 
       EventBus.emit(EventTypes.errors, null)
@@ -57,8 +61,8 @@ export default class AxiosInterceptor {
     }
   }
 
-  getErrorInterceptor () {
-    return error => {
+  getErrorInterceptor() {
+    return (error) => {
       if (!error.response) throw new Error('no_response')
 
       const { status, data, config } = error.response
@@ -91,7 +95,7 @@ export default class AxiosInterceptor {
         if (config && !config.quietly) {
           EventBus.emit(EventTypes.flash_message, {
             message,
-            type: 'error'
+            type: 'error',
           })
         }
       }

@@ -3,9 +3,11 @@
 <img alt="ZaloSpace" src="./public/images/logo.png" width="600"/>
 
 # ZaloSpace
+
 Proyecto personal
 
 ## Tech Stack
+
 - [x] Fullstack Framework is [Laravel 10](https://laravel.com/)
 - [x] Language is [PHP 8](https://www.php.net/)
 - [x] Data Base [MySQL](https://www.mysql.com/)

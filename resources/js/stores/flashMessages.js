@@ -7,25 +7,25 @@ export const useFlashMessages = defineStore('flashMessages', () => {
   const flashMessages = ref([])
 
   /**
-     * {
-     *   title: String
-     *   message: String - Required,
-     *   icon: String,
-     *   border: String,
-     *   closable: Boolean,
-     *   type: String ('success', 'info', 'warning', or 'error')
-     *   duration: Number,
-     * }
-     * @param message {
-     *      title: string|null,
-     *      message: string|null,
-     *      icon: string|null,
-     *      border: string|null,
-     *      type: string,
-     *      duration: int|null
-     * }
-     * @param params
-     */
+   * {
+   *   title: String
+   *   message: String - Required,
+   *   icon: String,
+   *   border: String,
+   *   closable: Boolean,
+   *   type: String ('success', 'info', 'warning', or 'error')
+   *   duration: Number,
+   * }
+   * @param message {
+   *      title: string|null,
+   *      message: string|null,
+   *      icon: string|null,
+   *      border: string|null,
+   *      type: string,
+   *      duration: int|null
+   * }
+   * @param params
+   */
   const pushFlashMessage = (message, params = {}) => {
     if (!message) return
 
@@ -33,7 +33,10 @@ export const useFlashMessages = defineStore('flashMessages', () => {
 
     if (!flashMessage) return
 
-    flashMessage.timer = setTimeout(() => destroy(flashMessage), flashMessage.duration)
+    flashMessage.timer = setTimeout(
+      () => destroy(flashMessage),
+      flashMessage.duration
+    )
   }
 
   const addMessage = (flashMessage) => {
@@ -46,7 +49,10 @@ export const useFlashMessages = defineStore('flashMessages', () => {
     return flashMessage
   }
 
-  const isDuplicated = (flashMessage) => flashMessages.value.find(iMessage => iMessage.message === flashMessage.message)
+  const isDuplicated = (flashMessage) =>
+    flashMessages.value.find(
+      (iMessage) => iMessage.message === flashMessage.message
+    )
 
   const destroy = (flashMessage) => {
     clearTimeout(flashMessage.timer)
@@ -57,7 +63,9 @@ export const useFlashMessages = defineStore('flashMessages', () => {
   }
 
   const clean = () => {
-    flashMessages.value = flashMessages.value.filter(flashMessage => !flashMessage.destroyed)
+    flashMessages.value = flashMessages.value.filter(
+      (flashMessage) => !flashMessage.destroyed
+    )
   }
 
   const parseFlashMessage = (message, params = {}) => {
@@ -73,12 +81,12 @@ export const useFlashMessages = defineStore('flashMessages', () => {
       icon: params.icon,
       closable: params.closable,
       type: params.type,
-      duration: params.duration || MESSAGE_TTL
+      duration: params.duration || MESSAGE_TTL,
     }
   }
 
   return {
     flashMessages,
-    pushFlashMessage
+    pushFlashMessage,
   }
 })

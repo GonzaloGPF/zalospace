@@ -1,27 +1,30 @@
 <script setup>
-import Translator from '@/objects/Translator.js';
-import TextInput from '@/Components/inputs/TextInput.vue';
-import InputError from '@/Components/inputs/InputError.vue';
-import InputLabel from '@/Components/inputs/InputLabel.vue';
-import { useForm } from '@inertiajs/vue3';
-import AppButton from '@/Components/core/AppButton.vue';
-import { computed } from 'vue';
-import TextArea from '@/Components/inputs/TextArea.vue';
+import Translator from '@/objects/Translator.js'
+import TextInput from '@/Components/inputs/TextInput.vue'
+import InputError from '@/Components/inputs/InputError.vue'
+import InputLabel from '@/Components/inputs/InputLabel.vue'
+import { useForm } from '@inertiajs/vue3'
+import AppButton from '@/Components/core/AppButton.vue'
+import { computed } from 'vue'
+import TextArea from '@/Components/inputs/TextArea.vue'
 
 const form = useForm({
-    name: '',
-    email: '',
-    message: '',
-});
+  name: '',
+  email: '',
+  message: '',
+})
 
 const title = computed(() => Translator.actionTitle('contact'))
 
 const submit = () => {
-    form.post(route('contacts.store'));
-};
+  form.post(route('contacts.store'))
+}
 </script>
 <template>
-  <form @submit.prevent="submit" class="flex flex-col justify-center text-gray-500 dark:text-gray-400">
+  <form
+    @submit.prevent="submit"
+    class="flex flex-col justify-center text-gray-500 dark:text-gray-400"
+  >
     <div>
       <InputLabel for="name" :value="Translator.ta('name')" />
 

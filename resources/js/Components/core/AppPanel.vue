@@ -1,22 +1,23 @@
 <script setup>
-
 defineProps({
-    title: {
-        type: String,
-        default: null,
-    },
-    content: {
-        type: String,
-        default: null,
-    },
-    image: {
-        type: String,
-        default: null,
-    },
-});
+  title: {
+    type: String,
+    default: null,
+  },
+  content: {
+    type: String,
+    default: null,
+  },
+  image: {
+    type: String,
+    default: null,
+  },
+})
 </script>
 <template>
-  <div class="flex md:justify-start items-center flex-col md:flex-row text-gray-500 dark:text-gray-400 rounded-md p-5">
+  <div
+    class="flex md:justify-start items-center flex-col md:flex-row text-gray-500 dark:text-gray-400 rounded-md p-5"
+  >
     <slot name="image">
       <img
         v-if="image"

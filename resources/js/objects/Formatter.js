@@ -6,10 +6,10 @@ import Translator from '@/objects/Translator.js'
 
 const Formatter = {
   /**
-     *
-     * @param {string} string
-     * @returns {string}
-     */
+   *
+   * @param {string} string
+   * @returns {string}
+   */
   ucFirst: (string) => {
     if (!string) return ''
 
@@ -26,7 +26,7 @@ const Formatter = {
 
   studly: (value) => lodash.upperFirst(lodash.camelCase(value)),
 
-  model (value) {
+  model(value) {
     if (!value) {
       return ''
     }
@@ -45,26 +45,24 @@ const Formatter = {
   },
 
   /**
-     * Formats a value to show 'Yes' or 'No'
-     *
-     * @param value
-     * @returns {string}
-     */
+   * Formats a value to show 'Yes' or 'No'
+   *
+   * @param value
+   * @returns {string}
+   */
   boolean: (value) => {
     if (Array.isArray(value)) {
       value = value.length !== 0
     }
 
-    return value
-      ? '&#10004;'
-      : '&#10008;'
+    return value ? '&#10004;' : '&#10008;'
   },
 
   /**
-     * @param {string} text
-     * @param {number|null} charsLimit
-     * @returns {string|*}
-     */
+   * @param {string} text
+   * @param {number|null} charsLimit
+   * @returns {string|*}
+   */
   text: (text, charsLimit = null) => {
     if (!charsLimit || typeof charsLimit === 'object') {
       charsLimit = 60
@@ -78,11 +76,11 @@ const Formatter = {
   },
 
   /**
-     * @param {Date|string|number|null} value
-     * @param {boolean} humanize
-     * @param {string|null} format
-     * @returns {string}
-     */
+   * @param {Date|string|number|null} value
+   * @param {boolean} humanize
+   * @param {string|null} format
+   * @returns {string}
+   */
   date: (value = null, humanize = false, format = null) => {
     format = format || locales.dateFormat
 
@@ -96,7 +94,7 @@ const Formatter = {
   formatDiff: (initialDate, endDate) => {
     const formatted = Formatter.duration(initialDate, endDate, {
       format: ['years', 'months'],
-      locale: Translator.getDateLocale()
+      locale: Translator.getDateLocale(),
     })
     initialDate = Formatter.date(initialDate)
     endDate = Formatter.date(endDate)
@@ -105,27 +103,28 @@ const Formatter = {
   },
 
   /**
-     * Returns a String date
-     *
-     * @param {string} value
-     * @returns {string}
-     */
-  dateTimeFormat: (value) => Formatter.date(value, false, locales.dateTimeFormat),
+   * Returns a String date
+   *
+   * @param {string} value
+   * @returns {string}
+   */
+  dateTimeFormat: (value) =>
+    Formatter.date(value, false, locales.dateTimeFormat),
 
   /**
-     * Returns a String date
-     *
-     * @param {string} value
-     * @returns {string}
-     */
+   * Returns a String date
+   *
+   * @param {string} value
+   * @returns {string}
+   */
   timeFormat: (value) => Formatter.date(value, false, locales.timeFormat),
 
   /**
-     * Returns a String date
-     *
-     * @returns {string}
-     * @param seconds
-     */
+   * Returns a String date
+   *
+   * @returns {string}
+   * @param seconds
+   */
   passedTime: (seconds) => {
     if (!seconds) {
       seconds = 0
@@ -149,17 +148,16 @@ const Formatter = {
   },
 
   /**
-     * Only two decimals without rounding. Using .toFixed(2) is not allowed
-     * @param value
-     * @returns {string}
-     */
+   * Only two decimals without rounding. Using .toFixed(2) is not allowed
+   * @param value
+   * @returns {string}
+   */
   twoDecimals: (value) => {
     if (isNaN(value) || !value) return '0'
 
     // parseFloat(value).toFixed(2) + '€';
 
-    return value.toString()
-      .match(/^-?\d+(?:\.\d{0,2})?/)[0] // truncate number with two decimals without rounding
+    return value.toString().match(/^-?\d+(?:\.\d{0,2})?/)[0] // truncate number with two decimals without rounding
   },
 
   percent: (value) => {
@@ -175,8 +173,11 @@ const Formatter = {
 
     value = parseFloat(Formatter.twoDecimals(value))
 
-    return new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR', trailingZeroDisplay: 'stripIfInteger' })
-      .format(value)
+    return new Intl.NumberFormat('es-ES', {
+      style: 'currency',
+      currency: 'EUR',
+      trailingZeroDisplay: 'stripIfInteger',
+    }).format(value)
 
     // return Translator.n(value, 'currency', 'en-US'); // Formatter.languageToLocale()
   },
@@ -186,10 +187,10 @@ const Formatter = {
   creditCard: (lastDigits) => `********${lastDigits ?? '****'}`,
 
   /**
-     *
-     * @param value
-     * @returns {string}
-     */
+   *
+   * @param value
+   * @returns {string}
+   */
   items: (value) => {
     if (!value) {
       value = []
@@ -200,7 +201,7 @@ const Formatter = {
     }
 
     return value.join(', ')
-  }
+  },
 }
 
 export default Formatter

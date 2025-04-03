@@ -26,9 +26,9 @@ export default i18nVue
 export const options = {
   lang: locales.getLocale(),
   fallbackLocale: 'en',
-  resolve: async lang => {
+  resolve: async (lang) => {
     const data = import.meta.glob('../../../lang/*.json')
     return await data[`../../../lang/php_${lang}.json`]()
-  }
+  },
   // onLoad: () => {}
 }

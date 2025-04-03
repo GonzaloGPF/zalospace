@@ -10,23 +10,25 @@ export default {
     el.originalText = text
     el.innerHTML = null
 
-    text.split('')
-      .map(char => toSpan(char, className))
-      .forEach(span => el.appendChild(span))
+    text
+      .split('')
+      .map((char) => toSpan(char, className))
+      .forEach((span) => el.appendChild(span))
 
     nextTick(() => el.dispatchEvent(new Event('split')))
   },
-  unmounted: el => {
+  unmounted: (el) => {
     el.innerHTML = el.originalText
-  }
+  },
 }
 
-function toSpan (char, className) {
+function toSpan(char, className) {
   const node = document.createElement('span')
 
   if (className) {
-    className.split(' ')
-      .forEach(classString => node.classList.add(classString))
+    className
+      .split(' ')
+      .forEach((classString) => node.classList.add(classString))
   }
 
   if (char === ' ') {

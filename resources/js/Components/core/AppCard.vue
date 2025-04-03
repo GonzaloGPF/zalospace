@@ -1,41 +1,41 @@
 <script setup>
-import AppSvg from '@/Components/core/AppSvg.vue';
-import {computed} from 'vue';
+import AppSvg from '@/Components/core/AppSvg.vue'
+import { computed } from 'vue'
 
 const props = defineProps({
   title: {
     type: String,
-    default: null
+    default: null,
   },
   description: {
     type: String,
-    default: null
+    default: null,
   },
   icon: {
     type: String,
-    default: null
+    default: null,
   },
   image: {
     type: String,
-    default: null
+    default: null,
   },
   plain: {
     type: Boolean,
-    default: null
+    default: null,
   },
   shine: {
     type: Boolean,
-    default: null
+    default: null,
   },
-});
-const imageSize = computed(() => props.image ? 'h-32 w-32' : 'h-16 w-16');
+})
+const imageSize = computed(() => (props.image ? 'h-32 w-32' : 'h-16 w-16'))
 const bg = computed(() => {
   if (props.plain) {
-    return;
+    return
   }
 
   return 'bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent'
-});
+})
 const classes = computed(() => [imageSize.value, bg.value])
 </script>
 <template>
@@ -55,14 +55,11 @@ const classes = computed(() => [imageSize.value, bg.value])
         stroke-width="1.5"
         fill="none"
       />
-      <img
-        v-if="image"
-        :src="image"
-        :alt="title"
-        class="rounded-full"
-      />
+      <img v-if="image" :src="image" :alt="title" class="rounded-full" />
     </div>
-    <div class="flex flex-col flex-1 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+    <div
+      class="flex flex-col flex-1 text-gray-500 dark:text-gray-400 text-sm leading-relaxed"
+    >
       <h2
         v-if="title"
         class="brand-font mt-6 mb-3 text-xl font-semibold text-gray-900 dark:text-white"
@@ -78,32 +75,32 @@ const classes = computed(() => [imageSize.value, bg.value])
   </div>
 </template>
 <style>
-
 @keyframes ShineAnimation {
-    0% {
-        background-repeat: no-repeat;
-        background-image: -webkit-linear-gradient(
-                top left,
-                rgba(255, 255, 255, 0.0) 0%,
-                rgba(255, 255, 255, 0.0) 45%,
-                rgba(255, 255, 255, 0.5) 48%,
-                rgba(255, 255, 255, 0.8) 50%,
-                rgba(255, 255, 255, 0.5) 52%,
-                rgba(255, 255, 255, 0.0) 57%,
-                rgba(255, 255, 255, 0.0) 100%
-        );
-        background-position: -450px -450px;
-        background-size: 800px 800px
-    }
-    20%, 100% {
-        background-repeat: no-repeat;
-        background-position: 850px 850px;
-    }
+  0% {
+    background-repeat: no-repeat;
+    background-image: -webkit-linear-gradient(
+      top left,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0) 45%,
+      rgba(255, 255, 255, 0.5) 48%,
+      rgba(255, 255, 255, 0.8) 50%,
+      rgba(255, 255, 255, 0.5) 52%,
+      rgba(255, 255, 255, 0) 57%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    background-position: -450px -450px;
+    background-size: 800px 800px;
+  }
+  20%,
+  100% {
+    background-repeat: no-repeat;
+    background-position: 850px 850px;
+  }
 }
 
 .shine-me {
-    /*width: 100%;*/
-    animation: ShineAnimation 8s infinite ease-in-out;
-    animation-delay: 5s;
+  /*width: 100%;*/
+  animation: ShineAnimation 8s infinite ease-in-out;
+  animation-delay: 5s;
 }
 </style>

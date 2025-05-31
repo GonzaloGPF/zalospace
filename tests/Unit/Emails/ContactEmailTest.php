@@ -16,13 +16,15 @@ class ContactEmailTest extends TestCase
         $this->email = new ContactEmail('some@mail.com', 'some message');
     }
 
-    #[Test] public function it_can_create_a_contact_email(): void
+    #[Test]
+    public function it_can_create_a_contact_email(): void
     {
         $this->assertEquals('some@mail.com', $this->email->email);
         $this->assertEquals('some message', $this->email->message);
     }
 
-    #[Test] public function it_can_return_expected_content()
+    #[Test]
+    public function it_can_return_expected_content()
     {
         $content = $this->email->content();
 

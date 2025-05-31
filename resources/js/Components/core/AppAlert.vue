@@ -46,13 +46,13 @@ const classes = computed(() => ({
       <span v-if="title" class="font-bold" v-text="title" />
       <span v-if="message" v-text="message" />
     </div>
-    <secondary-button
+    <SecondaryButton
       v-if="closable"
       variant="plain"
       :class="classes"
       @click="$emit('close')"
     >
       X
-    </secondary-button>
+    </SecondaryButton>
   </div>
 </template>

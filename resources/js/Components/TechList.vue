@@ -42,7 +42,7 @@ const vTechnologies = computed(() =>
           key="button"
           class="flex items-center max-w-xs"
         >
-          <app-button
+          <AppButton
             variant="plain"
             :label="Translator.tl(viewMore ? 'view_less' : 'view_more')"
             @click="viewMore = !viewMore"

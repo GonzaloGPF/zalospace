@@ -25,7 +25,7 @@ defineProps({
     class="relative sm:flex flex-col sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-blue-800 selection:text-white"
   >
     <Head v-if="title" :title="title" />
-    <app-flash-messages />
+    <AppFlashMessages />
     <TopMenu />
     <header v-if="description" class="pt-5 mt-6 md:mt-12">
       <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">

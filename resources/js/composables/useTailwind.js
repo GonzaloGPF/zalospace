@@ -1,8 +1,5 @@
 import { computed, ref, watch } from 'vue'
-import resolveConfig from 'tailwindcss/resolveConfig'
-import tailwindConfig from '@/../../tailwind.config.js'
-
-const fullConfig = resolveConfig(tailwindConfig)
+import defaultTheme from 'tailwindcss/defaultTheme'
 
 export default function useTailwind() {
   const screenWidth = ref(window.innerWidth)
@@ -18,7 +15,7 @@ export default function useTailwind() {
   const isLg = computed(() => screenWidth.value >= getBreakpoint('lg'))
 
   const getBreakpoint = (breakpointName) =>
-    parseInt(fullConfig.theme.screens[breakpointName])
+    parseInt(defaultTheme.screens[breakpointName])
 
   watch(screenWidth, () => {
     isResizing.value = true

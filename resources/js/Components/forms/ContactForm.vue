@@ -70,7 +70,7 @@ const submit = () => {
       <InputError class="mt-2" :message="form.errors.message" />
     </div>
 
-    <app-button
+    <AppButton
       type="submit"
       :label="title"
       :loading="form.processing"

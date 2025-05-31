@@ -105,7 +105,7 @@ const maxWidthClass = computed(() => {
             class="mb-6 bg-white dark:bg-gray-800 text-gray-500 dark:text-gray-400 rounded-lg overflow-hidden shadow-xl transform transition-all sm:w-full sm:mx-auto p-6 pt-2"
             :class="maxWidthClass"
           >
-            <app-button
+            <AppButton
               v-if="closeable"
               :title="Translator.actionTitle('close')"
               icon="close"

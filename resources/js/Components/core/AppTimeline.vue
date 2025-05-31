@@ -9,7 +9,7 @@ defineProps({
 })
 </script>
 <template>
-  <ol class="flex flex-col space-y-8 list-disc">
+  <ol class="flex flex-col space-y-8 list-disc w-full">
     <li
       v-for="item in items"
       class="pt-2 pb-6 mt-2 border-b border-slate-300 dark:border-slate-600"

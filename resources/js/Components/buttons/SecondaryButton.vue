@@ -1,10 +1,10 @@
 <script setup>
-const props = defineProps({
-  type: {
-    type: String,
-    default: 'button',
-  },
-})
+defineProps({
+    type: {
+        type: String,
+        default: 'button',
+    },
+});
 </script>
 <template>
   <button

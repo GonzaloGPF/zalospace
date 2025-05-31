@@ -28,13 +28,13 @@ const currentFlag = computed(() =>
 <template>
   <AppDropdown align="right" width="25">
     <template #trigger>
-      <app-button variant="plain">
+      <AppButton variant="plain">
         <img :src="currentFlag?.src" :alt="currentFlag?.title" width="25" />
-      </app-button>
+      </AppButton>
     </template>
 
     <template #content>
-      <app-button
+      <AppButton
         v-for="flag in filteredFlags"
         :key="flag.locale"
         variant="plain"
@@ -42,7 +42,7 @@ const currentFlag = computed(() =>
         @click="Translator.setLocale(flag.locale)"
       >
         <img :src="flag.src" :alt="flag.title" width="25" />
-      </app-button>
+      </AppButton>
     </template>
   </AppDropdown>
 </template>

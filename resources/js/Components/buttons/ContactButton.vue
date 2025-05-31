@@ -12,7 +12,7 @@ const label = computed(() =>
 const canShow = computed(() => !Utils.isSamePath(route('contacts.create')))
 </script>
 <template>
-  <app-button
+  <AppButton
     v-if="canShow"
     :title="label"
     :label="label"

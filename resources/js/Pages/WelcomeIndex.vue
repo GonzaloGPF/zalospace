@@ -26,7 +26,7 @@ import AppLink from '@/Components/core/AppLink.vue'
           icon="projects"
         />
       </AppLink>
-      <AppLink :href="route('larecipe.index')" external>
+      <AppLink :href="route('larecipe.docs.page')" external>
         <AppCard
           :title="Translator.tl('tutorials')"
           :description="Translator.t('help.tutorials_description')"

@@ -18,12 +18,11 @@ class ContactController extends Controller
 
     public function store(ContactRequest $request): RedirectResponse
     {
-        $email = new ContactEmail($request->get('email'), $request->get('message'));
-        $email->subject(tl('contact_email'));
-
-        Mail::to(config('mail.contact'))
-//            ->cc($request->get('email'))
-            ->queue($email);
+        Mail::to(config('mail.contact'))->queue(new ContactEmail(
+            $request->string('name')->value(),
+            $request->string('email')->value(),
+            $request->string('message')->value(),
+        ));
 
         $this->flashMessage(tAction('sent', null, false));
 

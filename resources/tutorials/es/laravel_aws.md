@@ -1,22 +1,11 @@
-# Despliegues con Laravel y AWS
-
+---
+title: 'Despliegues con Laravel y AWS'
+description: Cómo montar despliegues automáticos de aplicaciones Laravel con GitHub Actions, S3 y Laravel Forge.
 ---
 
-- [Introducción](#intro)
-- [Requisitos](#requirements)
-- [Setup](#setup)
-- [Run Tests](#execute_tests)
-  - [Código](#execute_tests_code)
-- [Build and Upload assets](#build_and_upload_assets)
-  - [Código](#build_and_upload_assets_code)
-- [Deploy to Prod](#deploy_to_prod)
-  - [Código](#deploy_to_prod_code)
-- [Download Assets](#download_assets)
-- [Forge Deploy Script](#deploy_script)
+# Despliegues con Laravel y AWS
 
-<a name="intro"></a>
-
-## Introducción
+## Introducción {#intro}
 
 Desarrollar con Laravel es muy cómodo, sin embargo, desplegar una aplicación aveces no es tan sencillo.
 En este tutorial voy a detallar cómo realizar despliegues de aplicaciones Laravel de la manera más rápida, barata y sencilla posible.
@@ -33,7 +22,8 @@ se aprovisionará con todo lo necesario para que tu aplicación Laravel esté di
 Forge instalará php, nginx, base de datos, creará usuarios, gestionará los permisos, el repo de git, etc. La verdad es que funciona muy bien.
 Además, te permitirá **activar** despliegues automáticos y te ofrecerá la posibilidad de modificar el **script de despliegue** desde su panel de administración.
 
-> {warning} El **script de despliegue** también realizará la compilación del front con `yarn build`.
+> [!WARNING]
+> El **script de despliegue** también realizará la compilación del front con `yarn build`.
 
 Aquí es donde está el problema, mientras compila, tu aplicación estará unos minutos 'actualizando'.
 
@@ -42,7 +32,8 @@ También podemos conseguir despliegues con zero-downtime si combinamos [Laravel 
 
 Estas opciones son válidas, pero nos supondrán mayor coste.
 
-> {info} En este tutorial explicaré cómo conseguir despliegues con zero-downtime sin aumentar costes
+> [!NOTE]
+> En este tutorial explicaré cómo conseguir despliegues con zero-downtime sin aumentar costes
 
 El truco será:
 
@@ -53,9 +44,7 @@ El truco será:
 Al compilar los ficheros desde las GitHub Actions, liberaremos al servidor de EC2 de esta tarea y solo tendrá que descargarlos del S3,
 lo cual es una acción mucho más rápida que `yarn build`.
 
-<a name="requirements"></a>
-
-## Requisitos
+## Requisitos {#requirements}
 
 Antes de empezar, es importante saber qué tecnologías y herramientas utilizaremos para realizar la integración continua.
 
@@ -67,9 +56,7 @@ Antes de empezar, es importante saber qué tecnologías y herramientas utilizare
   - [S3](https://aws.amazon.com/es/s3/): Para el almacenamiento temporal del front compilado.
 - [Docker](https://www.docker.com/): Conocimientos básicos de Docker para crear los Workflows.
 
-<a name="setup"></a>
-
-## Setup
+## Setup {#setup}
 
 Como hemos comentado, utilizaremos las GitHub Actions para implementar la integración continua.
 
@@ -83,11 +70,10 @@ GitHub detectará los workflows y los procesará automáticamente.
 
 Aquí escribiremos el código necesario para automatizar nuestros despliegues.
 
-> {info} Los workflows son contenedores Docker, por lo que podemos crear cualquier tipo de entorno
+> [!NOTE]
+> Los workflows son contenedores Docker, por lo que podemos crear cualquier tipo de entorno
 
-<a name="execute_tests"></a>
-
-## Run Tests
+## Run Tests {#execute_tests}
 
 El primer workflow es el más sencillo, se trata de crear un setup típico de Laravel para ejecutar nuestros tests.
 
@@ -118,7 +104,8 @@ jobs:
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
 ```
 
-> {info} Este Workflow se ejecutará por GitHub siempre que se haga un push
+> [!NOTE]
+> Este Workflow se ejecutará por GitHub siempre que se haga un push
 
 Ahora, escribiremos los pasos con la sección `steps`.
 
@@ -180,7 +167,6 @@ Si los tests se completan sin errores, el workflow finalizará satisfactoriament
 
 ## Run Tests - Código
 
-<a name="execute_tests_code"></a>
 **1_run_tests.yml**
 
 ```yaml
@@ -241,11 +227,10 @@ jobs:
 
 Si todo va bien, el workflow se completará satisfactoriamente, de lo contrario, nos mostrará un mensaje de error.
 
-> {success} Nuestro código ejecutará los tests por cada push
+> [!TIP]
+> Nuestro código ejecutará los tests por cada push
 
-<a name="build_and_upload_assets"></a>
-
-## Build and Upload assets
+## Build and Upload assets {#build_and_upload_assets}
 
 Este workflows es el más tricky. Aquí es donde realizaremos la compilación del front para poder eliminarla del script de despliegue de Laravel Forge.
 
@@ -268,7 +253,8 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
 ```
 
-> {info} La opción `workflow_run` en la sección `on` nos permite especificar cuándo lanzar este workflow.
+> [!NOTE]
+> La opción `workflow_run` en la sección `on` nos permite especificar cuándo lanzar este workflow.
 
 Los primeros pasos a ejecutar, serán los necesarios para compilar el front con `yarn build`.
 
@@ -289,7 +275,8 @@ on:
     - run: zip -r build.zip public/build
 ```
 
-> {info} En el fichero **build.zip** tendremos todos nuestros ficheros front compilados
+> [!NOTE]
+> En el fichero **build.zip** tendremos todos nuestros ficheros front compilados
 
 Ahora, añadiremos un pequeño paso extra de optimización.
 
@@ -303,11 +290,13 @@ Cachearemos el resultado de la compilación para evitar 'recompilar' siempre que
     key: ${{ runner.os }}-build-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('public/build/manifest.json') }}
 ```
 
-> {info} Esto agilizará nuestra integración continua al evitar procesamiento innecesario
+> [!NOTE]
+> Esto agilizará nuestra integración continua al evitar procesamiento innecesario
 
 Finalmente, subiremos el fichero **build.zip** a un **bucket** en S3 de AWS.
 
-> {warning} Previamente deberás de haber creado un **bucket** de S3
+> [!WARNING]
+> Previamente deberás de haber creado un **bucket** de S3
 
 ```yaml
 - name: Setup AWS CLI
@@ -323,11 +312,11 @@ Finalmente, subiremos el fichero **build.zip** a un **bucket** en S3 de AWS.
 
 Sustituye 'my_bucket' por el nombre de tu bucket de S3.
 
-> {info} Deberás tener una cuenta de S3 [configurada](https://laravel-news.com/using-aws-s3-for-laravel-storage). No olvides crear un usuario IAM con permisos **S3FullAccess**
+> [!NOTE]
+> Deberás tener una cuenta de S3 [configurada](https://laravel-news.com/using-aws-s3-for-laravel-storage). No olvides crear un usuario IAM con permisos **S3FullAccess**
 
 ## Build and Upload assets - Código
 
-<a name="build_and_upload_assets_code"></a>
 **2_build_and_upload_assets.yml**
 
 ```yaml
@@ -368,9 +357,7 @@ jobs:
           aws s3 cp build.zip s3://my_bucket.com/builds/
 ```
 
-<a name="deploy_to_prod"></a>
-
-## Deploy to Prod
+## Deploy to Prod {#deploy_to_prod}
 
 Este workflows es el más sencillo. Simplemente, solicitaremos a Laravel Forge que realice el despliegue utilizando `laravel/forge-cli`.
 
@@ -413,7 +400,8 @@ steps:
       coverage: none
 ```
 
-> {warning} Deberemos crear claves ssh, para comunicar GitHub con Laravel Forge.
+> [!WARNING]
+> Deberemos crear claves ssh, para comunicar GitHub con Laravel Forge.
 
 Añadiremos la clave pública en la sección de **SSH Keys** de nuestro servidor de Forge
 ![Forge SSH](/images/tutorials/forge_ssh.png)
@@ -445,11 +433,10 @@ Guárdalo en un secret llamado `FORGE_API_TOKEN` en el repositorio de GitHub.
     FORGE_API_TOKEN: ${{ secrets.FORGE_API_TOKEN }}
 ```
 
-> {info} Sustituye el valor de 'my_app' por el nombre de tu app en Laravel Forge
+> [!NOTE]
+> Sustituye el valor de 'my_app' por el nombre de tu app en Laravel Forge
 
-<a name="deploy_to_prod_code"></a>
-
-## Deploy to Prod - Código
+## Deploy to Prod - Código {#deploy_to_prod_code}
 
 ```yaml
 name: Deploy to Prod
@@ -491,9 +478,7 @@ jobs:
           FORGE_API_TOKEN: ${{ secrets.FORGE_API_TOKEN }}
 ```
 
-<a name="download_assets"></a>
-
-## Download Assets
+## Download Assets {#download_assets}
 
 Antes de modificar el script de despliegue de Forge, crearemos un comando custom en Laravel para poder llamarlo desde el script de despliegue.
 
@@ -509,7 +494,8 @@ Haciendo uso de **MountManager**, podremos copiar ficheros del disco S3 al disco
 
 Luego descomprimiremos los ficheros con **ZipArchive** y los moveremos a `public/build`
 
-> {warning} Hay que tener en cuenta que la ruta `public/build` del disco local es `storage/app/public/build`
+> [!WARNING]
+> Hay que tener en cuenta que la ruta `public/build` del disco local es `storage/app/public/build`
 
 ```php
 class DownloadAssets extends Command
@@ -599,9 +585,7 @@ Con esto, tendremos todos los ficheros descomprimidos en `storage/app/public/bui
 
 El último paso será modificar el script de despliegue de Forge para mover los ficheros del `storage` al directo `public`.
 
-<a name="deploy_script"></a>
-
-## Forge Deploy Script
+## Forge Deploy Script {#deploy_script}
 
 El último paso que deberemos hacer es modificar el script de despliegue de Laravel Forge, eliminando el `yarn build`.
 

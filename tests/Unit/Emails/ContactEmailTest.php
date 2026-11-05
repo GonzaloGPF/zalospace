@@ -13,12 +13,13 @@ class ContactEmailTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
-        $this->email = new ContactEmail('some@mail.com', 'some message');
+        $this->email = new ContactEmail('Some Client', 'some@mail.com', 'some message');
     }
 
     #[Test]
     public function it_can_create_a_contact_email(): void
     {
+        $this->assertEquals('Some Client', $this->email->name);
         $this->assertEquals('some@mail.com', $this->email->email);
         $this->assertEquals('some message', $this->email->message);
     }

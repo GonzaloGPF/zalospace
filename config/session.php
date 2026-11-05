@@ -198,4 +198,16 @@ return [
 
     'same_site' => 'lax',
 
+    /*
+    |--------------------------------------------------------------------------
+    | Session Serialization
+    |--------------------------------------------------------------------------
+    |
+    | JSON sessions cannot carry PHP objects, which mitigates deserialization
+    | gadget chains if the application key ever leaks.
+    |
+    */
+
+    'serialization' => 'json',
+
 ];

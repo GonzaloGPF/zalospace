@@ -40,7 +40,7 @@ const items = computed(() =>
       icon: 'projects',
     },
     {
-      href: route('larecipe.index'),
+      href: route('larecipe.docs.page'),
       label: Translator.tl('tutorials'),
       icon: 'tutorials',
       external: true,

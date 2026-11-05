@@ -1,0 +1,37 @@
+{
+    "$schema": "https://larecipe.saleem.dev/schemas/3.x/larecipe.json",
+    "name": "ZaloSpace",
+    "description": "Web personal de Gonzalo Pabón sobre tecnología y desarrollo web con Laravel y Vue",
+    "favicon": "/images/favicon-32x32.png",
+    "theme": {
+        "accent": "#787AF6"
+    },
+    "versions": [
+        {
+            "id": "es",
+            "default": true
+        }
+    ],
+    "landing": "overview",
+    "logo": "/images/logo_clean.svg",
+    "navbar": {
+        "links": [
+            {
+                "label": "Inicio",
+                "href": "/"
+            },
+            {
+                "label": "Sobre Mí",
+                "href": "/about-me"
+            },
+            {
+                "label": "Proyectos",
+                "href": "/projects"
+            }
+        ],
+        "cta": {
+            "label": "Contactar",
+            "href": "/contacts/create"
+        }
+    }
+}

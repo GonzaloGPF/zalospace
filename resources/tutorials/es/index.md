@@ -1,3 +1,0 @@
-- ## Tutoriales
-  - [Overview](/{{route}}/{{version}}/overview)
-  - [Laravel y AWS](/{{route}}/{{version}}/laravel_aws)

@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'contact_email_header' => 'Email de Contacto de :email',
+    'contact_email_header' => 'Email de Contacto de :name (:email)',
 ];

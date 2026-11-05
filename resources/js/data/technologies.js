@@ -185,19 +185,19 @@ export default [
   },
   {
     name: TechNames.LARAVEL,
-    url: 'https://laravel.com/docs/10.x',
+    url: 'https://laravel.com/docs',
     image: '/images/technologies/laravel.png',
     level: LEVELS.EXPERT,
   },
   {
     name: TechNames.DUSK,
-    url: 'https://laravel.com/docs/10.x/dusk',
+    url: 'https://laravel.com/docs/dusk',
     image: '/images/technologies/laravel_dusk.png',
     level: LEVELS.NOVICE,
   },
   {
     name: TechNames.HORIZON,
-    url: 'https://laravel.com/docs/10.x/horizon',
+    url: 'https://laravel.com/docs/horizon',
     image: '/images/technologies/horizon.png',
     level: LEVELS.MEDIUM,
   },

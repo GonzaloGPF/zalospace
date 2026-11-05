@@ -13,7 +13,7 @@ import {
 } from 'date-fns'
 import { enGB, es, fr, pt, ru } from 'date-fns/locale'
 import locales from '@/config/locales'
-import { utcToZonedTime } from 'date-fns-tz'
+import { toZonedTime } from 'date-fns-tz'
 
 const dateLocales = {
   es,
@@ -108,7 +108,7 @@ const Time = {
       return null
     }
 
-    return utcToZonedTime(new Date(value), locales.getTimezone())
+    return toZonedTime(new Date(value), locales.getTimezone())
   },
 
   /**

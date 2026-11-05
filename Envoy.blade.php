@@ -44,11 +44,11 @@
 
 @task('backend')
   cd {{ $dir }}
-  composer install --no-dev --no-interaction --no-plugins --no-progress --no-suggest --prefer-dist --optimize-autoloader
+  composer install --no-dev --no-interaction --no-plugins --no-progress --prefer-dist --optimize-autoloader
 
   php artisan optimize:clear
   #php artisan migrate --force
-  php artisan larecipe:install
+  php artisan larecipe:optimize
 @endtask
 
 @task('frontend')

@@ -20,7 +20,7 @@ return [
     'motorbike' => 'Motorbike Routes',
     'my_jobs' => 'Jobs',
     'fullstack_developer' => 'FullStack Developer',
-    'consultant' => 'Technology Consulting',
+    'consultor' => 'Technology Consulting',
     'team_lead' => 'Team Technical Leader',
     'technologies' => 'Technologies',
     'view_more' => 'View More',

@@ -13,6 +13,6 @@ return [
     'contact' => [
         'author' => 'Gonzalo Pabón Flores',
         'cif' => '',
-        'address' => 'Calle del Codo, 20., Piso 2, puerta 1, Alcobendas, M, 28100, España',
+        'address' => 'Sevilla, 41020, España',
     ],
 ];

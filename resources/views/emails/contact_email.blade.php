@@ -1,5 +1,5 @@
 @component('mail::message')
-# {{ trans('emails.contact_email_header', ['email' =>  $email ]) }}
+# {{ trans('emails.contact_email_header', ['name' => $name, 'email' => $email]) }}
 
 {{ $message }}
 

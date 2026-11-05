@@ -8,14 +8,23 @@ Proyecto personal
 
 ## Tech Stack
 
-- [x] Fullstack Framework is [Laravel 10](https://laravel.com/)
-- [x] Language is [PHP 8](https://www.php.net/)
-- [x] Data Base [MySQL](https://www.mysql.com/)
-- [x] Front with [Vue 3](https://vuejs.org/)
-- [x] Compiled with [Vite](https://laravel.com/docs/10.x/frontend#bundling-assets)
-- [x] Code Linters [PHP-CS](https://github.com/squizlabs/PHP_CodeSniffer), [Eslint](https://eslint.org/) and [StyleLint](https://stylelint.io/)
-- [x] Backend Testing with [Phpunit](https://phpunit.de/)
-- [ ] Front Testing with [Jest](https://jestjs.io/)
-- [ ] E2E Testing with [Laravel Dusk](https://laravel.com/docs/10.x/dusk)
-- [x] Hosted in [Hostinger](https://www.hostinger.es/)
-- [x] Documentation with [LaRecipe](https://larecipe.binarytorch.com.my/docs/)
+- Fullstack framework: [Laravel 13](https://laravel.com/) on [PHP 8.3+](https://www.php.net/)
+- Frontend: [Vue 3](https://vuejs.org/) + [Inertia 3](https://inertiajs.com/) + [Tailwind CSS 4](https://tailwindcss.com/)
+- Build: [Vite 8](https://vite.dev/) (requires Node 20.19+)
+- Tutorials: [LaRecipe 3](https://larecipe.saleem.dev/)
+- Testing: [PHPUnit 12](https://phpunit.de/)
+- Code style: [Pint](https://laravel.com/docs/pint), [ESLint](https://eslint.org/), [Stylelint](https://stylelint.io/) and [Prettier](https://prettier.io/)
+- AI tooling: [Laravel Boost](https://laravel.com/docs/boost)
+- Deployment: [Envoy](https://laravel.com/docs/envoy)
+
+## Local development
+
+```bash
+cp .env.example .env
+./vendor/bin/sail up -d
+./vendor/bin/sail artisan key:generate
+./vendor/bin/sail yarn install
+./vendor/bin/sail yarn dev
+```
+
+Run the tests with `./vendor/bin/sail artisan test`.

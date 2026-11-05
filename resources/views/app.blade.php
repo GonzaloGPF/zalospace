@@ -23,7 +23,7 @@
         <link rel="apple-touch-icon" href="{{ asset('images/apple-touch-icon.png') }}"><!-- 180×180 -->
         <link rel="manifest" href="{{ asset('images/site.webmanifest') }}">
 
-        <title inertia>{{ config('app.name') }}</title>
+        <title data-inertia>{{ config('app.name') }}</title>
 
         <!-- Fonts -->
 {{--        <link rel="preconnect" href="https://fonts.bunny.net">--}}

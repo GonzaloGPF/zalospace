@@ -1,0 +1,15 @@
+{
+    "$schema": "https://larecipe.saleem.dev/schemas/3.x/navigation.json",
+    "groups": [
+        {
+            "group": "Tutoriales",
+            "pages": [
+                "overview",
+                {
+                    "page": "laravel_aws",
+                    "label": "Laravel y AWS"
+                }
+            ]
+        }
+    ]
+}

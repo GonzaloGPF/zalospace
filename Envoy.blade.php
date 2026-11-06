@@ -59,6 +59,7 @@
 
   php artisan optimize:clear
   #php artisan migrate --force
+  php artisan vendor:publish --tag=larecipe-assets --force
   php artisan optimize
   php artisan queue:restart
 @endtask

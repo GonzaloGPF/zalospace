@@ -64,7 +64,7 @@ Para ello, deberemos crear en la raíz del proyecto un directorio `.github/workf
 
 Dentro de este directorio crearemos los siguientes ficheros:
 
-![workflows](/images/tutorials/workflows.png)
+![workflows](https://zalospace.com/images/tutorials/workflows.png)
 
 GitHub detectará los workflows y los procesará automáticamente.
 
@@ -404,16 +404,16 @@ steps:
 > Deberemos crear claves ssh, para comunicar GitHub con Laravel Forge.
 
 Añadiremos la clave pública en la sección de **SSH Keys** de nuestro servidor de Forge
-![Forge SSH](/images/tutorials/forge_ssh.png)
+![Forge SSH](https://zalospace.com/images/tutorials/forge_ssh.png)
 
 La clave privada la añadiremos en los **secrets** de GitHub Actions.
-![GitHub Actions Secrets](/images/tutorials/github_actions_secrets.png)
+![GitHub Actions Secrets](https://zalospace.com/images/tutorials/github_actions_secrets.png)
 
 Finalmente, escribiremos los pasos para realizar el despliegue con `laravel/forge-cli`
 
 Necesitaremos definir una variable extra con un Api Token de Forge, para que `laravel/forge-cli` se autentique a la hora de ordenar el despliegue.
 
-![Forge Api Tokens](/images/tutorials/forge_api_tokens.png)
+![Forge Api Tokens](https://zalospace.com/images/tutorials/forge_api_tokens.png)
 
 Puedes ponerle cualquier nombre descriptivo, como por ejemplo 'GitHub'.
 

@@ -27,9 +27,23 @@ class TutorialsTest extends TestCase
         $this->get($url)->assertSuccessful()->assertSee($expectedText);
     }
 
-    public function test_tutorial_images_are_served(): void
+    public static function tutorialImages(): array
     {
-        $this->get('/tutorials/_assets/es/images/tutorials/workflows.png')->assertSuccessful();
+        return [
+            'workflows' => ['workflows.png'],
+            'forge ssh' => ['forge_ssh.png'],
+            'github actions secrets' => ['github_actions_secrets.png'],
+            'forge api tokens' => ['forge_api_tokens.png'],
+        ];
+    }
+
+    #[DataProvider('tutorialImages')]
+    public function test_tutorial_renders_images_as_static_files_in_public(string $image): void
+    {
+        $response = $this->get('/tutorials/es/laravel_aws');
+
+        $response->assertOk()->assertSee("https://zalospace.com/images/tutorials/{$image}");
+        $this->assertFileExists(public_path("images/tutorials/{$image}"));
     }
 
     public static function protectedEndpoints(): array

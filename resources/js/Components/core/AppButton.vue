@@ -124,7 +124,7 @@ const classes = computed(() => [
     :type="type"
     :class="classes"
     :disabled="disabled || loading"
-    class="brand-font items-center px-2 py-1 lg:px-4 lg:py-2 font-semibold text-xs uppercase tracking-widest focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 disabled:opacity-25 transition ease-in-out duration-150 space-x-3"
+    class="brand-font items-center px-2 py-1 lg:px-4 lg:py-2 font-semibold text-xs uppercase tracking-widest focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 disabled:opacity-25 transition ease-in-out duration-150 space-x-3 cursor-pointer"
     @click="to ? router.visit(to) : $emit('click')"
   >
     <slot>

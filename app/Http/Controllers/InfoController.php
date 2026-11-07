@@ -17,8 +17,8 @@ class InfoController extends Controller
         return Inertia::render('Info/Projects');
     }
 
-    public function configurator(): Response
+    public function workWithMe(): Response
     {
-        return Inertia::render('Info/Configurator');
+        return Inertia::render('Info/WorkWithMe');
     }
 }

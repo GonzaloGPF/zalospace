@@ -1,6 +1,7 @@
 <script setup>
 import AppLogo from '@/Components/core/AppLogo.vue'
 import AppCard from '@/Components/core/AppCard.vue'
+import AppButton from '@/Components/core/AppButton.vue'
 import Translator from '@/objects/Translator.js'
 import BaseLayout from '@/Layouts/BaseLayout.vue'
 import AppLink from '@/Components/core/AppLink.vue'
@@ -9,7 +10,24 @@ import AppLink from '@/Components/core/AppLink.vue'
   <BaseLayout>
     <AppLogo />
 
-    <div class="mt-20 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+    <div class="max-w-2xl mx-auto mt-6 text-center">
+      <p
+        class="brand-font text-lg md:text-xl font-semibold text-blue-950 dark:text-white"
+        v-text="Translator.t('help.hero_tagline')"
+      />
+      <p
+        class="mt-3 text-gray-500 dark:text-gray-400"
+        v-text="Translator.t('help.hero_pitch')"
+      />
+      <AppButton
+        :to="route('info.work_with_me')"
+        :label="Translator.tl('work_with_me')"
+        icon="work"
+        class="mt-6"
+      />
+    </div>
+
+    <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
       <AppLink :href="route('info.about_me')">
         <AppCard
           :title="Translator.tl('about_me')"
@@ -34,12 +52,12 @@ import AppLink from '@/Components/core/AppLink.vue'
           icon="tutorials"
         />
       </AppLink>
-      <AppLink :href="route('info.configurator')">
+      <AppLink :href="route('info.work_with_me')">
         <AppCard
-          :title="Translator.tl('configurator')"
-          :description="Translator.t('help.configurator_description')"
+          :title="Translator.tl('work_with_me')"
+          :description="Translator.t('help.work_with_me_description')"
           class="scale-100 motion-safe:hover:scale-[1.01] transition-all duration-250"
-          icon="configurator"
+          icon="work"
         />
       </AppLink>
     </div>

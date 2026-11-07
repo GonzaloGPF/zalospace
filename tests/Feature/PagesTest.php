@@ -15,7 +15,7 @@ class PagesTest extends TestCase
             'home' => ['welcome', 'WelcomeIndex'],
             'about me' => ['info.about_me', 'Info/AboutMe'],
             'projects' => ['info.projects', 'Info/Projects'],
-            'configurator' => ['info.configurator', 'Info/Configurator'],
+            'work with me' => ['info.work_with_me', 'Info/WorkWithMe'],
             'contact' => ['contacts.create', 'Contact/CreateContact'],
         ];
     }
@@ -38,8 +38,8 @@ class PagesTest extends TestCase
             'contacts.create',
             'contacts.store',
             'info.about_me',
-            'info.configurator',
             'info.projects',
+            'info.work_with_me',
             'larecipe.docs.page',
             'welcome',
         ], $routes);

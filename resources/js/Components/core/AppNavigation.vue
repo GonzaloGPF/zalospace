@@ -4,7 +4,6 @@ import Translator from '@/objects/Translator.js'
 import { computed, ref } from 'vue'
 import { usePage } from '@inertiajs/vue3'
 import AppSvg from '@/Components/core/AppSvg.vue'
-import Utils from '@/objects/Utils.js'
 import AppButton from '@/Components/core/AppButton.vue'
 import useTailwind from '@/composables/useTailwind.js'
 import { default as vClickOutside } from '@/directives/clickOutside.js'
@@ -46,9 +45,9 @@ const items = computed(() =>
       external: true,
     },
     {
-      href: route('info.configurator'),
-      label: Translator.tl('configurator'),
-      icon: 'configurator',
+      href: route('info.work_with_me'),
+      label: Translator.tl('work_with_me'),
+      icon: 'work',
     },
     // {
     //     href: route('register'),

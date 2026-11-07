@@ -19,6 +19,7 @@ return [
     'process_delivery' => 'Entrega',
     'my_cv' => 'Mi CV',
     'download_cv' => 'Descargar CV (PDF)',
+    'faq' => 'Preguntas Frecuentes',
     'view_all_projects' => 'Ver todos los proyectos',
     'contact_email' => 'Email de Contacto',
     'who_am_i' => 'Quién soy',

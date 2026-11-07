@@ -19,6 +19,7 @@ return [
     'process_delivery' => 'Delivery',
     'my_cv' => 'My CV',
     'download_cv' => 'Download CV (PDF)',
+    'faq' => 'Frequently Asked Questions',
     'view_all_projects' => 'See all projects',
     'contact_email' => 'Contact Email',
     'who_am_i' => 'Who am I',

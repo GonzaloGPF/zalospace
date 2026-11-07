@@ -23,6 +23,7 @@
         <link rel="icon" href="{{ asset('images/favicon.ico') }}" sizes="any"><!-- 32×32 -->
         <link rel="apple-touch-icon" href="{{ asset('images/apple-touch-icon.png') }}"><!-- 180×180 -->
         <link rel="manifest" href="{{ asset('images/site.webmanifest') }}">
+        @include('partials.json_ld')
 
         <title data-inertia>{{ config('app.name') }}</title>
 

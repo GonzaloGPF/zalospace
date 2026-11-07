@@ -6,6 +6,7 @@ import AppCard from '@/Components/core/AppCard.vue'
 import AppButton from '@/Components/core/AppButton.vue'
 import AppLink from '@/Components/core/AppLink.vue'
 import AppTimeLineItem from '@/Components/core/AppTimeLineItem.vue'
+import FaqItem from '@/Components/FaqItem.vue'
 import projects from '@/data/projects.js'
 
 const featuredProjects = computed(() =>
@@ -28,6 +29,29 @@ const processSteps = computed(() => [
   {
     title: Translator.tl('process_delivery'),
     description: Translator.t('help.process_delivery_description'),
+  },
+])
+
+const faqs = computed(() => [
+  {
+    question: Translator.t('help.faq_billing_q'),
+    answer: Translator.t('help.faq_billing_a'),
+  },
+  {
+    question: Translator.t('help.faq_availability_q'),
+    answer: Translator.t('help.faq_availability_a'),
+  },
+  {
+    question: Translator.t('help.faq_minimum_q'),
+    answer: Translator.t('help.faq_minimum_a'),
+  },
+  {
+    question: Translator.t('help.faq_remote_q'),
+    answer: Translator.t('help.faq_remote_a'),
+  },
+  {
+    question: Translator.t('help.faq_start_q'),
+    answer: Translator.t('help.faq_start_a'),
   },
 ])
 </script>
@@ -127,6 +151,21 @@ const processSteps = computed(() => [
             v-text="step.description"
           />
         </div>
+      </div>
+    </div>
+
+    <div class="max-w-2xl mx-auto mt-16">
+      <h2
+        class="brand-font text-xl font-semibold text-center text-gray-900 dark:text-white"
+        v-text="Translator.tl('faq')"
+      />
+      <div class="mt-6">
+        <FaqItem
+          v-for="faq in faqs"
+          :key="faq.question"
+          :question="faq.question"
+          :answer="faq.answer"
+        />
       </div>
     </div>
 

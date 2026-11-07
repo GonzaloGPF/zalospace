@@ -15,4 +15,9 @@ return [
         'cif' => '',
         'address' => 'Sevilla, 41020, España',
     ],
+    'social' => [
+        'github' => 'https://github.com/GonzaloGPF',
+        'linkedin' => 'https://www.linkedin.com/in/gonzalogpf/',
+        'laracasts' => 'https://laracasts.com/@Zalo',
+    ],
 ];

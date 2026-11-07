@@ -9,14 +9,16 @@ const { isLg } = useTailwind()
 const label = computed(() =>
   isLg.value ? Translator.actionTitle('contact') : null
 )
-const canShow = computed(() => !Utils.isSamePath(route('contacts.create')))
+const canShow = computed(
+  () => !Utils.isSamePath(Translator.route('contacts.create'))
+)
 </script>
 <template>
   <AppButton
     v-if="canShow"
     :title="label"
     :label="label"
-    :to="route('contacts.create')"
+    :to="Translator.route('contacts.create')"
     icon="email"
   />
 </template>

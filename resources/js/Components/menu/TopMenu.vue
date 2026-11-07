@@ -5,13 +5,14 @@ import AppSvg from '@/Components/core/AppSvg.vue'
 import AppNavigation from '@/Components/core/AppNavigation.vue'
 import LanguageButton from '@/Components/buttons/LanguageButton.vue'
 import ContactButton from '@/Components/buttons/ContactButton.vue'
+import Translator from '@/objects/Translator.js'
 </script>
 <template>
   <div
     class="flex items-center dark:border-gray-700 fixed top-0 right-0 text-right bg-blue-950 dark:bg-gray-800 w-full px-2 md:px-5 z-10 drop-shadow-md"
   >
     <app-link
-      :href="route('welcome')"
+      :href="Translator.route('welcome')"
       :title="globalConfig.getAppName()"
       class="hidden md:block"
     >

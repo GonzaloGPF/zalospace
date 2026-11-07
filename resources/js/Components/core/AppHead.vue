@@ -18,6 +18,7 @@ const pageTitle = computed(() =>
   props.title ? `${props.title} · ${page.props.appName}` : page.props.appName
 )
 const url = computed(() => page.props.ziggy?.location)
+const localeAlternates = computed(() => page.props.localeAlternates ?? {})
 </script>
 <template>
   <Head :title="pageTitle">
@@ -43,5 +44,20 @@ const url = computed(() => page.props.ziggy?.location)
       :content="description"
     />
     <link v-if="url" head-key="canonical" rel="canonical" :href="url" />
+    <link
+      v-for="(href, locale) in localeAlternates"
+      :key="locale"
+      :head-key="`alternate-${locale}`"
+      rel="alternate"
+      :hreflang="locale"
+      :href="href"
+    />
+    <link
+      v-if="localeAlternates.es"
+      head-key="alternate-x-default"
+      rel="alternate"
+      hreflang="x-default"
+      :href="localeAlternates.es"
+    />
   </Head>
 </template>

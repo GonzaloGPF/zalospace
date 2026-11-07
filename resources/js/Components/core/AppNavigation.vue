@@ -23,18 +23,18 @@ const { props } = usePage()
 const items = computed(() =>
   [
     {
-      href: route('welcome'),
+      href: Translator.route('welcome'),
       label: Translator.tl('home'),
       icon: 'home',
       visible: () => isMobile.value,
     },
     {
-      href: route('info.about_me'),
+      href: Translator.route('info.about_me'),
       label: Translator.tl('about_me'),
       icon: 'user',
     },
     {
-      href: route('info.projects'),
+      href: Translator.route('info.projects'),
       label: Translator.tl('projects'),
       icon: 'projects',
     },
@@ -45,7 +45,7 @@ const items = computed(() =>
       external: true,
     },
     {
-      href: route('info.work_with_me'),
+      href: Translator.route('info.work_with_me'),
       label: Translator.tl('work_with_me'),
       icon: 'work',
     },

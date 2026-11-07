@@ -11,5 +11,5 @@ return [
     |
     */
 
-    'only' => ['welcome', 'info.*', 'contacts.*', 'larecipe.docs.page'],
+    'only' => ['welcome', 'info.*', 'contacts.*', 'en.*', 'larecipe.docs.page'],
 ];

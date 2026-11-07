@@ -20,7 +20,7 @@ import AppLink from '@/Components/core/AppLink.vue'
         v-text="Translator.t('help.hero_pitch')"
       />
       <AppButton
-        :to="route('info.work_with_me')"
+        :to="Translator.route('info.work_with_me')"
         :label="Translator.tl('work_with_me')"
         icon="work"
         class="mt-6"
@@ -28,7 +28,7 @@ import AppLink from '@/Components/core/AppLink.vue'
     </div>
 
     <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-      <AppLink :href="route('info.about_me')">
+      <AppLink :href="Translator.route('info.about_me')">
         <AppCard
           :title="Translator.tl('about_me')"
           :description="Translator.t('help.about_me_description')"
@@ -36,7 +36,7 @@ import AppLink from '@/Components/core/AppLink.vue'
           icon="user"
         />
       </AppLink>
-      <AppLink :href="route('info.projects')">
+      <AppLink :href="Translator.route('info.projects')">
         <AppCard
           :title="Translator.tl('projects')"
           :description="Translator.t('help.projects_description')"
@@ -52,7 +52,7 @@ import AppLink from '@/Components/core/AppLink.vue'
           icon="tutorials"
         />
       </AppLink>
-      <AppLink :href="route('info.work_with_me')">
+      <AppLink :href="Translator.route('info.work_with_me')">
         <AppCard
           :title="Translator.tl('work_with_me')"
           :description="Translator.t('help.work_with_me_description')"

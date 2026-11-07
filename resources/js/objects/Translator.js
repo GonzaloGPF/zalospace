@@ -1,10 +1,4 @@
-import {
-  getActiveLanguage,
-  I18n,
-  loadLanguageAsync,
-  trans,
-  transChoice,
-} from 'laravel-vue-i18n'
+import { getActiveLanguage, I18n, trans, transChoice } from 'laravel-vue-i18n'
 import Formatter from '@/objects/Formatter'
 import { es } from 'date-fns/locale'
 
@@ -19,13 +13,17 @@ const Translator = {
     return locales[Translator.getLocale()]
   },
 
-  setLocale(locale) {
-    if (!locale) return
-
-    document.documentElement.setAttribute('lang', locale)
-
-    return loadLanguageAsync(locale)
-  },
+  /**
+   * Resolves a route name to the one registered for the current locale.
+   * English pages are registered under an "en." prefixed name (e.g.
+   * "en.info.about_me"), while Spanish keeps the original, unprefixed name.
+   *
+   * @param {string} name
+   * @param {object} params
+   * @returns {string}
+   */
+  route: (name, params = {}) =>
+    route(Translator.getLocale() === 'en' ? `en.${name}` : name, params),
 
   t: (string, options = {}) => trans(string, options),
 

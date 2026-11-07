@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 use Inertia\Middleware;
 use Tighten\Ziggy\Ziggy;
 
@@ -41,6 +42,36 @@ class HandleInertiaRequests extends Middleware
             },
             'appName' => config('app.name'),
             'flash_message_data' => session('flash_message_data'),
+            'localeAlternates' => $this->localeAlternates($request),
         ]);
+    }
+
+    /**
+     * Maps the current page to its equivalent URL in each supported locale,
+     * used for the language switcher and the <link rel="alternate" hreflang>
+     * tags.
+     *
+     * @return array<string, string>
+     */
+    private function localeAlternates(Request $request): array
+    {
+        $routeName = $request->route()?->getName();
+
+        if (! $routeName) {
+            return [];
+        }
+
+        $canonicalName = str_starts_with($routeName, 'en.') ? substr($routeName, 3) : $routeName;
+        $parameters = $request->route()->parameters();
+
+        $alternates = [];
+
+        foreach (['es' => $canonicalName, 'en' => "en.{$canonicalName}"] as $locale => $name) {
+            if (Route::has($name)) {
+                $alternates[$locale] = route($name, $parameters);
+            }
+        }
+
+        return $alternates;
     }
 }

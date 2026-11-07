@@ -2,7 +2,10 @@
 import AppDropdown from '@/Components/core/AppDropdown.vue'
 import AppButton from '@/Components/core/AppButton.vue'
 import { computed } from 'vue'
+import { usePage } from '@inertiajs/vue3'
 import Translator from '@/objects/Translator.js'
+
+const { props } = usePage()
 
 const flags = computed(() => [
   {
@@ -38,7 +41,7 @@ const currentFlag = computed(() =>
         v-for="flag in filteredFlags"
         :key="flag.locale"
         variant="plain"
-        @click="Translator.setLocale(flag.locale)"
+        :to="props.localeAlternates?.[flag.locale]"
       >
         <img :src="flag.src" :alt="flag.title" width="25" />
       </AppButton>

@@ -68,7 +68,7 @@ const faqs = computed(() => [
 
     <div class="flex justify-center mt-6">
       <AppButton
-        :to="route('info.cv')"
+        :to="Translator.route('info.cv')"
         :label="Translator.tl('my_cv')"
         icon="user"
       />
@@ -113,7 +113,7 @@ const faqs = computed(() => [
         />
       </div>
       <div class="flex justify-center mt-6">
-        <AppLink :href="route('info.projects')">
+        <AppLink :href="Translator.route('info.projects')">
           {{ Translator.tl('view_all_projects') }}
         </AppLink>
       </div>
@@ -181,7 +181,7 @@ const faqs = computed(() => [
 
     <div class="flex justify-center mt-10">
       <AppButton
-        :to="route('contacts.create')"
+        :to="Translator.route('contacts.create')"
         :label="Translator.actionTitle('contact')"
         icon="email"
       />

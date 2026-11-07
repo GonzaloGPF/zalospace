@@ -18,7 +18,7 @@ defineProps({
     default: false,
   },
 })
-const { isMobile, isResizing } = useTailwind() // TODO: for some reason, only at this component, useTailwind is not reactive
+const { isMobile, isResizing } = useTailwind()
 const { props } = usePage()
 const items = computed(() =>
   [

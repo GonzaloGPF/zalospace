@@ -34,14 +34,17 @@ const age = computed(() => {
           <p v-text="Translator.t('help.who_am_i_3')" />
         </template>
       </AppPanel>
-      <AppCard :title="Translator.tl('hobbies')" class="md:w-80" shine>
+      <AppCard :title="'Laravel'" class="md:w-96" shine>
         <template #description>
-          <p v-text="Translator.t('help.hobbies_1')" />
+          <p v-text="Translator.t('help.laravel_passion')" />
           <ul class="list-disc list-inside mt-3">
-            <li class="" v-text="Translator.tl('music_production')" />
-            <li class="" v-text="Translator.tl('motorbike')" />
-            <li class="" v-text="Translator.tl('gym')" />
+            <li>Forge</li>
+            <li>Horizon</li>
+            <li>Boost</li>
+            <li>Dusk</li>
+            <li>Scribe</li>
           </ul>
+          <p class="mt-3" v-text="Translator.t('help.laracasts')" />
         </template>
       </AppCard>
     </div>
@@ -77,17 +80,14 @@ const age = computed(() => {
           <p v-text="Translator.t('help.academic_training_3')" />
         </template>
       </AppPanel>
-      <AppCard :title="'Laravel'" class="md:w-96" shine>
+      <AppCard :title="Translator.tl('hobbies')" class="md:w-80" shine>
         <template #description>
-          <p v-text="Translator.t('help.laravel_passion')" />
+          <p v-text="Translator.t('help.hobbies_1')" />
           <ul class="list-disc list-inside mt-3">
-            <li>Forge</li>
-            <li>Boost</li>
-            <li>Horizon</li>
-            <li>Telescope</li>
-            <li>Laravel Cloud</li>
+            <li class="" v-text="Translator.tl('music_production')" />
+            <li class="" v-text="Translator.tl('motorbike')" />
+            <li class="" v-text="Translator.tl('gym')" />
           </ul>
-          <p class="mt-3" v-text="Translator.t('help.laracasts')" />
         </template>
       </AppCard>
     </div>

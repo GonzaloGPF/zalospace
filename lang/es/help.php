@@ -46,7 +46,7 @@ return [
     'academic_training_2' => 'Paralelamente a mis estudios, conocí Laracasts, la plataforma oficial de formación y comunidad principal de Laravel en la cual siempre he estado muy activo.',
     'academic_training_3' => 'Siempre me mantengo en contaste formación mediante proyectos personales, la realización de cursos o la participación en eventos tecnológicos.',
     'my_jobs' => 'Algunas de las funciones que he desempeñado a nivel profesional:',
-    'laravel_passion' => 'Laravel es mi framework de cabecera. Soy un apasionado de Laravel y disfruto muchísimo construyendo con él, y domino buena parte de su ecosistema:',
+    'laravel_passion' => 'Laravel es mi framework de cabecera: lo utilizo a diario, disfruto cada parte de su ecosistema y me mantengo al día con sus últimas herramientas:',
     'laracasts' => 'Gran parte de lo que sé lo he aprendido en la comunidad de Laracast. Con más de 900 lecciones realizadas, mantengo un perfil fuerte y actualizado con todo su ecosistema.',
     'laracasts_developer' => 'Como desarrollador muy especializado en Laravel, disfruto mucho con la creación de aplicaciones completas, incluyendo modelado de BBDD, diseño API, integraciones con otras plataformas y desarrollos VueJS',
     'work_in_progress' => 'Esta sección aún está en construcción...',

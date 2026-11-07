@@ -46,7 +46,7 @@ return [
     'academic_training_2' => 'Parallel to my studies, I got to know Laracasts, the official training platform and main Laravel community in which I have always been very active.',
     'academic_training_3' => 'I always keep myself in constant training through personal projects, taking courses or participating in technological events.',
     'my_jobs' => 'Some of the functions I have performed at a professional level:',
-    'laravel_passion' => 'Laravel is my framework of choice. I\'m passionate about Laravel, I thoroughly enjoy building with it, and I\'m fluent across much of its ecosystem:',
+    'laravel_passion' => 'Laravel is my framework of choice: I use it every day, I enjoy every part of its ecosystem, and I keep up to date with its latest tools:',
     'laracasts' => 'Most of what I know I learned from the Laracast community. With more than 900 lessons done, I maintain a strong and up-to-date profile with their entire ecosystem.',
     'laracasts_developer' => 'As a very specialized Laravel developer, I really enjoy creating complete applications, including database modeling, API design, integrations with other platforms and VueJS development',
     'work_in_progress' => 'This section is still under construction...',

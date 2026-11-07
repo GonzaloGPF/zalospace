@@ -1,7 +1,7 @@
 <script setup>
 import AppFlashMessages from '@/Components/core/AppFlashMessages.vue'
 import AppFooter from '@/Components/core/AppFooter.vue'
-import { Head } from '@inertiajs/vue3'
+import AppHead from '@/Components/core/AppHead.vue'
 import AppCard from '@/Components/core/AppCard.vue'
 import TopMenu from '@/Components/menu/TopMenu.vue'
 
@@ -11,6 +11,10 @@ defineProps({
     default: null,
   },
   description: {
+    type: String,
+    default: null,
+  },
+  metaDescription: {
     type: String,
     default: null,
   },
@@ -24,7 +28,7 @@ defineProps({
   <div
     class="relative sm:flex flex-col sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-blue-800 selection:text-white"
   >
-    <Head v-if="title" :title="title" />
+    <AppHead :title="title" :description="metaDescription ?? description" />
     <AppFlashMessages />
     <TopMenu />
     <header v-if="description" class="pt-5 mt-6 md:mt-12">

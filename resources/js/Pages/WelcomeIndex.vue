@@ -7,7 +7,7 @@ import BaseLayout from '@/Layouts/BaseLayout.vue'
 import AppLink from '@/Components/core/AppLink.vue'
 </script>
 <template>
-  <BaseLayout>
+  <BaseLayout :meta-description="Translator.t('help.hero_pitch')">
     <AppLogo />
 
     <div class="max-w-2xl mx-auto mt-6 text-center">

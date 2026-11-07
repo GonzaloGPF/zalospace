@@ -42,6 +42,10 @@ class HandleInertiaRequests extends Middleware
             },
             'appName' => config('app.name'),
             'flash_message_data' => session('flash_message_data'),
+            // Resolved lazily: the SetLocale route middleware runs after this
+            // middleware's "before" phase, so reading it eagerly here would
+            // always return the default locale instead of the route's.
+            'locale' => fn () => app()->getLocale(),
             'localeAlternates' => $this->localeAlternates($request),
         ]);
     }

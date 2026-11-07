@@ -8,7 +8,7 @@ export default computed(() => [
     url: 'https://salseroapp.com/index',
     subtitle: Formatter.formatDiff('2015-03-01', '2015-09-01'),
     urlLabel: 'SalseroApp',
-    image: 'images/companies/salseroapp.png',
+    image: '/images/companies/salseroapp.png',
     paragraphs: [
       Translator.t('jobs.salsero_app_1'),
       Translator.t('jobs.salsero_app_2'),
@@ -20,7 +20,7 @@ export default computed(() => [
     url: 'https://www.soprasteria.com/',
     subtitle: Formatter.formatDiff('2015-11-01', '2016-03-01'),
     urlLabel: 'Sopra Steria',
-    image: 'images/companies/sopra.png',
+    image: '/images/companies/sopra.png',
     paragraphs: [
       Translator.t('jobs.sopra_steria_1'),
       Translator.t('jobs.sopra_steria_2'),
@@ -32,7 +32,7 @@ export default computed(() => [
     url: 'https://www.indracompany.com/es/',
     subtitle: Formatter.formatDiff('2016-03-01', '2017-03-01'),
     urlLabel: 'Indra',
-    image: 'images/companies/indra.png',
+    image: '/images/companies/indra.png',
     paragraphs: [
       Translator.t('jobs.indra_1'),
       Translator.t('jobs.indra_2'),
@@ -46,7 +46,7 @@ export default computed(() => [
     url: 'https://boream.com/',
     subtitle: Formatter.formatDiff('2017-03-01', '2017-06-01'),
     urlLabel: 'Boream',
-    image: 'images/companies/boream.png',
+    image: '/images/companies/boream.png',
     paragraphs: [Translator.t('jobs.boream_1'), Translator.t('jobs.boream_2')],
   },
   {
@@ -54,7 +54,7 @@ export default computed(() => [
     url: 'https://eugen.solutions/',
     subtitle: Formatter.formatDiff('2017-06-01', '2017-10-01'),
     urlLabel: 'Eugen',
-    image: 'images/companies/eugen.png',
+    image: '/images/companies/eugen.png',
     paragraphs: [
       Translator.t('jobs.eugen_1'),
       Translator.t('jobs.eugen_2'),
@@ -66,7 +66,7 @@ export default computed(() => [
     url: 'https://grupomobius.com//',
     subtitle: Formatter.formatDiff('2017-11-01', '2022-02-01'),
     urlLabel: 'Grupo Mobius',
-    image: 'images/companies/mobius.png',
+    image: '/images/companies/mobius.png',
     paragraphs: [
       Translator.t('jobs.mobius_1'),
       Translator.t('jobs.mobius_2'),
@@ -81,7 +81,7 @@ export default computed(() => [
     url: 'https://acierto.com//',
     subtitle: Formatter.formatDiff('2022-02-01', '2025-01-01'),
     urlLabel: 'Acierto',
-    image: 'images/companies/acierto.png',
+    image: '/images/companies/acierto.png',
     paragraphs: [
       Translator.t('jobs.acierto_1'),
       Translator.t('jobs.acierto_2'),
@@ -95,7 +95,7 @@ export default computed(() => [
     url: 'https://www.learningheroes.com/',
     subtitle: Formatter.formatDiff('2025-01-01', new Date()),
     urlLabel: 'Learning Heroes',
-    image: 'images/companies/learning-heroes.png',
+    image: '/images/companies/learning-heroes.png',
     paragraphs: [
       Translator.t('jobs.learning_heroes_1'),
       Translator.t('jobs.learning_heroes_2'),

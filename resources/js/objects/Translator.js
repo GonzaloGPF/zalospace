@@ -1,4 +1,10 @@
-import { getActiveLanguage, I18n, trans, transChoice } from 'laravel-vue-i18n'
+import {
+  getActiveLanguage,
+  I18n,
+  loadLanguageAsync,
+  trans,
+  transChoice,
+} from 'laravel-vue-i18n'
 import Formatter from '@/objects/Formatter'
 import { es } from 'date-fns/locale'
 
@@ -11,6 +17,23 @@ const Translator = {
     }
 
     return locales[Translator.getLocale()]
+  },
+
+  /**
+   * Loads the translations for the locale of the page Inertia just rendered
+   * and updates the <html lang> attribute to match. Each page's locale comes
+   * from the server (set by the SetLocale middleware for the matched route),
+   * since Inertia navigations don't reload the document and so never touch
+   * the lang attribute or active dictionary on their own.
+   *
+   * @param {string} locale
+   */
+  syncLocale(locale) {
+    if (!locale || locale === Translator.getLocale()) return
+
+    document.documentElement.setAttribute('lang', locale)
+
+    return loadLanguageAsync(locale)
   },
 
   /**

@@ -49,6 +49,15 @@ class PagesTest extends TestCase
         $this->assertSame('es', app()->getLocale());
     }
 
+    public function test_the_page_shares_the_locale_resolved_for_its_route(): void
+    {
+        $this->get(route('info.about_me'))
+            ->assertInertia(fn (AssertableInertia $page) => $page->where('locale', 'es'));
+
+        $this->get(route('en.info.about_me'))
+            ->assertInertia(fn (AssertableInertia $page) => $page->where('locale', 'en'));
+    }
+
     public function test_the_page_shares_the_equivalent_url_in_each_locale(): void
     {
         $this->get(route('info.about_me'))

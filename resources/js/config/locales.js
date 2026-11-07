@@ -31,6 +31,10 @@ const locales = {
    * @returns {string}
    */
   getLocale() {
+    if (typeof document === 'undefined') {
+      return 'es'
+    }
+
     return document.documentElement.getAttribute('lang')
   },
 

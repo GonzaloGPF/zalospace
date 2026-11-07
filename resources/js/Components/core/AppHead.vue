@@ -35,5 +35,13 @@ const url = computed(() => page.props.ziggy?.location)
       :content="description"
     />
     <meta v-if="url" head-key="og:url" property="og:url" :content="url" />
+    <meta head-key="twitter:title" name="twitter:title" :content="pageTitle" />
+    <meta
+      v-if="description"
+      head-key="twitter:description"
+      name="twitter:description"
+      :content="description"
+    />
+    <link v-if="url" head-key="canonical" rel="canonical" :href="url" />
   </Head>
 </template>

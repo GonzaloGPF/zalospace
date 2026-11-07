@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\InfoController;
+use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,3 +27,5 @@ Route::get('/my-cv/pdf/{locale}', [InfoController::class, 'cvPdf'])
     ->name('info.cv_pdf');
 
 Route::resource('contacts', ContactController::class)->only(['create', 'store']);
+
+Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');

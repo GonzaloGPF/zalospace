@@ -18,6 +18,11 @@
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="200">
         <meta property="og:image:height" content="200">
+        <meta name="twitter:card" content="summary">
+        <meta data-inertia="twitter:title" name="twitter:title" content="{{ config('company.name') }}">
+        <meta data-inertia="twitter:description" name="twitter:description" content="{{ config('company.description') }}">
+        <meta name="twitter:image" content="{{ url('images/logo.png') }}">
+        <link data-inertia="canonical" rel="canonical" href="{{ config('app.url') }}">
         <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/favicon-32x32.png') }}">
         <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/favicon-16x16.png') }}">
         <link rel="icon" href="{{ asset('images/favicon.ico') }}" sizes="any"><!-- 32×32 -->

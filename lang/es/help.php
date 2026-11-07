@@ -23,6 +23,7 @@ return [
     'professional_profile_1' => 'Soy un Desarrollador Web FullStack muy especializado en desarrollos a medida con Laravel + VueJS.',
     'professional_profile_2' => 'Tengo experiencia construyendo proyectos desde cero, abarcando todas las ramas de desarrollo, desde la toma de requerimientos, pasando por el diseño de arquitecturas, modelado de datos, interfaces de usuario, infraestructuras cloud hasta testing y maquetación.',
     'professional_profile_3' => 'Como Líder Técnico de equipos de Desarrollo, también he llevado a cabo tareas de mentoría y formación, así como planificación y estimación de proyectos.',
+    'professional_profile_4' => 'Utilizo Claude Code de forma constante e intento agentificar mi flujo de trabajo en la mayor medida posible, manteniendo siempre una vigilancia y control exhaustivo sobre el código producido.',
     'academic_training_1' => 'Estudié en la Escuela Técnica Superior de Ingeniería Informática (Universidad de Sevilla), en la especialidad de Computadores.',
     'academic_training_2' => 'Paralelamente a mis estudios, conocí Laracasts, la plataforma oficial de formación y comunidad principal de Laravel en la cual siempre he estado muy activo.',
     'academic_training_3' => 'Siempre me mantengo en contaste formación mediante proyectos personales, la realización de cursos o la participación en eventos tecnológicos.',

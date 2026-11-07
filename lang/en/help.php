@@ -23,6 +23,7 @@ return [
     'professional_profile_1' => 'I am a FullStack Web Developer very specialized in custom developments with Laravel + VueJS.',
     'professional_profile_2' => 'I have experience building projects from scratch, covering all branches of development, from requirements gathering, through architecture design, data modeling, user interfaces, cloud infrastructures to testing and layout.',
     'professional_profile_3' => 'As a Technical Leader of Development teams, I have also carried out mentoring and training tasks, as well as project planning and estimation.',
+    'professional_profile_4' => 'I use Claude Code constantly and try to agentify my workflow as much as possible, while always keeping close oversight and control over the code it produces.',
     'academic_training_1' => 'I studied at the Higher Technical School of Computer Engineering (Universidad de Sevilla), specializing in Computers.',
     'academic_training_2' => 'Parallel to my studies, I got to know Laracasts, the official training platform and main Laravel community in which I have always been very active.',
     'academic_training_3' => 'I always keep myself in constant training through personal projects, taking courses or participating in technological events.',

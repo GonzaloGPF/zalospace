@@ -37,6 +37,7 @@ export const TechNames = {
   NITRO: 'Nitro',
   STORYBOOK: 'Storybook',
   STORYBLOK: 'Storyblok',
+  CLAUDE: 'Claude',
 }
 
 const LEVELS = {
@@ -290,5 +291,11 @@ export default [
     url: 'https://www.storyblok.com/',
     image: '/images/technologies/storyblok.png',
     level: LEVELS.MEDIUM,
+  },
+  {
+    name: TechNames.CLAUDE,
+    url: 'https://claude.com/claude-code',
+    image: '/images/technologies/claude.webp',
+    level: LEVELS.EXPERT,
   },
 ]

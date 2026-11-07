@@ -64,6 +64,7 @@ const age = computed(() => {
           <p v-text="Translator.t('help.professional_profile_1')" />
           <p v-text="Translator.t('help.professional_profile_2')" />
           <p v-text="Translator.t('help.professional_profile_3')" />
+          <p v-text="Translator.t('help.professional_profile_4')" />
         </template>
       </AppPanel>
     </div>

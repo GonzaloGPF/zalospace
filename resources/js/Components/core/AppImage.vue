@@ -17,10 +17,11 @@ const show = ref(false)
       :src="image"
       :alt="title"
       :class="[
-        'rounded-lg shadow-md bg-gray-800 p-3',
+        'rounded-lg shadow-md bg-gray-800 p-3 w-[150px] h-[150px] object-contain',
         { 'cursor-pointer': modal },
       ]"
       width="150"
+      height="150"
       @click="show = true"
     />
     <span v-if="label" v-text="label" />

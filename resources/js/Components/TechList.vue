@@ -31,47 +31,45 @@ const vTechnologies = computed(() =>
 )
 </script>
 <template>
-  <div>
+  <div v-if="technologies.length" class="@container">
     <div
-      v-if="technologies.length"
-      class="grid grid-cols-4 md:grid-cols-8 gap-4"
+      class="grid grid-cols-3 @sm:grid-cols-4 @lg:grid-cols-6 @2xl:grid-cols-8 gap-4"
     >
       <TransitionGroup name="technology">
         <div
-          v-if="limit && limit < technologies.length"
-          key="button"
-          class="flex items-center max-w-xs"
-        >
-          <AppButton
-            variant="plain"
-            :label="Translator.tl(viewMore ? 'view_less' : 'view_more')"
-            @click="viewMore = !viewMore"
-          />
-        </div>
-        <div
           v-for="technology in vTechnologies"
           :key="technology.name"
-          class="flex flex-col justify-center items-center"
+          class="flex flex-col justify-center items-center min-w-0"
         >
           <a
             :href="technology.url"
             :title="technology.name"
             target="_blank"
-            class="block p-2 rounded-lg link flex flex-col items-center justify-center mt-auto"
+            class="block p-2 rounded-lg link flex flex-col items-center justify-center mt-auto min-w-0"
           >
-            <div class="flex flex-col items-center">
+            <div class="flex flex-col items-center min-w-0">
               <img
                 :src="technology.image"
                 :alt="technology.name"
                 class="mx-auto rounded-lg"
                 width="50"
               />
-              <span v-text="technology.name" />
+              <span class="truncate max-w-full" v-text="technology.name" />
             </div>
           </a>
           <TechLevel :technology="technology" />
         </div>
       </TransitionGroup>
+    </div>
+    <div
+      v-if="limit && limit < technologies.length"
+      class="flex justify-center mt-4"
+    >
+      <AppButton
+        variant="plain"
+        :label="Translator.tl(viewMore ? 'view_less' : 'view_more')"
+        @click="viewMore = !viewMore"
+      />
     </div>
   </div>
 </template>

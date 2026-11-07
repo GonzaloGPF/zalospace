@@ -27,6 +27,7 @@ export default computed(() => [
       TechNames.FORGE,
       TechNames.INERTIAJS,
       TechNames.PHPUNIT,
+      TechNames.CLAUDE,
       TechNames.GSAP,
       TechNames.VITE,
       TechNames.GIT,
@@ -34,9 +35,10 @@ export default computed(() => [
   },
   {
     title: 'Talent Battles',
-    subtitle: Formatter.formatDiff('2019-08-13', new Date()),
+    subtitle: Formatter.formatDiff('2019-08-13', '2023-07-27'),
     image: 'images/projects/talentbattles.png',
     url: 'https://talentbattles.com/',
+    featured: true,
     paragraphs: [
       Translator.t('projects.talentbattles_1'),
       Translator.t('projects.talentbattles_2'),
@@ -74,6 +76,7 @@ export default computed(() => [
     subtitle: Formatter.formatDiff('2017-09-01', '2022-02-01'),
     image: 'images/projects/pegasus.png',
     url: 'https://pegasus.grupomobius.com/',
+    featured: true,
     paragraphs: [
       Translator.t('projects.pegasus_1'),
       Translator.t('projects.pegasus_2'),

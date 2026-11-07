@@ -12,12 +12,13 @@
     "require": {
         "php": "^8.3",
         "aws/aws-sdk-php": "^3.262",
+        "dompdf/dompdf": "^3.1",
         "guzzlehttp/guzzle": "^7.2",
         "inertiajs/inertia-laravel": "^3.7",
-        "larecipe/larecipe": "^3.0",
         "laravel/framework": "^13.40",
         "laravel/sanctum": "^4.3",
         "laravel/tinker": "^3.0",
+        "larecipe/larecipe": "^3.0",
         "tightenco/ziggy": "^2.6"
     },
     "require-dev": {

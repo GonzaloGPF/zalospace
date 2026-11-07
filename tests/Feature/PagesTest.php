@@ -16,6 +16,7 @@ class PagesTest extends TestCase
             'about me' => ['info.about_me', 'Info/AboutMe'],
             'projects' => ['info.projects', 'Info/Projects'],
             'work with me' => ['info.work_with_me', 'Info/WorkWithMe'],
+            'my cv' => ['info.cv', 'Info/MyCv'],
             'contact' => ['contacts.create', 'Contact/CreateContact'],
         ];
     }
@@ -38,6 +39,8 @@ class PagesTest extends TestCase
             'contacts.create',
             'contacts.store',
             'info.about_me',
+            'info.cv',
+            'info.cv_pdf',
             'info.projects',
             'info.work_with_me',
             'larecipe.docs.page',

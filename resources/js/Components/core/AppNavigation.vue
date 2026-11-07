@@ -134,6 +134,7 @@ const showMenu = computed(() => {
           :label="item.label"
           :external="item.external"
           class="flex md:items-center space-x-2 text-white dark:text-gray-500 p-3 border-white-700 dark:border-white-300 px-4 whitespace-nowrap"
+          @click="openMenu = false"
         >
           <AppSvg v-if="item.icon" :icon="item.icon" />
           <span v-if="item.label" class="brand-font" v-text="item.label" />

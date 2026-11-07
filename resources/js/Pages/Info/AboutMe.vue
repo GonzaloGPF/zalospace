@@ -77,9 +77,17 @@ const age = computed(() => {
           <p v-text="Translator.t('help.academic_training_3')" />
         </template>
       </AppPanel>
-      <AppCard :title="'Laravel'" class="md:w-80" shine>
+      <AppCard :title="'Laravel'" class="md:w-96" shine>
         <template #description>
-          <p v-text="Translator.t('help.laracasts')" />
+          <p v-text="Translator.t('help.laravel_passion')" />
+          <ul class="list-disc list-inside mt-3">
+            <li>Forge</li>
+            <li>Boost</li>
+            <li>Horizon</li>
+            <li>Telescope</li>
+            <li>Laravel Cloud</li>
+          </ul>
+          <p class="mt-3" v-text="Translator.t('help.laracasts')" />
         </template>
       </AppCard>
     </div>

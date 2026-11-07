@@ -20,5 +20,9 @@ Route::get('/', [WelcomeController::class, 'show'])->name('welcome');
 Route::get('/about-me', [InfoController::class, 'aboutMe'])->name('info.about_me');
 Route::get('/projects', [InfoController::class, 'projects'])->name('info.projects');
 Route::get('/work-with-me', [InfoController::class, 'workWithMe'])->name('info.work_with_me');
+Route::get('/my-cv', [InfoController::class, 'cv'])->name('info.cv');
+Route::get('/my-cv/pdf/{locale}', [InfoController::class, 'cvPdf'])
+    ->whereIn('locale', ['es', 'en'])
+    ->name('info.cv_pdf');
 
 Route::resource('contacts', ContactController::class)->only(['create', 'store']);

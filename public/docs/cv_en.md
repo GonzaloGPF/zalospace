@@ -2,7 +2,7 @@
 
 **Senior Full-Stack Developer & Tech Lead · Laravel + Vue**
 
-Madrid, Spain · [zalo.pabon@gmail.com](mailto:zalo.pabon@gmail.com) · [zalospace.com](https://zalospace.com) · [GitHub](https://github.com/GonzaloGPF) · [LinkedIn](https://www.linkedin.com/in/gonzalogpf/) · [Laracasts](https://laracasts.com/@Zalo)
+Seville, Spain · [zalo.pabon@gmail.com](mailto:zalo.pabon@gmail.com) · [zalospace.com](https://zalospace.com) · [GitHub](https://github.com/GonzaloGPF) · [LinkedIn](https://www.linkedin.com/in/gonzalogpf/) · [Laracasts](https://laracasts.com/@Zalo)
 
 > **Available for hourly freelance work** on Laravel + Vue projects: part-time and remote, alongside my full-time role.
 
@@ -71,7 +71,7 @@ November 2017 – February 2022
 
 ## Selected projects
 
-- **[Talent Battles](https://talentbattles.com)** (2019 – Present): my own platform for music producers and digital designers. A social network and marketplace built with Laravel and Vue, with Stripe payments, audio processing with D3 and real-time features with WebSockets.
+- **[Talent Battles](https://talentbattles.com)** (2019 – 2023): my own platform for music producers and digital designers. A social network and marketplace built with Laravel and Vue, with Stripe payments, audio processing with D3 and real-time features with WebSockets.
 - **Pegasus** (Grupo Mobius): internal ERP also exposed to external clients, with multiple roles, reporting, charts and real-time features.
 - **Real Madrid Assembly voting** (Indra): prototype for counting member votes on tablets and showing the results in real time.
 - **BBVA SET1** (Indra): internal application with configurable, interactive charts built from automated CSV imports, with PDF export.
@@ -83,7 +83,7 @@ November 2017 – February 2022
 
 ## Continuous learning
 
-- [Laracasts](https://laracasts.com/@Zalo): more than 850 lessons completed.
+- [Laracasts](https://laracasts.com/@Zalo): more than 900 lessons completed.
 - Udemy: Vue.js, TypeScript and Docker courses.
 
 ## Languages

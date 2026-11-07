@@ -97,7 +97,7 @@ export default computed(() => [
       TechNames.SASS,
       TechNames.MYSQL,
       TechNames.VITE,
-      TechNames.VUETIFY,
+      TechNames.ELEMENTUI,
       TechNames.GIT,
       TechNames.WEBSOCKETS,
       TechNames.PUSHER,

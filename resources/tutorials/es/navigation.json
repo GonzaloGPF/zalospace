@@ -24,6 +24,10 @@
                 {
                     "page": "atomic_deploys",
                     "label": "Despliegues atómicos"
+                },
+                {
+                    "page": "state_machine",
+                    "label": "Máquina de estados"
                 }
             ]
         }

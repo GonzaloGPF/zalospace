@@ -16,6 +16,10 @@
                 {
                     "page": "spa_seo",
                     "label": "SEO en una SPA"
+                },
+                {
+                    "page": "audio_waveform",
+                    "label": "Ondas de audio"
                 }
             ]
         }

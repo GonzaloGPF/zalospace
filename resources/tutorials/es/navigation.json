@@ -20,6 +20,10 @@
                 {
                     "page": "audio_waveform",
                     "label": "Ondas de audio"
+                },
+                {
+                    "page": "atomic_deploys",
+                    "label": "Despliegues atómicos"
                 }
             ]
         }

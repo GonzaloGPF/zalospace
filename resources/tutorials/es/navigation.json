@@ -12,6 +12,10 @@
                 {
                     "page": "share_images",
                     "label": "Imágenes para compartir"
+                },
+                {
+                    "page": "spa_seo",
+                    "label": "SEO en una SPA"
                 }
             ]
         }

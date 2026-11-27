@@ -444,7 +444,7 @@ Y la vista pinta las meta tags a partir de ese objeto:
 ```
 
 > [!NOTE]
-> Cómo sirvo una SPA de Vue con meta tags distintas para cada página (título, descripción, JSON-LD, sitemap...) da para otro tutorial.
+> Cómo sirvo una SPA de Vue con meta tags distintas para cada página (título, descripción, JSON-LD, sitemap...) lo explico en el tutorial [SEO para una SPA de Vue servida por Laravel](/tutorials/es/spa_seo).
 
 ## Tests {#tests}
 

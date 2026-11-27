@@ -8,6 +8,10 @@
                 {
                     "page": "laravel_aws",
                     "label": "Laravel y AWS"
+                },
+                {
+                    "page": "share_images",
+                    "label": "Imágenes para compartir"
                 }
             ]
         }

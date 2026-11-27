@@ -254,7 +254,8 @@ Pero, ¿cómo sabemos que ha cambiado? Con una **versión**: un hash de todo lo 
 
 ```php title="app/Services/BattleShareImageService.php"
 /**
- * Changes whenever something the image shows changes: a creation, its name, its author or its cover.
+ * Changes whenever something the image shows changes: a creation, its name, its author or its cover. A cover is
+ * replaced in place, keeping its id, so its path is what tells it has changed.
  */
 public function version(Battle $battle): string
 {
@@ -618,7 +619,8 @@ class BattleShareImageService
     }
 
     /**
-     * Changes whenever something the image shows changes: a creation, its name, its author or its cover.
+     * Changes whenever something the image shows changes: a creation, its name, its author or its cover. A cover is
+     * replaced in place, keeping its id, so its path is what tells it has changed.
      */
     public function version(Battle $battle): string
     {

@@ -28,6 +28,10 @@
                 {
                     "page": "state_machine",
                     "label": "Máquina de estados"
+                },
+                {
+                    "page": "api_filters",
+                    "label": "API con filtros"
                 }
             ]
         }
